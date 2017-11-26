@@ -8,23 +8,25 @@ Most likely this repository will be the foundation and the boilerplate for futur
 - npm >= 5 or yarn
 
 ## Getting started
-** Clone this repository **
+**Clone this repository**
 ``` git clone https://github.com/adalberht/styled-react-redux ```
 
-** Installation **
+**Installation**
 ``` npm install ```
 
-** Run development server **
+**Run development server**
 ``` npm run start ``` or ``` yarn start ```
 
-** Specify staging environment while running at development mode **
+**Specify staging environment while running at development mode**
 ``` NODE_ENV=local npm run start ```
 
 
-** Deployment **
+**Deployment**
 ``` npm run build ``` or ``` yarn build ```
 - Serve static files from `dist` to server
 
+``` npm run serve ```
+- Run server (Node server) to serve static files in the dist
 
 ## Styleguide
 - This repository's styleguide follows Airbnb's styleguide, please read:
@@ -36,4 +38,4 @@ Most likely this repository will be the foundation and the boilerplate for futur
 - To be filled later.
 
 
-** Made with @fatanugraha **
+**Made with @fatanugraha**
