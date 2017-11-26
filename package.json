@@ -10,14 +10,18 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint-config-airbnb": "^15.1.0",
+    "gh-pages": "^1.1.0",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-loadable": "^5.3.1",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
+    "react-scroll": "^1.6.7",
+    "react-spinkit": "^3.0.0",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.3.5",
@@ -27,6 +31,7 @@
     "styled-components": "^2.2.3",
     "superagent": "^3.8.1",
     "superagent-defaults": "^0.1.14",
+    "tailwindcss": "^0.2.2",
     "webpack": "^3.8.1"
   },
   "devDependencies": {
@@ -41,6 +46,7 @@
   "scripts": {
     "start": "poi src/index.jsx",
     "build": "poi build",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "deploy": "npm run build && gh-pages -d dist"
   }
 }

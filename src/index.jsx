@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { ConnectedRouter } from 'react-router-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 
+import './tailwind.css';
 import configureStore from './redux/configureStore';
 import App from './containers/';
 import theme from './constants/theme';
