@@ -5,9 +5,9 @@ module.exports = (options, req) => ({
   },
   html: {
     // `pkg` indicates the data in `package.json`
-    title: 'React Redux Styled Boilerplate',
+    title: 'Albertus Angga',
   },
-  port: 999,
+  port: 3550,
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },

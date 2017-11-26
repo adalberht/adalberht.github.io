@@ -1,41 +1,32 @@
-## styled-react-redux
-'styled-react-redux' is a boilerplate consisting React, Redux, React Router, and styled-components.
-Most likely this repository will be the foundation and the boilerplate for future CompFest X boilerplate.
+### Portfolio
+Personal Portfolio website made with React.
+This project used [styled-react-redux](https://github.com/adalberht/styled-react-redux) boilerplate.
 
+### Stacks
+- [GitHub pages with custom domain](https://adalberht.github.io)
+- [React](https://github.com/facebook/react)
+- to be filled again later
 
-## Requirements
+## Installation and Buildings
+Interested on running my project locally?
+Here's how.
+
+*Requirements*
 - Node >= 6
 - npm >= 5 or yarn
 
-## Getting started
-**Clone this repository**
-``` git clone https://github.com/adalberht/styled-react-redux ```
+```
+# Clone this repository
+git clone https://github.com/adalberht/portfolio
+cd portfolio
 
-**Installation**
-``` npm install ```
+# Install required dependency
+npm install
 
-**Run development server**
-``` npm run start ``` or ``` yarn start ```
+# Run development server
+npm run start # or yarn start
 
-**Specify staging environment while running at development mode**
-``` NODE_ENV=local npm run start ```
-
-
-**Deployment**
-``` npm run build ``` or ``` yarn build ```
-- Serve static files from `dist` to server
-
-``` npm run serve ```
-- Run server (Node server) to serve static files in the dist
-
-## Styleguide
-- This repository's styleguide follows Airbnb's styleguide, please read:
-  > https://github.com/airbnb/javascript
-- In each of subfolder there will be README.md as well explaining the usage and or styleguide of each folders.
-
-
-## Contributions
-- To be filled later.
-
-
-**Made with @fatanugraha**
+# Deployment
+npm run build # or yarn build
+npm run serve # serve static file from Node server
+```
