@@ -1,3 +1,4 @@
+import tailwindConfig from '../tailwind.config';
 /*
   All style variables are declared here
   - Fonts are used for font-family names
@@ -6,15 +7,17 @@
   - Declare all font-family names into const here and export it
 */
 
-const linearGradient = {
+const linearGradients = {
   main: `
     background: -webkit-linear-gradient(90deg, #2a2f38, #333842 95%);
     background: linear-gradient(90deg, #2a2f38, #333842 95%)
   `,
 };
 
+
 const theme = {
-  linearGradient,
+  linearGradients,
+  ...tailwindConfig,
 };
 
 export default theme;

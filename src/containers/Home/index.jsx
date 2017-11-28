@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
-import { HOME_ROUTE } from '../../constants/routes';
+import Loadable from 'react-loadable';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
-class Home extends Component {
-  state = {}
-  render() {
-    return (
-      <Element name={HOME_ROUTE}>
-        <Container>
-          <IdentityWrapper>
-            <Name>Albertus Angga Raharja</Name>
-            <Description>Computer Science Student</Description>
-            <Description>Future Software Engineer</Description>
-          </IdentityWrapper>
-        </Container>
-      </Element>
-    );
-  }
-}
+const LoadableHome = Loadable({
+  loader: () => import('./Home'),
+  loading: LoadingIndicator,
+  timeout: 10000000,
+  delay: 1000000,
+});
 
 const Container = props => (
   <div
@@ -30,34 +19,21 @@ const Container = props => (
       h-screen
       mx-auto
       justify-center
+      relative
     `}
     {...props}
   />
 );
 
-const IdentityWrapper = props => (
-  <div
-    className={`
-      flex
-      flex-col
-      mx-auto
-    `}
-    {...props}
-  />
-);
-
-const Name = props => (
-  <span
-    className=" font-bold text-white text-5xl self-center justify-center text-center"
-    {...props}
-  />
-);
-
-const Description = props => (
-  <span
-    className="italic text-grey-lightest text-xl"
-    {...props}
-  />
-);
+class Home extends Component {
+  state = {}
+  render() {
+    return (
+      <Container>
+        <LoadableHome />
+      </Container>
+    );
+  }
+}
 
 export default Home;

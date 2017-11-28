@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
 
 Tailwind - The Utility-First CSS Framework
@@ -773,3 +774,5 @@ module.exports = {
   },
 
 }
+
+/* eslint-enable */
