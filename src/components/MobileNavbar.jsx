@@ -92,7 +92,7 @@ const MobileMenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   a {
-    margin: 2rem;
+    margin: ${props => `${props.theme.margin['3']} ${props.theme.margin['4']}`};
     font-size: ${props => props.theme.textSizes['3xl']};
     font-family: ${props => props.theme.fonts.mono};
   }

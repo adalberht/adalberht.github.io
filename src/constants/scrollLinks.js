@@ -3,19 +3,27 @@ import * as routes from './routes';
 const links = {
   HOME: {
     to: routes.HOME_ROUTE,
-    text: 'HOME',
-  },
-  EXPERIENCES: {
-    to: routes.EXPERIENCES_ROUTE,
-    text: 'EXPERIENCES',
+    text: 'Home',
   },
   SKILLS: {
     to: routes.SKILLS_ROUTE,
-    text: 'SKILLS',
+    text: 'Skills',
+  },
+  EXPERIENCES: {
+    to: routes.EXPERIENCES_ROUTE,
+    text: 'Experiences',
+  },
+  PROJECTS: {
+    to: routes.PROJECTS_ROUTE,
+    text: 'Projects',
+  },
+  ACHIEVEMENTS: {
+    to: routes.ACHIEVEMENTS_ROUTE,
+    text: 'Achievements',
   },
   ABOUT: {
     to: routes.ABOUT_ROUTE,
-    text: 'ABOUT',
+    text: 'About',
   },
 };
 
