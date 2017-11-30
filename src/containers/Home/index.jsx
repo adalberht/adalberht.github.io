@@ -10,28 +10,11 @@ const LoadableHome = Loadable({
   delay: 1000000,
 });
 
-const Container = props => (
-  <div
-    className={`
-      container
-      flex
-      flex-col
-      h-screen
-      mx-auto
-      justify-center
-      relative
-    `}
-    {...props}
-  />
-);
-
 class Home extends Component {
   state = {}
   render() {
     return (
-      <Container>
-        <LoadableHome />
-      </Container>
+      <LoadableHome />
     );
   }
 }

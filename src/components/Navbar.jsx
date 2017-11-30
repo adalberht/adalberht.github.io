@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Link } from 'react-scroll';
 import SwitchButton from './SwitchButton';
-import * as routes from '../constants/routes';
+import scrollLinks from '../constants/scrollLinks';
 
 @connect(state => ({ utils: state.utils }))
 export default class Navbar extends React.Component {
@@ -20,14 +20,13 @@ export default class Navbar extends React.Component {
     return (
       <Container primaryColor={primaryColor} themeColor={themeColor}>
         <SwitchButton />
-        <div className="flex text-white">
-          <Link to={routes.HOME_ROUTE} spy smooth duration={1000}>
-            Home
-          </Link>
-          <Link to={routes.SKILLS_ROUTE} spy smooth duration={1000}>
-            Skill
-          </Link>
-        </div>
+        <Links>
+          {Object.values(scrollLinks).map(scrollLink => (
+            <Link key={scrollLink.to} to={scrollLink.to} spy smooth duration={500}>
+              {scrollLink.text}
+            </Link>
+          ))}
+        </Links>
       </Container>
     );
   }
@@ -77,3 +76,7 @@ Flex.propTypes = {
 Flex.defaultProps = {
   column: false,
 };
+
+const Links = styled.div`
+  display: flex;
+`;

@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import { connect } from 'react-redux';
 import Icon from './Icon';
 import SwitchButton from './SwitchButton';
-import * as routes from '../constants/routes';
+import scrollLinks from '../constants/scrollLinks';
 
 @connect(state => ({ utils: state.utils }))
 export default class MobileNavbar extends React.Component {
@@ -15,13 +15,13 @@ export default class MobileNavbar extends React.Component {
       secondaryColor: PropTypes.string.isRequired,
       themeColor: PropTypes.string.isRequired,
     }).isRequired,
-  }
+  };
 
   state = { isMenuActive: false };
 
   toggleMenu = () => {
     this.setState({ isMenuActive: !this.state.isMenuActive });
-  }
+  };
 
   render() {
     const { isMenuActive } = this.state;
@@ -29,20 +29,15 @@ export default class MobileNavbar extends React.Component {
       <Container>
         <div />
         <Flex>
-          {!isMenuActive &&
+          {!isMenuActive && (
             <Flex>
               <SwitchButton />
               <MenuButton onClick={this.toggleMenu}>
-                <Icon
-                  className="m-4"
-                  name="bars"
-                  size="2x"
-                  color={this.props.utils.primaryColor}
-                />
+                <Icon className="m-4" name="bars" size="2x" color={this.props.utils.primaryColor} />
               </MenuButton>
             </Flex>
-          }
-          {isMenuActive &&
+          )}
+          {isMenuActive && (
             <MobileMenuContainer
               primaryColor={this.props.utils.primaryColor}
               secondaryColor={this.props.utils.secondaryColor}
@@ -56,26 +51,14 @@ export default class MobileNavbar extends React.Component {
                 />
               </button>
               <Links>
-                <Link
-                  duration={500}
-                  onClick={this.toggleMenu}
-                  smooth
-                  spy
-                  to={routes.HOME_ROUTE}
-                >
-                  Home
-                </Link>
-                <Link
-                  duration={500}
-                  onClick={this.toggleMenu}
-                  smooth
-                  spy
-                  to={routes.SKILLS_ROUTE}
-                >
-                  Skill
-                </Link>
+                {Object.values(scrollLinks).map(scrollLink => (
+                  <Link key={scrollLink.to} to={scrollLink.to} spy smooth duration={500}>
+                    {scrollLink.text}
+                  </Link>
+                ))}
               </Links>
-            </MobileMenuContainer>}
+            </MobileMenuContainer>
+          )}
         </Flex>
       </Container>
     );

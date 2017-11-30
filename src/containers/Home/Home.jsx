@@ -106,7 +106,7 @@ class HomeComponent extends React.Component {
             <Description>
               A <span className="bold">sophomore</span> in{' '}
               <span className="highlight">Computer Science</span> at{' '}
-              <a href="http://www.ui.ac.id/en/">University of Indonesia,</a>
+              <a href="http://www.ui.ac.id/en/">University of Indonesia</a>,
             </Description>
             <Description>
               An aspiring <span className="highlight">Software Engineer</span> in a journey to become a <span className="highlight"> full-stack developer</span>.
