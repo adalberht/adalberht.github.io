@@ -32,9 +32,9 @@ export default class MobileNavbar extends React.Component {
           {!isMenuActive && (
             <Flex>
               <SwitchButton />
-              <MenuButton onClick={this.toggleMenu}>
-                <Icon className="m-4" name="bars" size="2x" color={this.props.utils.primaryColor} />
-              </MenuButton>
+              <ButtonIcon onClick={this.toggleMenu}>
+                <Icon name="bars" size="2x" color={this.props.utils.primaryColor} />
+              </ButtonIcon>
             </Flex>
           )}
           {isMenuActive && (
@@ -42,17 +42,23 @@ export default class MobileNavbar extends React.Component {
               primaryColor={this.props.utils.primaryColor}
               secondaryColor={this.props.utils.secondaryColor}
             >
-              <button className="self-end" onClick={this.toggleMenu}>
+              <ButtonIcon onClick={this.toggleMenu}>
                 <Icon
-                  className="m-4"
                   name="times"
                   size="2x"
                   color={this.props.utils.primaryColor}
                 />
-              </button>
+              </ButtonIcon>
               <Links>
                 {Object.values(scrollLinks).map(scrollLink => (
-                  <Link key={scrollLink.to} to={scrollLink.to} spy smooth duration={500}>
+                  <Link
+                    duration={500}
+                    key={scrollLink.to}
+                    smooth
+                    spy
+                    to={scrollLink.to}
+                    onClick={this.toggleMenu}
+                  >
                     {scrollLink.text}
                   </Link>
                 ))}
@@ -98,8 +104,9 @@ const MobileMenuContainer = styled.div`
   }
 `;
 
-const MenuButton = styled.button`
+const ButtonIcon = styled.button`
   align-self: flex-end;
+  margin: ${props => props.theme.margin['4']};
 `;
 
 const Links = styled.div`

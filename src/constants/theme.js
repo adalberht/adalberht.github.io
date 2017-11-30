@@ -8,18 +8,16 @@ import tailwindConfig from '../tailwind.config';
 */
 
 const linearGradients = {
-  main: `
-    background: -webkit-linear-gradient(90deg, #2a2f38, #333842 95%);
-    background: linear-gradient(90deg, #2a2f38, #333842 95%)
-  `,
+  main: 'linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%)',
 };
 
 const fonts = {};
 
 Object.keys(tailwindConfig.fonts).forEach((font) => {
   fonts[font] = tailwindConfig.fonts[font].reduce(
-    (prev, current, index) =>
-      (index === 0 ? current : `${prev}, ${current}`), '');
+    (prev, current, index) => (index === 0 ? current : `${prev}, ${current}`),
+    '',
+  );
 });
 
 fonts.main = fonts.mono;
