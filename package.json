@@ -51,6 +51,6 @@
     "start": "poi src/index.jsx",
     "build": "poi build",
     "serve": "node server.js",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist -b master -a"
   }
 }
