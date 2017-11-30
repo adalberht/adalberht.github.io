@@ -1,17 +1,22 @@
 import theme from '../../../constants/theme';
 
-console.log('importing theme');
-console.log(theme);
-
-
 const REHYDRATE = 'persist/REHYDRATE';
 const THEME_INVERT = 'utils/THEME_INVERT';
 
+
+// Colors
+
+const PRIMARY_COLOR = theme.colors.black; // Default fonts color
+const SECONDARY_COLOR = theme.colors.white; // Default background color
+
+const THEME_COLOR = theme.colors['blue-light'];
+const DARKER_THEME_COLOR = theme.colors['blue-dark'];
+
 const INITIAL_STATE = {
   isUsingLightTheme: true,
-  primaryColor: theme.colors.black,
-  secondaryColor: theme.colors.white,
-  themeColor: theme.colors['blue-light'],
+  primaryColor: PRIMARY_COLOR,
+  secondaryColor: SECONDARY_COLOR,
+  themeColor: THEME_COLOR,
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
@@ -26,14 +31,10 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
   }
 }
 
-export function invertThemePayload({ isUsingLightTheme, primaryColor, secondaryColor }) {
+export function invertThemePayload(newTheme) {
   return {
     type: THEME_INVERT,
-    payload: {
-      isUsingLightTheme,
-      primaryColor,
-      secondaryColor,
-    },
+    payload: { ...newTheme },
   };
 }
 
@@ -43,6 +44,7 @@ export const invertTheme = () => (
     const { primaryColor, secondaryColor } = state;
     state.primaryColor = secondaryColor;
     state.secondaryColor = primaryColor;
+    state.themeColor = state.themeColor === THEME_COLOR ? DARKER_THEME_COLOR : THEME_COLOR;
     state.isUsingLightTheme = !state.isUsingLightTheme;
     dispatch(invertThemePayload(state));
   }

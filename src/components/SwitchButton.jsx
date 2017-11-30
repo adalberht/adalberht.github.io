@@ -25,11 +25,9 @@ export default class SwitchButton extends Component {
   }
 
   render() {
-    console.log(this.props.utils);
     const { primaryColor, secondaryColor } = this.props.utils;
-    console.log(primaryColor, secondaryColor);
     return (
-      <Container>
+      <Container className={this.props.className}>
         <Icon name="sun-o" color={primaryColor} />
         <Label primaryColor={primaryColor} secondaryColor={secondaryColor}>
           <input
@@ -45,8 +43,8 @@ export default class SwitchButton extends Component {
   }
 }
 
-const labelWidth = '6rem';
-const mobileLabelWidth = '4rem';
+const labelWidth = '4rem';
+const mobileLabelWidth = '2rem';
 
 const Container = styled.div`
   display: flex;
@@ -88,9 +86,9 @@ const Label = styled.label`
     -webkit-transition: 0.5s;
   }
   input:checked + span:before {
-    -webkit-transform: translateX(195%);
-    -ms-transform: translateX(195%);
-    transform: translateX(195%);
+    -webkit-transform: translateX(90%);
+    -ms-transform: translateX(90%);
+    transform: translateX(90%);
   }
   input:focus + span {
     box-shadow: ${props => props.theme.shadows.default};

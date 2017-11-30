@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import { connect } from 'react-redux';
 import Icon from './Icon';
 import SwitchButton from './SwitchButton';
 import * as routes from '../constants/routes';
 
+@connect(state => ({ utils: state.utils }))
 export default class MobileNavbar extends React.Component {
   static propTypes = {
-    primaryColor: PropTypes.string.isRequired,
-    secondaryColor: PropTypes.string.isRequired,
+    utils: PropTypes.shape({
+      primaryColor: PropTypes.string.isRequired,
+      secondaryColor: PropTypes.string.isRequired,
+      themeColor: PropTypes.string.isRequired,
+    }).isRequired,
   }
 
   state = { isMenuActive: false };
-
-  constructor() {
-    super();
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
 
   toggleMenu = () => {
     this.setState({ isMenuActive: !this.state.isMenuActive });
@@ -26,33 +26,36 @@ export default class MobileNavbar extends React.Component {
   render() {
     const { isMenuActive } = this.state;
     return (
-      <div className="w-full fixed z-10 flex justify-between md:hidden">
-        <SwitchButton className="md:hidden" />
-        <div className="flex">
+      <Container>
+        <div />
+        <Flex>
           {!isMenuActive &&
-            <button onClick={this.toggleMenu}>
-              <Icon
-                className="m-4"
-                name="bars"
-                size="2x"
-                color={this.props.primaryColor}
-              />
-            </button>
+            <Flex>
+              <SwitchButton />
+              <MenuButton onClick={this.toggleMenu}>
+                <Icon
+                  className="m-4"
+                  name="bars"
+                  size="2x"
+                  color={this.props.utils.primaryColor}
+                />
+              </MenuButton>
+            </Flex>
           }
           {isMenuActive &&
             <MobileMenuContainer
-              primaryColor={this.props.primaryColor}
-              secondaryColor={this.props.secondaryColor}
+              primaryColor={this.props.utils.primaryColor}
+              secondaryColor={this.props.utils.secondaryColor}
             >
               <button className="self-end" onClick={this.toggleMenu}>
                 <Icon
                   className="m-4"
                   name="times"
                   size="2x"
-                  color={this.props.primaryColor}
+                  color={this.props.utils.primaryColor}
                 />
               </button>
-              <div className="container mx-auto flex flex-col">
+              <Links>
                 <Link
                   duration={500}
                   onClick={this.toggleMenu}
@@ -71,13 +74,27 @@ export default class MobileNavbar extends React.Component {
                 >
                   Skill
                 </Link>
-              </div>
+              </Links>
             </MobileMenuContainer>}
-        </div>
-      </div>
+        </Flex>
+      </Container>
     );
   }
 }
+
+const Container = styled.div`
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: ${props => props.theme.screens.sm}) {
+    display: none;
+    button {
+      display: none;
+    }
+  }
+`;
 
 const MobileMenuContainer = styled.div`
   position: absolute;
@@ -94,6 +111,20 @@ const MobileMenuContainer = styled.div`
   a {
     margin: 2rem;
     font-size: ${props => props.theme.textSizes['3xl']};
-    font-family: ${props => props.theme.fonts.mono.reduce((prev, cur) => `${prev}, ${cur}`, '')};
+    font-family: ${props => props.theme.fonts.mono};
   }
+`;
+
+const MenuButton = styled.button`
+  align-self: flex-end;
+`;
+
+const Links = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const Flex = styled.div`
+  display: flex;
 `;

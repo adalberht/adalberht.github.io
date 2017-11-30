@@ -14,10 +14,20 @@ const linearGradients = {
   `,
 };
 
+const fonts = {};
+
+Object.keys(tailwindConfig.fonts).forEach((font) => {
+  fonts[font] = tailwindConfig.fonts[font].reduce(
+    (prev, current, index) =>
+      (index === 0 ? current : `${prev}, ${current}`), '');
+});
+
+fonts.main = fonts.mono;
 
 const theme = {
   linearGradients,
   ...tailwindConfig,
+  fonts,
 };
 
 export default theme;
