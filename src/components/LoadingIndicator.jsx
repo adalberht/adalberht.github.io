@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Spinner from 'react-spinkit';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const Container = styled.div`
   position: absolute;
@@ -26,18 +27,25 @@ const Container = styled.div`
   }
 `;
 
-export default function LoadingIndicator(props) {
-  return (
-    <Container className={props.className}>
-      <Spinner color="blue" name="pacman" fadeIn="none" />
-    </Container>
-  );
+@connect(state => ({ utils: state.utils }))
+export default class LoadingIndicator extends React.Component {
+  static propTypes = {
+    className: PropTypes.string,
+    utils: PropTypes.shape({
+      themeColor: PropTypes.string.isRequired,
+    }).isRequired,
+  }
+
+  static defaultProps = {
+    className: null,
+  }
+
+  render() {
+    const { themeColor } = this.props.utils;
+    return (
+      <Container className={this.props.className}>
+        <Spinner color={themeColor} name="pacman" fadeIn="none" />
+      </Container>
+    );
+  }
 }
-
-LoadingIndicator.propTypes = {
-  className: PropTypes.string
-};
-
-LoadingIndicator.defaultProps = {
-  className: null
-};

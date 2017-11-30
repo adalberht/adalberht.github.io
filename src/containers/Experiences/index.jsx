@@ -3,19 +3,19 @@ import styled from 'styled-components';
 import Loadable from 'react-loadable';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
-const LoadableSkills = Loadable({
-  loader: () => import('./Skills'),
+const LoadableExperiences = Loadable({
+  loader: () => import('./Experiences'),
   loading: LoadingIndicator,
   timeout: 10000000,
   delay: 1000000,
 });
 
-class Skills extends Component {
+class Experiences extends Component {
   state = {};
   render() {
     return (
       <Container>
-        <LoadableSkills />
+        <LoadableExperiences />
       </Container>
     );
   }
@@ -27,4 +27,4 @@ const Container = styled.div`
   width: 100vw;
 `;
 
-export default Skills;
+export default Experiences;

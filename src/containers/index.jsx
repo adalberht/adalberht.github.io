@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Home from './Home';
+import About from './About';
 import Skills from './Skills';
+import Experiences from './Experiences';
 import Navbar from '../components/Navbar';
 import MobileNavbar from '../components/MobileNavbar';
 // import Footer from '../components/Footer';
@@ -18,7 +20,7 @@ class Routes extends Component {
     utils: PropTypes.shape({
       isUsingLightTheme: PropTypes.bool.isRequired,
       primaryColor: PropTypes.string.isRequired,
-      secondaryColor:PropTypes.string.isRequired,
+      secondaryColor: PropTypes.string.isRequired,
     }).isRequired,
   };
 
@@ -29,13 +31,12 @@ class Routes extends Component {
         className="min-h-screen max-w-screen flex flex-col justify-between relative"
         background={secondaryColor}
       >
-        <Navbar primaryColor={primaryColor} secondaryColor={secondaryColor} />
-        <MobileNavbar
-          primaryColor={primaryColor}
-          secondaryColor={secondaryColor}
-        />
-        <Home primaryColor={primaryColor} secondaryColor={secondaryColor} />
-        <Skills primaryColor={primaryColor} secondaryColor={secondaryColor} />
+        <Navbar />
+        <MobileNavbar />
+        <Home />
+        <About />
+        <Skills />
+        <Experiences />
       </RootContainer>
     );
   }

@@ -4,10 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { invertTheme } from '../redux/modules/utils/';
 import Icon from '../components/Icon';
-@connect(
-  state => ({ utils: state.utils }),
-  { invertTheme },
-)
+@connect(state => ({ utils: state.utils }), { invertTheme })
 export default class SwitchButton extends Component {
   static propTypes = {
     // Styled-Components props
@@ -18,22 +15,26 @@ export default class SwitchButton extends Component {
       secondaryColor: PropTypes.string.isRequired,
     }).isRequired,
     invertTheme: PropTypes.func.isRequired,
-  }
+  };
 
   static defaultProps = {
     className: null,
-  }
+  };
 
   render() {
     const { primaryColor, secondaryColor } = this.props.utils;
     return (
       <Container className={this.props.className}>
         <Icon name="sun-o" color={primaryColor} />
-        <Label primaryColor={primaryColor} secondaryColor={secondaryColor}>
+        <Label
+          primaryColor={primaryColor}
+          secondaryColor={secondaryColor}
+        >
           <input
             type="checkbox"
             onChange={this.props.invertTheme}
-            value={this.props.utils.isUsingLightTheme ? 'on' : 'off'}
+            value={!this.props.utils.isUsingLightTheme ? 'on' : 'off'}
+            checked={!this.props.utils.isUsingLightTheme}
           />
           <span />
         </Label>
@@ -102,4 +103,3 @@ Label.propTypes = {
   primaryColor: PropTypes.string.isRequired,
   secondaryColor: PropTypes.string.isRequired,
 };
-
