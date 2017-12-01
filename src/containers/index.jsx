@@ -56,9 +56,9 @@ class Routes extends Component {
         <Navbar scrollDown={onScrollDown} />
         <MobileNavbar scrollDown={onScrollDown} />
         <Home />
-        <About />
         <Skills />
         <Experiences />
+        <About />
       </RootContainer>
     );
   }

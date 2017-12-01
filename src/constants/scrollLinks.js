@@ -5,10 +5,6 @@ const links = {
     to: routes.HOME_ROUTE,
     text: 'Home',
   },
-  ABOUT: {
-    to: routes.ABOUT_ROUTE,
-    text: 'About',
-  },
   SKILLS: {
     to: routes.SKILLS_ROUTE,
     text: 'Skills',
@@ -21,9 +17,9 @@ const links = {
     to: routes.PROJECTS_ROUTE,
     text: 'Projects',
   },
-  ACHIEVEMENTS: {
-    to: routes.ACHIEVEMENTS_ROUTE,
-    text: 'Achievements',
+  ABOUT: {
+    to: routes.ABOUT_ROUTE,
+    text: 'About',
   },
 };
 

@@ -6,7 +6,8 @@ import { Element } from 'react-scroll';
 import { ABOUT_ROUTE } from '../../constants/routes';
 import { invertTheme } from '../../redux/modules/utils';
 import Icon from '../../components/Icon';
-
+import profile from '../../../static/profile.jpg';
+import SocialMedias from '../../components/SocialMedias';
 
 @connect(state => ({ utils: state.utils }), { invertTheme })
 class AboutComponent extends Component {
@@ -29,7 +30,37 @@ class AboutComponent extends Component {
           secondaryColor={secondaryColor}
           themeColor={themeColor}
         >
-          <h1>About</h1>
+          <Wrapper>
+            <img src={profile} alt="albert's profile" />
+            <h1>
+              About <span className="highlight">Albert</span>
+            </h1>
+            <Description>
+              I'm an aspiring <span className="bold highlight">Front End Software Engineer</span>{' '}
+              who is in his journey to become{' '}
+              <span className="highlight">full-stack developer</span>.
+            </Description>
+            <Description>
+              I used to have no interest in{' '}
+              <span className="bold highlight">Front End Development</span> before I know{' '}
+              <span className="bold">ReactJS.</span>
+            </Description>
+            <Description>
+              I got introduced to programming world when I was in high school through
+              <span className="highlight"> Competitive Programming</span>. Even though I am not that
+              competitive (yet), I do still enjoy competitive programming and can proudly say it's a
+              part that shapes who I am.
+            </Description>
+            <Description>
+              I <span className="highlight">type quite fast</span> with more than{' '}
+              <span className="bold">150 WPM</span> in average.
+            </Description>
+            <Description>
+              I'm a <span className="bold">Japanese pop culture enthusiast </span>
+              and still hoping that someday I can visit Japan.
+            </Description>
+            <SocialMedias />
+          </Wrapper>
         </Container>
       </Element>
     );
@@ -39,7 +70,7 @@ class AboutComponent extends Component {
 export default AboutComponent;
 
 const Container = styled.div`
-  align-items: center;
+  align-items: flex-start;
   color: ${props => props.primaryColor};
   display: flex;
   font-family: ${props => props.theme.fonts.main};
@@ -57,50 +88,11 @@ const Container = styled.div`
   a {
     color: ${props => props.primaryColor};
   }
-  button {
-    -webkit-transition: 0.5s;
-    align-self: flex-start;
-    background: none;
-    border-radius: 0;
-    display: flex;
-    flex: 0;
-    margin-top: ${props => props.theme.margin['8']};
-    transition: 0.5s;
-    font-size: ${props => props.theme.textSizes.lg};
-    a {
-      position: relative;
-      display: flex;
-      text-decoration: none;
-      @keyframes slide {
-        0% {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-          transform: translateX(0%);
-        }
-        50% {
-          -webkit-transform: translateX(50%);
-          -ms-transform: translateX(50%);
-          transform: translateX(50%);
-        }
-        100% {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-          transform: translateX(0%);
-        }
-      }
-      .text {
-        margin-right: ${props => props.theme.margin['2']};
-        border-bottom: ${props => `${props.theme.borderWidths['2']} solid ${props.themeColor}`};
-      }
-      .arrow {
-        animation: slide 1s linear infinite;
-      }
-    }
-    :hover {
-      .text {
-        font-weight: bold;
-      }
-    }
+  img {
+    border-radius: ${props => props.theme.borderRadius.full};
+    width: ${props => props.theme.width['48']};
+    object-fit: scale-down;
+    margin: ${props => props.theme.margin['4']};
   }
 `;
 
@@ -113,3 +105,20 @@ Container.defaultProps = {
   isUsingLightTheme: false,
 };
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 ${props => props.theme.margin['8']};
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    margin: 0 ${props => props.theme.margin['4']};
+  }
+`;
+
+const Description = styled.p`
+  font-size: ${props => props.theme.textSizes.xl};
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    font-size: ${props => props.theme.textSizes.base};
+  }
+  margin-right: ${props => props.theme.margin['1']};
+  margin-bottom: ${props => props.theme.margin['1']};
+`;

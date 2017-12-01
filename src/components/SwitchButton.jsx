@@ -60,6 +60,7 @@ const Label = styled.label`
   display: inline-block;
   height: 2.25rem;
   width: ${labelWidth};
+  margin: 1rem 0;
   span:before {
     -webkit-transition: 0.5s;
     background-color: ${props => props.secondaryColor};

@@ -7,8 +7,6 @@ import { toHiragana } from 'wanakana';
 import { HOME_ROUTE } from '../../constants/routes';
 import { invertTheme } from '../../redux/modules/utils';
 import Icon from '../../components/Icon';
-import Navbar from '../../components/Navbar';
-import MobileNavbar from '../../components/MobileNavbar';
 
 const KONNICHIWA = toHiragana('konnichiha');
 

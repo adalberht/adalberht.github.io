@@ -11,12 +11,20 @@ const LoadableHome = Loadable({
 });
 
 class Home extends Component {
-  state = {}
+  state = {};
   render() {
     return (
-      <LoadableHome />
+      <Container>
+        <LoadableHome />
+      </Container>
     );
   }
 }
 
 export default Home;
+
+const Container = styled.div`
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+`;

@@ -50,12 +50,13 @@ const Container = styled.div`
   justify-content: space-between;
   display: flex;
   position: fixed;
+  align-items: center;
   top: 0;
   left: 0;
   color: ${props => props.primaryColor};
   font-family: ${props => props.theme.fonts.mono};
 
-  box-shadow: ${props => props.theme.shadows.lg};
+  box-shadow: ${props => props.theme.shadows.md};
   background-color: ${props => props.secondaryColor};
   transition: transform 0.5s ease;
 
@@ -76,8 +77,12 @@ const Container = styled.div`
   }
 
   a {
-    margin: 1rem;
+    margin: 0.5rem;
     cursor: pointer;
+    border-bottom: solid 1px ${props => props.themeColor};
+    :hover {
+      font-weight: bold;
+    }
   }
 
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
