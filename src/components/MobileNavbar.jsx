@@ -69,7 +69,7 @@ export default class MobileNavbar extends React.Component {
                   </Link>
                 ))}
               </Links>
-              <SocialMediasWithMargin primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} />
+              <SocialMediasWithMargin primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} size="lg" />
             </MobileMenuContainer>
           )}
         </Flex>
@@ -129,6 +129,9 @@ const MobileMenuContainer = styled.div`
 const ButtonIcon = styled.button`
   align-self: flex-end;
   margin: ${props => props.theme.margin['4']};
+  border: none;
+  border-radius: none;
+  background: none;
 `;
 
 const Links = styled.div`
@@ -144,6 +147,9 @@ const Flex = styled.div`
 const SocialMediasWithMargin = styled(SocialMedias)`
   margin-top: 30%;
   margin-bottom: ${props => props.theme.margin['4']};
+  a {
+    margin: auto ${props => props.theme.margin['2']};
+  }
   span {
     padding: 0;
   }

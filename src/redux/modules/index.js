@@ -1,10 +1,13 @@
-import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import utils from './utils';
+import experiences from './experiences';
+import projects from './projects';
 import skills from './skills';
+import utils from './utils';
 
 export default {
   router: routerReducer,
-  utils,
+  experiences,
+  projects,
   skills,
+  utils,
 };
