@@ -15,6 +15,13 @@ export default class MobileNavbar extends React.Component {
       secondaryColor: PropTypes.string.isRequired,
       themeColor: PropTypes.string.isRequired,
     }).isRequired,
+    scrollDown: PropTypes.bool,
+    scrollUp: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    scrollDown: false,
+    scrollUp: false,
   };
 
   state = { isMenuActive: false };
@@ -25,8 +32,9 @@ export default class MobileNavbar extends React.Component {
 
   render() {
     const { isMenuActive } = this.state;
+    const { scrollDown } = this.props;
     return (
-      <Container>
+      <Container scrollDown={scrollDown}>
         <div />
         <Flex>
           {!isMenuActive && (
@@ -43,11 +51,7 @@ export default class MobileNavbar extends React.Component {
               secondaryColor={this.props.utils.secondaryColor}
             >
               <ButtonIcon onClick={this.toggleMenu}>
-                <Icon
-                  name="times"
-                  size="2x"
-                  color={this.props.utils.primaryColor}
-                />
+                <Icon name="times" size="2x" color={this.props.utils.primaryColor} />
               </ButtonIcon>
               <Links>
                 {Object.values(scrollLinks).map(scrollLink => (
@@ -74,9 +78,22 @@ export default class MobileNavbar extends React.Component {
 const Container = styled.div`
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
   display: flex;
   justify-content: space-between;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  transition: transform 0.5s ease;
+  ${props =>
+    props.scrollDown &&
+    `
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateX(-100%);
+  `};
   @media screen and (min-width: ${props => props.theme.screens.sm}) {
     display: none;
     button {

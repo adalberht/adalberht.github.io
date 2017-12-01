@@ -16,7 +16,7 @@ const INITIAL_STATE = {
   isUsingLightTheme: true,
   primaryColor: PRIMARY_COLOR,
   secondaryColor: SECONDARY_COLOR,
-  themeColor: THEME_COLOR,
+  themeColor: DARKER_THEME_COLOR,
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {

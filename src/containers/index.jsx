@@ -24,15 +24,37 @@ class Routes extends Component {
     }).isRequired,
   };
 
+  state = {
+    onScrollDown: false,
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = (e) => {
+    const offset = window.pageYOffset || document.documentElement.scrollTop;
+    if (offset > this.lastScrollPosition) {
+      this.setState({ onScrollDown: true });
+    } else {
+      this.setState({ onScrollDown: false });
+    }
+    this.lastScrollPosition = offset;
+  };
+
+  lastScrollPosition = 0;
+
   render() {
     const { primaryColor, secondaryColor } = this.props.utils;
+    const { onScrollDown } = this.state;
     return (
-      <RootContainer
-        className="min-h-screen max-w-screen flex flex-col justify-between relative"
-        background={secondaryColor}
-      >
-        <Navbar />
-        <MobileNavbar />
+      <RootContainer background={secondaryColor}>
+        <Navbar scrollDown={onScrollDown} />
+        <MobileNavbar scrollDown={onScrollDown} />
         <Home />
         <About />
         <Skills />
@@ -43,9 +65,16 @@ class Routes extends Component {
 }
 
 const RootContainer = styled.div`
-  background-color: ${props => props.background};
-  transition: 1s;
   -webkit-transition: 1s;
+  background-color: ${props => props.background};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  transition: 1s;
+  width: 100vw;
 `;
 
 RootContainer.defaultProps = {
