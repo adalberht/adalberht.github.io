@@ -24,7 +24,7 @@ class Skills extends Component {
 const Container = styled.div`
   position: relative;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
 `;
 
 export default Skills;

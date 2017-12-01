@@ -74,7 +74,7 @@ const RootContainer = styled.div`
   min-height: 100vh;
   position: relative;
   transition: 1s;
-  width: 100vw;
+  width: 100%;
 `;
 
 RootContainer.defaultProps = {
