@@ -7,7 +7,7 @@ import Skills from './Skills';
 import Experiences from './Experiences';
 import Navbar from '../components/Navbar';
 import MobileNavbar from '../components/MobileNavbar';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 import { connect } from 'react-redux';
 import { invertTheme } from '../redux/modules/utils';
 
@@ -59,6 +59,7 @@ class Routes extends Component {
         <Skills />
         <Experiences />
         <About />
+        <Footer />
       </RootContainer>
     );
   }

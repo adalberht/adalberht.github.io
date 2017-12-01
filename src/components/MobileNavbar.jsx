@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Icon from './Icon';
 import SwitchButton from './SwitchButton';
 import scrollLinks from '../constants/scrollLinks';
+import SocialMedias from './SocialMedias';
 
 @connect(state => ({ utils: state.utils }))
 export default class MobileNavbar extends React.Component {
@@ -33,25 +34,26 @@ export default class MobileNavbar extends React.Component {
   render() {
     const { isMenuActive } = this.state;
     const { scrollDown } = this.props;
+    const { primaryColor, secondaryColor, themeColor } = this.props.utils;
     return (
-      <Container scrollDown={scrollDown}>
+      <Container scrollDown={scrollDown} secondaryColor={secondaryColor}>
         <div />
         <Flex>
           {!isMenuActive && (
             <Flex>
               <SwitchButton />
               <ButtonIcon onClick={this.toggleMenu}>
-                <Icon name="bars" size="2x" color={this.props.utils.primaryColor} />
+                <Icon name="bars" size="2x" color={primaryColor} />
               </ButtonIcon>
             </Flex>
           )}
           {isMenuActive && (
             <MobileMenuContainer
-              primaryColor={this.props.utils.primaryColor}
-              secondaryColor={this.props.utils.secondaryColor}
+              primaryColor={primaryColor}
+              secondaryColor={secondaryColor}
             >
               <ButtonIcon onClick={this.toggleMenu}>
-                <Icon name="times" size="2x" color={this.props.utils.primaryColor} />
+                <Icon name="times" size="2x" color={primaryColor} />
               </ButtonIcon>
               <Links>
                 {Object.values(scrollLinks).map(scrollLink => (
@@ -67,6 +69,7 @@ export default class MobileNavbar extends React.Component {
                   </Link>
                 ))}
               </Links>
+              <SocialMediasWithMargin primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} />
             </MobileMenuContainer>
           )}
         </Flex>
@@ -87,6 +90,8 @@ const Container = styled.div`
   -ms-transform: translateY(0%);
   transform: translateY(0%);
   transition: transform 0.5s ease;
+  background: ${props => props.secondaryColor};
+  box-shadow: ${props => props.theme.shadows.md};
   ${props =>
     props.scrollDown &&
     `
@@ -134,4 +139,13 @@ const Links = styled.div`
 
 const Flex = styled.div`
   display: flex;
+`;
+
+const SocialMediasWithMargin = styled(SocialMedias)`
+  margin-top: 30%;
+  margin-bottom: ${props => props.theme.margin['4']};
+  span {
+    padding: 0;
+  }
+  align-self: center;
 `;

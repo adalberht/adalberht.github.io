@@ -11,58 +11,57 @@ const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000171038042';
 const TWITTER = 'https://twitter.com/adalberht';
 const MAIL = 'mailto:albertusangga.98@gmail.com?Subject=Hello';
 
-@connect(state => ({ utils: state.utils }))
-export default class SocialMedias extends React.Component {
-  static propTypes = {
-    utils: PropTypes.shape({
-      primaryColor: PropTypes.string.isRequired,
-      themeColor: PropTypes.string.isRequired,
-    }).isRequired,
-    size: PropTypes.string,
-  };
-
-  static defaultProps = {
-    size: '1x',
-  };
-
-  render() {
-    const { size } = this.props;
-    const { primaryColor, secondaryColor, themeColor } = this.props.utils;
-    return (
-      <Container
-        primaryColor={primaryColor}
-        secondaryColor={secondaryColor}
-        themeColor={themeColor}
-      >
-        <a href={GITHUB} target="_blank">
-          <Icon color={primaryColor} name="github" size={size} />
-        </a>
-        <a href={MEDIUM} target="_blank">
-          <Icon color={primaryColor} name="medium" size={size} />
-        </a>
-        <a href={LINKEDIN} target="_blank">
-          <Icon color={primaryColor} name="linkedin" size={size} />
-        </a>
-        <a href={FACEBOOK} target="_blank">
-          <Icon color={primaryColor} name="facebook-official" size={size} />
-        </a>
-        <a href={TWITTER} target="_blank">
-          <Icon color={primaryColor} name="twitter" size={size} />
-        </a>
-        <a href={MAIL} target="_top">
-          <Icon color={primaryColor} name="envelope" size={size} />
-        </a>
-      </Container>
-    );
-  }
+export default function SocialMedias(props) {
+  const { className, size, primaryColor, secondaryColor, themeColor } = props;
+  return (
+    <Container
+      primaryColor={primaryColor}
+      secondaryColor={secondaryColor}
+      themeColor={themeColor}
+      className={className}
+    >
+      <a href={GITHUB} target="_blank">
+        <Icon color={primaryColor} name="github" size={size} />
+      </a>
+      <a href={MEDIUM} target="_blank">
+        <Icon color={primaryColor} name="medium" size={size} />
+      </a>
+      <a href={LINKEDIN} target="_blank">
+        <Icon color={primaryColor} name="linkedin" size={size} />
+      </a>
+      <a href={FACEBOOK} target="_blank">
+        <Icon color={primaryColor} name="facebook-official" size={size} />
+      </a>
+      <a href={TWITTER} target="_blank">
+        <Icon color={primaryColor} name="twitter" size={size} />
+      </a>
+      <a href={MAIL} target="_top">
+        <Icon color={primaryColor} name="envelope" size={size} />
+      </a>
+    </Container>
+  );
 }
+
+SocialMedias.propTypes = {
+  primaryColor: PropTypes.string.isRequired,
+  secondaryColor: PropTypes.string.isRequired,
+  themeColor: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  size: PropTypes.string,
+};
+
+SocialMedias.defaultProps = {
+  size: '1x',
+  className: null,
+};
+
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  align-self: flex-end;
+  align-self: flex-start;
   margin: ${props => props.theme.margin['4']} 0;
-  a + a{
+  a + a {
     margin: ${props => props.theme.margin['2']};
 
   }
