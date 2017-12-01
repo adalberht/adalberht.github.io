@@ -51,7 +51,7 @@ SocialMedias.propTypes = {
 };
 
 SocialMedias.defaultProps = {
-  size: '1x',
+  size: 'lg',
   className: null,
 };
 

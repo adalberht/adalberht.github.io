@@ -76,6 +76,8 @@ const RootContainer = styled.div`
   position: relative;
   transition: 1s;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 RootContainer.defaultProps = {

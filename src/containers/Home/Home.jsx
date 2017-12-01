@@ -48,12 +48,10 @@ class HomeComponent extends React.Component {
               An aspiring <span className="highlight">Software Engineer</span> who is in a journey
               to become a <span className="highlight"> full-stack developer</span>.
             </Description>
-            <button>
-              <a href={RESUME_LINK} target="_blank">
-                <span className="text">See my resume</span>
-                <Icon className="arrow" name="arrow-right" color={themeColor} />
-              </a>
-            </button>
+            <a href={RESUME_LINK} target="_blank">
+              <span className="text">See my resume</span>
+              <Icon className="arrow" name="arrow-right" color={themeColor} />
+            </a>
           </IdentityWrapper>
         </Container>
       </Element>
@@ -80,23 +78,20 @@ const Container = styled.div`
   .bold {
     font-weight: ${props => props.theme.fontWeights.bold};
   }
-  a {
-    color: ${props => props.primaryColor};
-  }
-  button {
-    -webkit-transition: 0.5s;
-    align-self: flex-start;
-    background: none;
-    border-radius: 0;
-    display: flex;
-    flex: 0;
-    margin-top: ${props => props.theme.margin['8']};
-    transition: 0.5s;
-    font-size: ${props => props.theme.textSizes.lg};
     a {
+      color: ${props => props.primaryColor};
       position: relative;
       display: flex;
       text-decoration: none;
+      -webkit-transition: 0.5s;
+      align-self: flex-start;
+      background: none;
+      border-radius: 0;
+      display: flex;
+      flex: 0;
+      margin-top: ${props => props.theme.margin['8']};
+      transition: 0.5s;
+      font-size: ${props => props.theme.textSizes.lg};
       @keyframes slide {
         0% {
           -webkit-transform: translateX(0%);
@@ -122,12 +117,11 @@ const Container = styled.div`
         animation: slide 1s linear infinite;
       }
     }
-    :hover {
+    a:hover {
       .text {
         font-weight: bold;
       }
     }
-  }
 `;
 
 Container.propTypes = {

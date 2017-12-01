@@ -136,6 +136,7 @@ const SkillSection = styled.div`
   align-items: flex-start;
   justify-content: center;
   .section-title {
+    font-size: ${props => props.theme.textSizes['2xl']};
     margin-left: ${props => props.theme.margin['4']};
   }
   > * {
