@@ -67,7 +67,8 @@ const Container = styled.div`
   display: flex;
   font-family: ${props => props.theme.fonts.main};
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  align-self: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;

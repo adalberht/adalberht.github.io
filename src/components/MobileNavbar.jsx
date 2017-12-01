@@ -80,7 +80,7 @@ export default class MobileNavbar extends React.Component {
 
 const Container = styled.div`
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 10;
