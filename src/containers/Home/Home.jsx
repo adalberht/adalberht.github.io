@@ -48,7 +48,7 @@ class HomeComponent extends React.Component {
               An aspiring <span className="highlight">Software Engineer</span> who is in a journey
               to become a <span className="highlight"> full-stack developer</span>.
             </Description>
-            <a href={RESUME_LINK} target="_blank">
+            <a className="button-link" href={RESUME_LINK} target="_blank">
               <span className="text">See my resume</span>
               <Icon className="arrow" name="arrow-right" color={themeColor} />
             </a>
@@ -79,50 +79,50 @@ const Container = styled.div`
   .bold {
     font-weight: ${props => props.theme.fontWeights.bold};
   }
-    a {
-      color: ${props => props.primaryColor};
-      position: relative;
-      display: flex;
-      text-decoration: none;
-      -webkit-transition: 0.5s;
-      align-self: flex-start;
-      background: none;
-      border-radius: 0;
-      display: flex;
-      flex: 0;
-      margin-top: ${props => props.theme.margin['8']};
-      transition: 0.5s;
-      font-size: ${props => props.theme.textSizes.lg};
-      @keyframes slide {
-        0% {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-          transform: translateX(0%);
-        }
-        50% {
-          -webkit-transform: translateX(50%);
-          -ms-transform: translateX(50%);
-          transform: translateX(50%);
-        }
-        100% {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-          transform: translateX(0%);
-        }
+  .button-link {
+    color: ${props => props.primaryColor};
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    -webkit-transition: 0.5s;
+    align-self: flex-start;
+    background: none;
+    border-radius: 0;
+    display: flex;
+    flex: 0;
+    margin-top: ${props => props.theme.margin['8']};
+    transition: 0.5s;
+    font-size: ${props => props.theme.textSizes.lg};
+    @keyframes slide {
+      0% {
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
       }
-      .text {
-        margin-right: ${props => props.theme.margin['2']};
-        border-bottom: ${props => `${props.theme.borderWidths['2']} solid ${props.themeColor}`};
+      50% {
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
       }
-      .arrow {
-        animation: slide 1s linear infinite;
+      100% {
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
       }
     }
-    a:hover {
-      .text {
-        font-weight: bold;
-      }
+    .text {
+      margin-right: ${props => props.theme.margin['2']};
+      border-bottom: ${props => `${props.theme.borderWidths['2']} solid ${props.themeColor}`};
     }
+    .arrow {
+      animation: slide 1s linear infinite;
+    }
+  }
+  .button-link:hover {
+    .text {
+      font-weight: bold;
+    }
+  }
 `;
 
 Container.propTypes = {

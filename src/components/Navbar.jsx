@@ -34,7 +34,7 @@ export default class Navbar extends React.Component {
         <SwitchButton />
         <Links>
           {Object.values(scrollLinks).map(scrollLink => (
-            <Link key={scrollLink.to} to={scrollLink.to} spy smooth duration={500}>
+            <Link active="active" key={scrollLink.to} to={scrollLink.to} spy smooth duration={500}>
               {scrollLink.text}
             </Link>
           ))}

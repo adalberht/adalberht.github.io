@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Element } from 'react-scroll';
 import { EXPERIENCES_ROUTE } from '../../constants/routes';
-import { invertTheme } from '../../redux/modules/utils';
+import { loadExperiences } from '../../redux/modules/experiences';
 import Icon from '../../components/Icon';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 
-@connect(state => ({ utils: state.utils }), { invertTheme })
+@connect(state => ({ utils: state.utils, experiences: state.experiences }), { loadExperiences })
 class ExperiencesComponent extends Component {
   static propTypes = {
     utils: PropTypes.shape({
@@ -17,10 +18,21 @@ class ExperiencesComponent extends Component {
       secondaryColor: PropTypes.string.isRequired,
       themeColor: PropTypes.string.isRequired,
     }).isRequired,
+    experiences: PropTypes.shape({
+      loaded: PropTypes.bool.isRequired,
+      works: PropTypes.object.isRequired,
+      educations: PropTypes.object.isRequired,
+    }).isRequired,
+    loadExperiences: PropTypes.func.isRequired,
   };
+
+  componentDidMount() {
+    if (!this.props.experiences.loaded) this.props.loadExperiences();
+  }
 
   render() {
     const { isUsingLightTheme, primaryColor, secondaryColor, themeColor } = this.props.utils;
+    const { loading, works, educations } = this.props.experiences;
     return (
       <Element name={EXPERIENCES_ROUTE}>
         <Container
@@ -29,7 +41,35 @@ class ExperiencesComponent extends Component {
           secondaryColor={secondaryColor}
           themeColor={themeColor}
         >
-          <h1>Experiences</h1>
+          {loading && <LoadingIndicator />}
+          {!loading && (
+            <Flex>
+              <SectionTitle>Work Experiences</SectionTitle>
+              <ul>
+                {works.map(work => (
+                  <li>
+                    <pre>
+                      <code>
+                        {JSON.stringify(work, 2, 2)}
+                      </code>
+                    </pre>
+                  </li>
+                ))}
+              </ul>
+              <SectionTitle>Educations</SectionTitle>
+              <ul>
+                {educations.map(education => (
+                  <li>
+                    <pre>
+                      <code>
+                        {JSON.stringify(education, 2, 2)}
+                      </code>
+                    </pre>
+                  </li>
+                ))}
+              </ul>
+            </Flex>
+          )}
         </Container>
       </Element>
     );
@@ -44,7 +84,7 @@ const Container = styled.div`
   display: flex;
   font-family: ${props => props.theme.fonts.main};
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -57,51 +97,6 @@ const Container = styled.div`
   a {
     color: ${props => props.primaryColor};
   }
-  button {
-    -webkit-transition: 0.5s;
-    align-self: flex-start;
-    background: none;
-    border-radius: 0;
-    display: flex;
-    flex: 0;
-    margin-top: ${props => props.theme.margin['8']};
-    transition: 0.5s;
-    font-size: ${props => props.theme.textSizes.lg};
-    a {
-      position: relative;
-      display: flex;
-      text-decoration: none;
-      @keyframes slide {
-        0% {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-          transform: translateX(0%);
-        }
-        50% {
-          -webkit-transform: translateX(50%);
-          -ms-transform: translateX(50%);
-          transform: translateX(50%);
-        }
-        100% {
-          -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-          transform: translateX(0%);
-        }
-      }
-      .text {
-        margin-right: ${props => props.theme.margin['2']};
-        border-bottom: ${props => `${props.theme.borderWidths['2']} solid ${props.themeColor}`};
-      }
-      .arrow {
-        animation: slide 1s linear infinite;
-      }
-    }
-    :hover {
-      .text {
-        font-weight: bold;
-      }
-    }
-  }
 `;
 
 Container.propTypes = {
@@ -113,3 +108,12 @@ Container.defaultProps = {
   isUsingLightTheme: false,
 };
 
+const SectionTitle = styled.div`
+  font-family: ${props => props.theme.fonts.sans};
+  font-size: ${props => props.theme.textSizes['3xl']};
+`;
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

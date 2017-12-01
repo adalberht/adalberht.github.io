@@ -5,20 +5,18 @@ const EXPERIENCES_SET = 'experiences/EXPERIENCES_SET';
 const LOADING = 'experiences/LOADING';
 
 const INITIAL_STATE = {
-  education: [],
-  work: [],
+  educations: [],
+  works: [],
   loading: false,
+  loaded: false,
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
-    case REHYDRATE:
-      if (!action.payload || !action.payload.experiences) return state;
-      return { ...action.payload.experiences };
-    case LOADING:
+   case LOADING:
       return { ...state, loading: true };
     case EXPERIENCES_SET:
-      return { ...state, ...action.payload, loading: false };
+      return { ...state, ...action.payload, loading: false, loaded: true };
     default:
       return { ...state };
   }

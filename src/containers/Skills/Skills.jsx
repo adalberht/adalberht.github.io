@@ -48,7 +48,16 @@ class SkillsComponent extends Component {
           themeColor={themeColor}
         >
           <Flex>
-            <Title color={themeColor}>Skills</Title>
+            <Title color={primaryColor}>Skills</Title>
+          </Flex>
+          <Flex>
+            <p>
+              My strength for now lies more in <span className="highlight">front end development</span> .
+              I enjoy learning new frameworks, language and code that solves{' '}
+              <span className="bold highlight">technical challenges</span>.
+            </p>
+          </Flex>
+          <Flex>
             <SkillSection>
               <div className="highlight bold section-title">Strong</div>
               {strong.map(skill => <div>{skill}</div>)}
@@ -82,7 +91,6 @@ const Container = styled.div`
   min-height: 100vh;
   .highlight {
     color: ${props => props.themeColor};
-    font-size: ${props => props.theme.textSizes['xl']};
     font-weight: ${props => props.theme.fontWeights.bold};
   }
   .bold {
@@ -100,11 +108,12 @@ Container.defaultProps = {
 };
 
 const Title = styled.div`
-  color: ${props => props.color};
-  font-size: ${props => props.theme.textSizes['5xl']};
   align-self: flex-start;
-  text-transform: uppercase;
+  color: ${props => props.color};
+  font-family: ${props => props.theme.fonts.sans};
+  font-size: ${props => props.theme.textSizes['5xl']};
   margin-left: ${props => props.theme.margin['4']};
+  text-transform: uppercase;
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     font-size: ${props => props.theme.textSizes['3xl']};
     margin-left: ${props => props.theme.margin['4']};
@@ -114,7 +123,7 @@ const Title = styled.div`
 
 const Flex = styled.div`
   display: flex;
-  margin: ${props => props.theme.margin['4']};
+  margin: ${props => `${props.theme.margin['2']} ${props.theme.margin['8']}`};
   width: 100%;
   align-items: flex-start;
   justify-content: space-between;
@@ -125,6 +134,10 @@ const Flex = styled.div`
     > * {
       margin: ${props => props.theme.margin['4']} auto;
     }
+  }
+  p {
+    margin: 0 ${props => props.theme.margin['4']};
+    font-family: ${props => props.theme.fonts.sans};
   }
 `;
 
@@ -137,6 +150,7 @@ const SkillSection = styled.div`
   justify-content: center;
   .section-title {
     font-size: ${props => props.theme.textSizes['2xl']};
+    font-family: ${props => props.theme.fonts.sans};
     margin-left: ${props => props.theme.margin['4']};
   }
   > * {
