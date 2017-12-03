@@ -4,19 +4,20 @@ import PropTypes from 'prop-types';
 import Loadable from 'react-loadable';
 import { connect } from 'react-redux';
 import { Element } from 'react-scroll';
-import Project from './Project';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import { PROJECTS_ROUTE } from '../../constants/routes';
 import { loadProjects } from '../../redux/modules/projects';
 
-/*
-const LoadableProjects = Loadable({
-  loader: () => import('./Projects'),
+
+const LoadableProject = Loadable({
+  loader: () => import('./Project'),
   loading: LoadingIndicator,
-  timeout: 10000000,
-  delay: 1000000,
+  render(loaded, props) {
+    const LoadedProject = loaded.default;
+    return <LoadedProject {...props} />;
+  },
 });
- */
+
 @connect(state => ({ projects: state.projects, utils: state.utils }), { loadProjects })
 class Projects extends Component {
   static propTypes = {
@@ -46,7 +47,7 @@ class Projects extends Component {
           <Wrapper>
             <Title color={primaryColor}>Projects</Title>
             {loading && <LoadingIndicator />}
-            {!loading && projects.map(project => <Project project={project} utils={utils} />)}
+            {!loading && projects.map(project => <LoadableProject project={project} utils={utils} />)}
           </Wrapper>
         </Element>
       </Container>
