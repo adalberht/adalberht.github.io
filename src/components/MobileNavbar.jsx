@@ -31,6 +31,18 @@ export default class MobileNavbar extends React.Component {
 
   state = { isMenuActive: false };
 
+  componentDidMount = () => {
+    window.addEventListener('wheel', this.preventScrolling);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener('wheel', this.preventScrolling);
+  }
+
+  preventScrolling = (event) => {
+    event.preventDefault();
+  }
+
   toggleMenu = () => {
     this.setState({ isMenuActive: !this.state.isMenuActive });
   };
@@ -143,12 +155,12 @@ const MobileMenuContainer = styled.div`
   color: ${props => props.primaryColor};
   display: flex;
   flex-direction: column;
-  touch-action: none;
   a {
     margin: ${props => `${props.theme.margin['3']} ${props.theme.margin['4']}`};
     font-size: ${props => props.theme.textSizes['3xl']};
     font-family: ${props => props.theme.fonts.mono};
   }
+  touch-action: none;
 `;
 
 const ButtonIcon = styled.button`
