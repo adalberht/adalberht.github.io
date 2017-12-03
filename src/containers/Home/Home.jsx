@@ -73,6 +73,11 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: ${props => props.primaryColor};
+  }
   .highlight {
     color: ${props => props.themeColor};
   }

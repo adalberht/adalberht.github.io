@@ -5,10 +5,6 @@ const links = {
     to: routes.HOME_ROUTE,
     text: 'Home',
   },
-  SKILLS: {
-    to: routes.SKILLS_ROUTE,
-    text: 'Skills',
-  },
   EXPERIENCES: {
     to: routes.EXPERIENCES_ROUTE,
     text: 'Experiences',
@@ -16,6 +12,10 @@ const links = {
   PROJECTS: {
     to: routes.PROJECTS_ROUTE,
     text: 'Projects',
+  },
+  SKILLS: {
+    to: routes.SKILLS_ROUTE,
+    text: 'Skills',
   },
   ABOUT: {
     to: routes.ABOUT_ROUTE,

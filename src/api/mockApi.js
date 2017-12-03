@@ -66,12 +66,52 @@ export const experiences = {
       place: 'Depok, Indonesia',
       time: "Aug '16 - present",
       image: uiImageUrl,
+      grade: 'Current GPA: 3.98 / 4.00',
       role: 'Computer Science, Bachelor Degree',
       institution: 'University of Indonesia',
-      description: 'I studied Computer Science at one of the best university in Indonesia.',
-      tags: [],
+      description: `
+        I get to pursue my passion since high school, Computer Science, in the largest and one of the best universities in Indonesia.
+        My normal day-to-day activities as student are going to lecture, learn a lot of new things and frameworks, train in <b>Competitive Programming</b>,
+        and maintaining my love and passion for coding.
+      `,
+      tags: ['Competitive Programming', 'Software Engineering', 'Web Development'],
     },
   ],
 };
 
-export const projects = {};
+export const projects = [
+  {
+    title: 'Twiggsy',
+    link: 'https://www.twiggsy.com',
+    role: 'Lead Front End Engineer',
+    description: [
+      'Twiggsy is  a "Twibbon" redesign website',
+      '',
+    ],
+    tags: ['JSX', 'CSS', 'JavaScript', 'ReactJS', 'Redux', 'styled-components', 'Webpack', 'npm'],
+  },
+  {
+    title: 'Pekan Ristek Website',
+    link: 'https://github.com/adalberht/pekan-ristek-frontend',
+    role: 'Lead Developer',
+    description: [
+      '',
+    ],
+    tags: ['JSX', 'CSS', 'JavaScript', 'ReactJS', 'Redux', 'Webpack', 'npm'],
+  },
+  {
+    title: 'albertusangga.tech (Personal Portfolio)',
+    link: 'https://albertusangga.tech',
+    role: 'Project Owner',
+    description: [],
+    tags: ['JSX', 'CSS', 'ReactJS', 'Redux', 'Webpack', 'UI Design', 'npm'],
+  },
+  {
+    title: 'Android: Project Popular Movies 1',
+    link: 'https://github.com/adalberht/android-project-popular-movies-1',
+    role: 'Project Owner',
+    description: [],
+    tags: ['Android', 'Java'],
+  },
+];
+

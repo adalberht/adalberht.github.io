@@ -6,6 +6,7 @@ import Home from './Home';
 import About from './About';
 import Skills from './Skills';
 import Experiences from './Experiences';
+import Projects from './Projects';
 import Navbar from '../components/Navbar';
 import MobileNavbar from '../components/MobileNavbar';
 import Footer from '../components/Footer';
@@ -61,8 +62,8 @@ class Routes extends Component {
               <Navbar scrollDown={onScrollDown} />
               <MobileNavbar scrollDown={onScrollDown} />
               <Home />
-              <Skills />
               <Experiences />
+              <Skills />
               <About />
               <Footer />
             </RootContainer>)}
