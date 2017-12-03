@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { Link } from 'react-scroll';
+import scrollLinks from '../constants/scrollLinks';
 import Icon from './Icon';
 import SwitchButton from './SwitchButton';
-import scrollLinks from '../constants/scrollLinks';
 import SocialMedias from './SocialMedias';
+import albertIcon from '../assets/icon.png';
 
+@withRouter
 @connect(state => ({ utils: state.utils }))
 export default class MobileNavbar extends React.Component {
   static propTypes = {
@@ -16,13 +19,14 @@ export default class MobileNavbar extends React.Component {
       secondaryColor: PropTypes.string.isRequired,
       themeColor: PropTypes.string.isRequired,
     }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
     scrollDown: PropTypes.bool,
-    scrollUp: PropTypes.bool,
   };
 
   static defaultProps = {
     scrollDown: false,
-    scrollUp: false,
   };
 
   state = { isMenuActive: false };
@@ -37,7 +41,19 @@ export default class MobileNavbar extends React.Component {
     const { primaryColor, secondaryColor, themeColor } = this.props.utils;
     return (
       <Container scrollDown={scrollDown} secondaryColor={secondaryColor}>
-        <div />
+        <Link
+          active="active"
+          className="without-border"
+          duration={500}
+          href={scrollLinks.HOME.to}
+          key={scrollLinks.HOME.to}
+          smooth
+          spy
+          to={scrollLinks.HOME.to}
+          onClick={() => this.props.history.push(scrollLinks.HOME.to)}
+        >
+          <Image src={albertIcon} alt="icon" />
+        </Link>
         <Flex>
           {!isMenuActive && (
             <Flex>
@@ -48,11 +64,8 @@ export default class MobileNavbar extends React.Component {
             </Flex>
           )}
           {isMenuActive && (
-            <MobileMenuContainer
-              primaryColor={primaryColor}
-              secondaryColor={secondaryColor}
-            >
-              <ButtonIcon onClick={this.toggleMenu}>
+            <MobileMenuContainer primaryColor={primaryColor} secondaryColor={secondaryColor}>
+              <ButtonIcon column onClick={this.toggleMenu}>
                 <Icon name="times" size="2x" color={primaryColor} />
               </ButtonIcon>
               <Links>
@@ -63,13 +76,21 @@ export default class MobileNavbar extends React.Component {
                     smooth
                     spy
                     to={scrollLink.to}
-                    onClick={this.toggleMenu}
+                    onClick={() => {
+                      this.props.history.push(scrollLink.to);
+                      this.toggleMenu();
+                    }}
                   >
                     {scrollLink.text}
                   </Link>
                 ))}
               </Links>
-              <SocialMediasWithMargin primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} size="lg" />
+              <SocialMediasWithMargin
+                primaryColor={primaryColor}
+                secondaryColor={secondaryColor}
+                themeColor={themeColor}
+                size="lg"
+              />
             </MobileMenuContainer>
           )}
         </Flex>
@@ -85,6 +106,7 @@ const Container = styled.div`
   left: 0;
   z-index: 10;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
@@ -108,17 +130,20 @@ const Container = styled.div`
 `;
 
 const MobileMenuContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
   z-index: 10;
   background: ${props => props.secondaryColor};
   color: ${props => props.primaryColor};
   display: flex;
   flex-direction: column;
+  touch-action: none;
   a {
     margin: ${props => `${props.theme.margin['3']} ${props.theme.margin['4']}`};
     font-size: ${props => props.theme.textSizes['3xl']};
@@ -127,8 +152,8 @@ const MobileMenuContainer = styled.div`
 `;
 
 const ButtonIcon = styled.button`
-  align-self: flex-end;
-  margin: ${props => props.theme.margin['4']};
+  align-self: ${props => (props.column ? 'flex-end' : 'center')};
+  margin: ${props => (props.column ? `${props.theme.margin['4']}` : `0 ${props.theme.margin['4']}`)};
   border: none;
   border-radius: none;
   background: none;
@@ -142,6 +167,8 @@ const Links = styled.div`
 
 const Flex = styled.div`
   display: flex;
+  align-items: center;
+  ${props => props.spaceBetween && 'justify-content: space-between'};
 `;
 
 const SocialMediasWithMargin = styled(SocialMedias)`
@@ -155,4 +182,10 @@ const SocialMediasWithMargin = styled(SocialMedias)`
     padding: 0;
   }
   align-self: center;
+`;
+
+const Image = styled.img`
+  width: ${props => props.theme.width['8']};
+  object-fit: scale-down;
+  margin: ${props => props.theme.margin['1']} ${props => props.theme.margin['4']};
 `;

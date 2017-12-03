@@ -47,7 +47,7 @@ class ExperiencesComponent extends Component {
               <SectionTitle>Work Experiences</SectionTitle>
               <Timeline color={primaryColor}>
                 {works.map(work => (
-                  <TimelineEvent themeColor={themeColor}>
+                  <TimelineEvent key={work.description} themeColor={themeColor}>
                     <div className="time-and-place">
                       <div className="place">{work.place}</div>
                       <div className="time">{work.time}</div>

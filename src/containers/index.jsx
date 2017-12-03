@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Skills from './Skills';
@@ -52,15 +53,21 @@ class Routes extends Component {
     const { primaryColor, secondaryColor } = this.props.utils;
     const { onScrollDown } = this.state;
     return (
-      <RootContainer background={secondaryColor}>
-        <Navbar scrollDown={onScrollDown} />
-        <MobileNavbar scrollDown={onScrollDown} />
-        <Home />
-        <Skills />
-        <Experiences />
-        <About />
-        <Footer />
-      </RootContainer>
+      <Switch>
+        <Route
+          path="*"
+          render={() => (
+            <RootContainer background={secondaryColor}>
+              <Navbar scrollDown={onScrollDown} />
+              <MobileNavbar scrollDown={onScrollDown} />
+              <Home />
+              <Skills />
+              <Experiences />
+              <About />
+              <Footer />
+            </RootContainer>)}
+        />
+      </Switch>
     );
   }
 }

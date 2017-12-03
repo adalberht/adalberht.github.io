@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { Link } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import SwitchButton from './SwitchButton';
 import scrollLinks from '../constants/scrollLinks';
+import albertIcon from '../assets/icon.png';
 
-@connect(state => ({ utils: state.utils }))
+
+@withRouter
+@connect(state => (state))
 export default class Navbar extends React.Component {
   static propTypes = {
     utils: PropTypes.shape({
@@ -15,6 +19,9 @@ export default class Navbar extends React.Component {
       themeColor: PropTypes.string.isRequired,
     }).isRequired,
     scrollDown: PropTypes.bool,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }).isRequired,
   };
 
   static defaultProps = {
@@ -31,10 +38,32 @@ export default class Navbar extends React.Component {
         themeColor={themeColor}
         scrollDown={scrollDown}
       >
-        <SwitchButton />
+        <Link
+          active="active"
+          className="without-border"
+          duration={500}
+          href={scrollLinks.HOME.to}
+          key={scrollLinks.HOME.to}
+          smooth
+          spy
+          to={scrollLinks.HOME.to}
+          onClick={() => this.props.history.push(scrollLinks.HOME.to)}
+        >
+          <img src={albertIcon} alt="icon" />
+        </Link>
         <Links>
+          <SwitchButton />
           {Object.values(scrollLinks).map(scrollLink => (
-            <Link active="active" key={scrollLink.to} to={scrollLink.to} spy smooth duration={500}>
+            <Link
+              active="active"
+              key={scrollLink.to}
+              to={scrollLink.to}
+              spy
+              smooth
+              duration={500}
+              href={scrollLink.to}
+              onClick={() => this.props.history.push(scrollLink.to)}
+            >
               {scrollLink.text}
             </Link>
           ))}
@@ -80,9 +109,22 @@ const Container = styled.div`
     margin: 0.5rem;
     cursor: pointer;
     border-bottom: solid 1px ${props => props.themeColor};
+    color: ${props => props.primaryColor};
+    text-decoration: none;
     :hover {
       font-weight: bold;
     }
+  }
+
+  .without-border {
+    border: none;
+  }
+
+  img {
+    height: ${props => props.theme.height['8']};
+    object-fit: scale-down;
+    margin: ${props => props.theme.margin['1']} ${props => props.theme.margin['4']};
+    cursor: pointer;
   }
 
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
@@ -115,4 +157,5 @@ Flex.defaultProps = {
 
 const Links = styled.div`
   display: flex;
+  align-items: center;
 `;
