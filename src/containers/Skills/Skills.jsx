@@ -21,8 +21,8 @@ class SkillsComponent extends Component {
       strong: PropTypes.array.isRequired,
       experienced: PropTypes.array.isRequired,
       familiar: PropTypes.array.isRequired,
+      achievements: PropTypes.array.isRequired,
     }).isRequired,
-    achievements: PropTypes.array.isRequired,
     loadSkills: PropTypes.func.isRequired,
   };
 
@@ -60,19 +60,19 @@ class SkillsComponent extends Component {
           <Flex>
             <SkillSection>
               <div className="highlight bold section-title">Strong</div>
-              {strong.map(skill => <div>{skill}</div>)}
+              {strong && strong.map(skill => <div>{skill}</div>)}
             </SkillSection>
             <SkillSection>
               <div className="highlight bold section-title">Experienced</div>
-              {experienced.map(skill => <div>{skill}</div>)}
+              {experienced && experienced.map(skill => <div>{skill}</div>)}
             </SkillSection>
             <SkillSection>
               <div className="highlight bold section-title">Familiar</div>
-              {familiar.map(skill => <div>{skill}</div>)}
+              {familiar && familiar.map(skill => <div>{skill}</div>)}
             </SkillSection>
           </Flex>
           <Title color={primaryColor}>Achievements</Title>
-          {achievements.map(achievement => (
+          {achievements && achievements.map(achievement => (
             <div className="achievement" key={achievement.title}>
               <div className="flex">
                 <Icon name="trophy" color={primaryColor} className="achievement" />
