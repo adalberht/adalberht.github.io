@@ -63,6 +63,7 @@ class Routes extends Component {
               <MobileNavbar scrollDown={onScrollDown} />
               <Home />
               <Experiences />
+              <Projects />
               <Skills />
               <About />
               <Footer />
@@ -79,13 +80,15 @@ const RootContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 100vw;
+  align-items: center;
   min-height: 100vh;
   position: relative;
   transition: 1s;
+  max-width: 100vw;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 `;
 
 RootContainer.defaultProps = {

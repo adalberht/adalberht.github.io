@@ -24,7 +24,12 @@ class About extends Component {
 const Container = styled.div`
   position: relative;
   min-height: 100vh;
-  width: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    width: 100%;
+  }
 `;
 
 export default About;

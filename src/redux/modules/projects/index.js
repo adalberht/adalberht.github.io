@@ -1,24 +1,23 @@
 import * as api from '../../../api';
 
 const REHYDRATE = 'persist/REHYDRATE';
-const PROJECTS_SET = 'experiences/PROJECTS_SET';
-const LOADING = 'experiences/LOADING';
+const PROJECTS_SET = 'projects/PROJECTS_SET';
+const LOADING = 'projects/LOADING';
 
 const INITIAL_STATE = {
-  education: [],
-  work: [],
+  projects: [],
   loading: false,
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
     case REHYDRATE:
-      if (!action.payload || !action.payload.experiences) return state;
-      return { ...action.payload.experiences };
+      if (!action.payload || !action.payload.projects) return state;
+      return { ...action.payload.projects };
     case LOADING:
       return { ...state, loading: true };
     case PROJECTS_SET:
-      return { ...state, ...action.payload, loading: false };
+      return { ...state, projects: action.payload, loading: false };
     default:
       return { ...state };
   }

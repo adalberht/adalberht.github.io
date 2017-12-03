@@ -24,7 +24,10 @@ class Experiences extends Component {
 const Container = styled.div`
   position: relative;
   min-height: 100vh;
-  width: 100%;
+  width: 80%;
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    width: 100%;
+  }
 `;
 
 export default Experiences;

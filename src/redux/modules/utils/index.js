@@ -3,7 +3,6 @@ import theme from '../../../constants/theme';
 const REHYDRATE = 'persist/REHYDRATE';
 const THEME_INVERT = 'utils/THEME_INVERT';
 
-
 // Colors
 
 const PRIMARY_COLOR = theme.colors.black; // Default fonts color
@@ -38,14 +37,12 @@ export function invertThemePayload(newTheme) {
   };
 }
 
-export const invertTheme = () => (
-  (dispatch, getState) => {
-    const state = Object.assign({}, getState().utils);
-    const { primaryColor, secondaryColor } = state;
-    state.primaryColor = secondaryColor;
-    state.secondaryColor = primaryColor;
-    state.themeColor = state.themeColor === THEME_COLOR ? DARKER_THEME_COLOR : THEME_COLOR;
-    state.isUsingLightTheme = !state.isUsingLightTheme;
-    dispatch(invertThemePayload(state));
-  }
-);
+export const invertTheme = () => (dispatch, getState) => {
+  const state = Object.assign({}, getState().utils);
+  const { primaryColor, secondaryColor } = state;
+  state.primaryColor = secondaryColor;
+  state.secondaryColor = primaryColor;
+  state.themeColor = state.themeColor === THEME_COLOR ? DARKER_THEME_COLOR : THEME_COLOR;
+  state.isUsingLightTheme = !state.isUsingLightTheme;
+  dispatch(invertThemePayload(state));
+};

@@ -60,7 +60,12 @@ class AboutComponent extends Component {
               I'm a <span className="bold">Japanese pop culture enthusiast </span>
               and still hoping that someday I can visit Japan.
             </Description>
-            <SocialMedias primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} />
+            <br />
+            <SectionTitle>Want to get in touch?</SectionTitle>
+            <div>
+              Feel free to say hi in my listed social medias :)
+            </div>
+            <UnmarginSocialMedias primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} />
           </Wrapper>
         </Container>
       </Element>
@@ -130,4 +135,8 @@ const SectionTitle = styled.div`
   margin-top: ${props => props.theme.margin['2']};
   font-weight: ${props => props.theme.fontWeights.bold};
   font-size: ${props => props.theme.textSizes['2xl']};
+`;
+
+const UnmarginSocialMedias = styled(SocialMedias)`
+  margin-top: 0;
 `;

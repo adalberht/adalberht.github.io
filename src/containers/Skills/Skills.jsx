@@ -22,6 +22,7 @@ class SkillsComponent extends Component {
       experienced: PropTypes.array.isRequired,
       familiar: PropTypes.array.isRequired,
     }).isRequired,
+    achievements: PropTypes.array.isRequired,
     loadSkills: PropTypes.func.isRequired,
   };
 
@@ -31,7 +32,7 @@ class SkillsComponent extends Component {
 
   render() {
     const { isUsingLightTheme, primaryColor, secondaryColor, themeColor } = this.props.utils;
-    const { strong, experienced, familiar, loading } = this.props.skills;
+    const { strong, experienced, familiar, achievements, loading } = this.props.skills;
     if (loading) {
       return (
         <Element name={SKILLS_ROUTE}>
@@ -47,13 +48,12 @@ class SkillsComponent extends Component {
           secondaryColor={secondaryColor}
           themeColor={themeColor}
         >
-          <Flex>
-            <Title color={primaryColor}>Skills</Title>
-          </Flex>
+          <Title color={primaryColor}>Skills</Title>
           <Flex>
             <p>
-              My strength for now lies more in <span className="highlight">front end development</span> .
-              I enjoy learning new frameworks, language and code that solves{' '}
+              Currently, my strength lies more in{' '}
+              <span className="highlight">front end development</span>. I enjoy learning new
+              frameworks, language and code that solves{' '}
               <span className="bold highlight">technical challenges</span>.
             </p>
           </Flex>
@@ -71,6 +71,21 @@ class SkillsComponent extends Component {
               {familiar.map(skill => <div>{skill}</div>)}
             </SkillSection>
           </Flex>
+          <Title color={primaryColor}>Achievements</Title>
+          {achievements.map(achievement => (
+            <div className="achievement" key={achievement.title}>
+              <div className="flex">
+                <Icon name="trophy" color={primaryColor} className="achievement" />
+                <div className="achievement-title">
+                  <span className="achievement-tag">{achievement.tag}</span>
+                  <span className="achievement-title-text">{achievement.title}</span>
+                </div>
+              </div>
+              <ul>
+                <li>{achievement.description}</li>
+              </ul>
+            </div>
+          ))}
         </Container>
       </Element>
     );
@@ -96,6 +111,26 @@ const Container = styled.div`
   .bold {
     font-weight: ${props => props.theme.fontWeights.bold};
   }
+  .achievement {
+    align-self: flex-start;
+    margin: 0 ${props => props.theme.margin['2']};
+    .flex {
+      display: flex;
+      align-self: flex-start;
+    }
+    .achievement-tag {
+      color: ${props => props.themeColor};
+    }
+    ul {
+      margin-top: 0;
+    }
+    li {
+      font-family: ${props => props.theme.fonts.sans};
+    }
+    span {
+      margin-right: ${props => props.theme.margin['2']};
+    }
+  }
 `;
 
 Container.propTypes = {
@@ -112,13 +147,11 @@ const Title = styled.div`
   color: ${props => props.color};
   font-family: ${props => props.theme.fonts.sans};
   font-size: ${props => props.theme.textSizes['5xl']};
-  margin-left: ${props => props.theme.margin['4']};
-  text-transform: uppercase;
+  margin: ${props => props.theme.margin['4']} 0;
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     font-size: ${props => props.theme.textSizes['3xl']};
     margin-left: ${props => props.theme.margin['4']};
   }
-  flex: 1;
 `;
 
 const Flex = styled.div`

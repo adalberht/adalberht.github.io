@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   strong: [],
   experienced: [],
   familiar: [],
-
+  achievements: [],
   loading: false,
 };
 

@@ -14,16 +14,28 @@ export default class Footer extends React.Component {
       secondaryColor: PropTypes.string.isRequired,
       themeColor: PropTypes.string.isRequired,
     }).isRequired,
-  }
+  };
 
   render() {
     const { primaryColor, secondaryColor, themeColor } = this.props.utils;
     return (
-      <Container primaryColor={primaryColor} secondaryColor={secondaryColor}>
-        <CenterSocialMedias primaryColor={secondaryColor} secondaryColor={primaryColor} themeColor={themeColor} />
+      <Container primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor}>
+        <CenterSocialMedias
+          primaryColor={secondaryColor}
+          secondaryColor={primaryColor}
+          themeColor={themeColor}
+        />
         <Copyright>&copy; 2017 - Design and Code by Albertus Angga Raharja</Copyright>
         <div>Built with React, Redux, styled-component and tailwindcss.</div>
-        <div>Code for this project is open sourced <a href={REPOSITORY}>here</a>.</div>
+        <div>
+          Code for this project is open sourced <a href={REPOSITORY}>here</a>.
+        </div>
+        <div>
+          &copy; Projects assets laptop and phone vectors is
+          <a href="https://www.freepik.com/free-vector/laptop-and-mobile-phone-design_919220.htm">
+            {' '}designed by Freepik.
+          </a>
+        </div>
       </Container>
     );
   }
@@ -38,20 +50,23 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: ${props => props.theme.fonts.sans};
   div {
     text-align: center;
   }
-  div:2th-last-child {
+  div: 2th-last-child {
     background: white;
   }
   div:last-child {
     margin: 2rem;
     font-style: italic;
   }
+  a {
+    color: ${props => props.themeColor};
+  }
 `;
 
-const Copyright = styled.div`
-`;
+const Copyright = styled.div``;
 
 const CenterSocialMedias = styled(SocialMedias)`
   align-self: center;

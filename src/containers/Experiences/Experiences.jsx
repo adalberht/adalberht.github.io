@@ -26,6 +26,7 @@ class ExperiencesComponent extends Component {
     loadExperiences: PropTypes.func.isRequired,
   };
 
+
   componentDidMount() {
     if (!this.props.experiences.loaded) this.props.loadExperiences();
   }
@@ -44,35 +45,10 @@ class ExperiencesComponent extends Component {
           {loading && <LoadingIndicator />}
           {!loading && (
             <Flex>
-              <SectionTitle>Work Experiences</SectionTitle>
-              <Timeline color={primaryColor}>
-                {works.map(work => (
-                  <TimelineEvent key={work.description} themeColor={themeColor}>
-                    <div className="time-and-place">
-                      <div className="place">{work.place}</div>
-                      <div className="time">{work.time}</div>
-                    </div>
-                    <div className="image">
-                      <img src={work.image} alt={work.place} />
-                    </div>
-                    <div className="panel">
-                      <div className="title">
-                        <span className="role">{work.role}</span>
-                        <span>-</span>
-                        <a href={work.website} className="institution">{work.company}</a>
-                      </div>
-                      <div className="description">{work.description}</div>
-                      <div className="tags">
-                        {work.tags.map(tag => <div className="tag">{tag}</div>)}
-                      </div>
-                    </div>
-                  </TimelineEvent>
-                ))}
-              </Timeline>
               <SectionTitle>Educations</SectionTitle>
               <Timeline color={primaryColor}>
                 {educations.map(education => (
-                  <TimelineEvent themeColor={themeColor}>
+                  <TimelineEvent themeColor={themeColor} hideTimeline>
                     <div className="time-and-place">
                       <div className="place">{education.place}</div>
                       <div className="time">{education.time}</div>
@@ -83,12 +59,51 @@ class ExperiencesComponent extends Component {
                     <div className="panel">
                       <div className="title">
                         <span className="role">{education.role}</span>
-                        <span>-</span>
-                        <a href={education.website} className="institution">{education.institution}</a>
+                        <span className="separator" />
+                        <a href={education.website} className="institution">
+                          {education.institution}
+                        </a>
                       </div>
-                      <div className="description">{education.description}</div>
+                      <div className="grade">{education.grade}</div>
+                      <ul className="descriptions">
+                        {education.descriptions.map(description => (
+                          <li className="description">{description}</li>
+                        ))}
+                      </ul>
                       <div className="tags">
                         {education.tags.map(tag => <div className="tag">{tag}</div>)}
+                      </div>
+                    </div>
+                  </TimelineEvent>
+                ))}
+              </Timeline>
+              <SectionTitle>Work Experiences</SectionTitle>
+              <Timeline id="timeline" color={primaryColor}>
+                {works.map((work, index) => (
+                  <TimelineEvent key={work.description} themeColor={themeColor}>
+                    <div className="time-and-place">
+                      <div className="place">{work.place}</div>
+                      <div className="time">{work.time}</div>
+                    </div>
+                    <div className="image">
+                      <img src={work.image} alt={work.place} />
+                      {index < (works.length - 1) && <TimelineIndicator color={primaryColor} height={document.getElementById('timeline').clientHeight} />}
+                    </div>
+                    <div className="panel">
+                      <div className="title">
+                        <span className="role">{work.role}</span>
+                        <span className="separator" />
+                        <a href={work.website} className="institution">
+                          {work.company}
+                        </a>
+                      </div>
+                      <ul className="descriptions">
+                        {work.descriptions.map(description => (
+                          <li className="description">{description}</li>
+                        ))}
+                      </ul>
+                      <div className="tags">
+                        {work.tags.map(tag => <div className="tag">{tag}</div>)}
                       </div>
                     </div>
                   </TimelineEvent>
@@ -123,8 +138,81 @@ const Container = styled.div`
   a {
     color: ${props => props.primaryColor};
   }
-  .institution {
-    color: ${props => props.themeColor};
+
+  .image {
+    position: relative;
+  }
+
+  .panel {
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: ${props => props.theme.margin['2']};
+      @media screen and (max-width: ${props => props.theme.screens.sm}) {
+        flex-direction: column;
+        font-size: ${props => props.theme.textSizes.xl};
+        align-items: flex-start;
+      }
+      > * {
+        margin-right: ${props => props.theme.margin['2']};
+      }
+      .role {
+        font-size: ${props => props.theme.textSizes.xl};
+        font-weight: ${props => props.theme.fontWeights.bold};
+      }
+      .institution {
+        color: ${props => props.themeColor};
+        font-weight: ${props => props.theme.fontWeights.black};
+        text-decoration: underline;
+        font-size: ${props => props.theme.textSizes.lg};
+        font-family: ${props => props.theme.fonts.sans};
+      }
+      .separator {
+        content: '';
+        width: 1rem;
+        border: 1px solid ${props => props.primaryColor};
+        @media screen and (max-width: ${props => props.theme.screens.sm}) {
+          display: none;
+        }
+      }
+    }
+
+    .grade {
+      font-weight: ${props => props.theme.fontWeights.bold};
+      font-size: ${props => props.theme.textSizes.base};
+      margin-bottom: ${props => props.theme.margin['2']};
+    }
+
+    .descriptions {
+      font-family: ${props => props.theme.fonts.sans};
+      text-align: justify;
+      margin-bottom: ${props => props.theme.margin['4']};
+      .description {
+        margin-bottom: ${props => props.theme.margin['1']};
+        text-align: justify;
+        font-size: ${props => props.theme.textSizes.lg};
+        @media screen and (max-width: ${props => props.theme.screens.sm}) {
+          margin-left: -${props => props.theme.margin['8']};
+          font-size: ${props => props.theme.textSizes.base};
+        }
+      }
+    }
+
+    .tags {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      .tag {
+        color: ${props => props.themeColor};
+        font-family: ${props => props.theme.fonts.mono};
+        padding: ${props => props.theme.padding['1']};
+        margin-top: ${props => props.theme.margin['2']};
+        margin-right: ${props => props.theme.margin['2']};
+        border-radius: ${props => props.theme.borderRadius.default};
+        border: 2px solid ${props => props.themeColor};
+        text-align: center;
+      }
+    }
   }
 `;
 
@@ -154,17 +242,6 @@ const Timeline = styled.ul`
   position: relative;
   display: flex;
   flex-direction: column;
-  &::before {
-    display: initial;
-    bottom: 15rem;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: calc(15% + 4.5rem);
-    width: 2px;
-    height: 75%;
-    background-color: ${props => props.color};
-  }
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     &::before {
       display: none;
@@ -178,7 +255,7 @@ const Timeline = styled.ul`
 
 const TimelineEvent = styled.li`
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   margin-bottom: ${props => props.theme.margin['8']};
   > * {
     margin-right: ${props => props.theme.margin['4']};
@@ -188,53 +265,9 @@ const TimelineEvent = styled.li`
     height: ${props => props.theme.width['12']};
     object-fit: contain;
     border-radius: ${props => props.theme.borderRadius.full};
-  }
-  .time-and-place {
-    width: 15%;
-  }
-  .image {
     position: relative;
-    min-height: 1px;
     z-index: 1;
-  }
-  .image::after {
-    content: ' ';
-    display: block;
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    height: calc(100% + 6px);
-    border-radius: 100%;
-    background: ${props => props.theme.colors.gray};
-    border: 2px solid #e4e4e4;
-    width: calc(100% + 6px);
-    z-index: 0;
-  }
-  .role {
-    font-weight: ${props => props.theme.fontWeights.bold};
-  }
-  .institution {
-  }
-  .panel {
-    width: 75%;
-    .title {
-      > * {
-        margin-right: ${props => props.theme.margin['2']};
-      }
-    }
-  }
-  .tags {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    .tag {
-      font-family: ${props => props.theme.fonts.mono};
-      padding: ${props => props.theme.padding['1']};
-      margin: ${props => props.theme.margin['1']};
-      margin-left: 0;
-      border-radius: ${props => props.theme.borderRadius.default};
-      border: 2px solid ${props => props.themeColor};
-    }
+    margin: 0 ${props => props.theme.margin['4']};
   }
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     flex-direction: column;
@@ -246,5 +279,19 @@ const TimelineEvent = styled.li`
     .image {
       margin: ${props => props.theme.margin['2']};
     }
+  }
+`;
+
+const TimelineIndicator = styled.div`
+  display: initial;
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: calc(100% + 2rem);
+  background-color: ${props => props.color};
+  z-index: 0;
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    display: none;
   }
 `;
