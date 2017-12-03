@@ -40,7 +40,7 @@ export default class MobileNavbar extends React.Component {
   }
 
   preventScrolling = (event) => {
-    event.preventDefault();
+    if (this.state.isMenuActive) event.preventDefault();
   }
 
   toggleMenu = () => {
