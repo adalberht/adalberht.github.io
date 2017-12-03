@@ -32,9 +32,9 @@ class AboutComponent extends Component {
         >
           <Wrapper>
             <img src={profile} alt="albert's profile" />
-            <h1>
+            <SectionTitle>
               About <span className="highlight">Albert</span>
-            </h1>
+            </SectionTitle>
             <Description>
               I'm an aspiring <span className="bold highlight">Front End Software Engineer</span>{' '}
               who is in a journey to become{' '}
@@ -51,7 +51,7 @@ class AboutComponent extends Component {
               competitive (yet), I do still enjoy competitive programming and can proudly say it's a
               part that shapes who I am.
             </Description>
-            <RandomFacts>Random Facts</RandomFacts>
+            <SectionTitle>Random Facts</SectionTitle>
             <Description>
               I <span className="highlight">type quite fast</span> with more than{' '}
               <span className="bold">150 WPM</span> in average.
@@ -120,13 +120,14 @@ const Description = styled.p`
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     font-size: ${props => props.theme.textSizes.base};
   }
+  margin-top: ${props => props.theme.margin['2']};
   margin-left: ${props => props.theme.margin['4']};
   margin-bottom: ${props => props.theme.margin['2']};
   margin-right: ${props => props.theme.margin['4']};
 `;
 
-const RandomFacts = styled.div`
-  margin-top: ${props => props.theme.margin['8']};
+const SectionTitle = styled.div`
+  margin-top: ${props => props.theme.margin['2']};
   font-weight: ${props => props.theme.fontWeights.bold};
   font-size: ${props => props.theme.textSizes['2xl']};
 `;

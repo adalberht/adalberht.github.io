@@ -3,6 +3,7 @@
 
 # Production Build
 /dist
+/log
 
 # Editor
 .vscode/
