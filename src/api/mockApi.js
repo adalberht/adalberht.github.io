@@ -83,7 +83,7 @@ export const experiences = {
       place: 'Depok, Indonesia',
       time: "Aug '17 - Dec '17",
       image: uiImageUrl,
-      role: 'Assistant Lecturer',
+      role: 'Teaching Assistant',
       company: 'University of Indonesia',
       website: 'http://ui.ac.id/en',
       descriptions: [
