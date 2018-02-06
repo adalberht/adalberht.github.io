@@ -2,6 +2,7 @@
 /node_modules
 
 # Production Build
+/dist
 /log
 
 # Editor
