@@ -8,12 +8,12 @@ export default function Project(props) {
   const { project } = props;
   return (
     <Container primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor}>
-      <Image src={project.imageUrl} alt={`${project.title} image`} />
+      {!!project.imageUrl && <Image src={project.imageUrl} alt={`${project.title} image`} />}
       <a className="title button-link" href={project.link} target="_blank">
         <span className="text">{project.title}</span>
         <Icon className="arrow" name="arrow-right" color={themeColor} />
       </a>
-      <div className="role">{project.role}</div>
+      {!!project.role && <div className="role">{project.role}</div>}
       <ul className="descriptions">
         {project.descriptions.map(description => <li className="description">{description}</li>)}
       </ul>
@@ -126,6 +126,7 @@ const Container = styled.div`
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
     .tag {
       color: ${props => props.themeColor};
       font-family: ${props => props.theme.fonts.mono};
@@ -140,9 +141,9 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 75%;
+  max-width: 50%;
   object-fit: scale-down;
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
-    max-width: 90%;
+    max-width: 80%;
   }
 `;

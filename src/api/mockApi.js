@@ -6,19 +6,20 @@ import projectPortfolioImageUrl from '../assets/project-portfolio.png';
 import projectPekanRistekImageUrl from '../assets/project-pekan-ristek.png';
 import projectTwiggsyImageUrl from '../assets/project-twiggsy.png';
 
+const twiggsyImageUrl = 'https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/hhbmro3rb2og5fittthx';
+
 export const skills = {
   strong: [
-    'C++',
     'Python',
+    'JavaScript',
+    'C++',
     'Java',
-    'JavaScript (ES6)',
     'HTML',
     'CSS',
-    'ReactJS',
-    'styled-components',
+    'React',
   ],
-  experienced: ['Git', 'Django', 'Django-REST', 'Redux', 'Webpack'],
-  familiar: ['PHP', 'Go', 'Android', 'Angular'],
+  experienced: ['Git', 'Django (Django-REST)', 'Node.js', 'Express'],
+  familiar: ['Android', 'Go', 'PHP', 'Angular'],
   achievements: [
     {
       tag: '[International]',
@@ -44,40 +45,33 @@ export const experiences = {
   works: [
     {
       place: 'Jakarta, Indonesia',
-      time: "Jun '17 - Aug '17",
+      time: "Dec '17 - present",
+      image: twiggsyImageUrl,
+      role: 'Software Engineer & Lead Front End',
+      company: 'Twiggsy',
+      website: 'https://www.twiggsy.com',
+      descriptions: [
+        'Twiggsy is a redesigned Twibbon website. (picture with watermarks to support public campaign).',
+        'Led the early stage of front end development by creating project’s boilerplate and core website features such as campaign creation and filtered picture generation site using React.js, imgix API and Django-REST.',
+        'Reduced 50% loading time of creating a filtered image by resizing image in client-side to reduce server workload.',
+      ],
+     tags: ['CSS', 'JavaScript', 'React.js', 'Redux', 'styled-components'],
+    },
+    {
+      place: 'Jakarta, Indonesia',
+      time: "Jun '17 - Feb '18",
       image: stoqoImageUrl,
       role: 'Software Engineering Intern',
       company: 'Stoqo',
       website: 'https://www.stoqo.com',
       descriptions: [
-        'Improved company day to day operation by creating internal tool website using React, Redux, and Django-REST that tracks more than 1000 orders and 100 stores.',
-        'Implemented customer dashboard website by using React and Redux that is used by more than 100 customers to track their orders.',
-        'Improved marketplace automation by creating merchant platform website that allows supplier to add products in the marketplace using React, Redux and Algolia.',
+        'Improved company’s day to day operation by creating internal tool website using React, Redux, Django-REST, and Google Maps API that tracks more than 2000 orders, 300 stores and 900 products.',
+        'Improved marketplace automation by creating merchant platform website using React, Redux and Algolia that allows supplier to add products in the marketplace.',
+        'Implemented password resetting system for customer using stateless JWT.',
+        'Implemented cart and checkout system of Stoqo’s marketplace in web platform which previously only available in the Android application using React and Redux backed by strong tests utilizing Django-REST API.',
+
       ],
-      tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'styled-components', 'Django'],
-    },
-    {
-      place: 'Jakarta, Indonesia',
-      time: "Sep '17 - Nov '17",
-      image: stoqoImageUrl,
-      role: 'Part Time Software Engineering Intern',
-      company: 'Stoqo',
-      website: 'https://www.stoqo.com',
-      descriptions: [
-        'Implemented forget password system and mechanism for customer.',
-        'Continued maintaining and adding features to the internal tool and landing page codebase using Django-REST and React such as tool to export products list.',
-      ],
-      tags: [
-        'Python',
-        'Django',
-        'Django-REST',
-        'HTML',
-        'CSS',
-        'JavaScript',
-        'React',
-        'Redux',
-        'styled-components',
-      ],
+      tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'styled-components', 'Django-REST'],
     },
     {
       place: 'Depok, Indonesia',
@@ -87,7 +81,7 @@ export const experiences = {
       company: 'University of Indonesia',
       website: 'http://ui.ac.id/en',
       descriptions: [
-        'Tutor and grade Computer Science Freshmans’ lab and task submissions for "Fundamentals of Programming I" course using Python programming language.',
+        'Tutored and graded 14 Computer Science freshmans’ in "Fundamentals of Programming I" course by teaching Python 3 as their first programming language, resulting in 12 of them receiving an A.',
       ],
       tags: ['Python'],
     },
@@ -97,14 +91,11 @@ export const experiences = {
       place: 'Depok, Indonesia',
       time: "Aug '16 - present",
       image: uiImageUrl,
-      grade: 'Current GPA: 3.98 / 4.00',
+      grade: 'Current GPA: 3.91 / 4.00',
       role: 'Computer Science Undergraduate Student',
       institution: 'University of Indonesia',
       descriptions: [
-        'Pursuing my passion in Computer Science at the largest and one of the best universities in Indonesia.',
-        'Learning a lot of new things and frameworks',
-        'Training in Competitive Programming',
-        'Maintaining my love and passion for coding.',
+        'Relevant Courseworks: Data Structures and Algorithm, Introduction to Computer Organization, Linear Algebra, Statistics & Probability, Web Programming & Design (Taken); Advanced Programming, Competitive Programming, Database, Operating Systems, Theory of Language & Automata (Taking);',
       ],
       tags: ['Competitive Programming', 'Software Engineering', 'Web Development'],
     },
@@ -112,6 +103,15 @@ export const experiences = {
 };
 
 export const projects = [
+  {
+    title: 'HOTP TOTP Generator',
+    role: 'Contributor',
+    link: 'https://www.npmjs.com/package/hotp-totp-generator',
+    descriptions: [
+      'Implemented and published customizable HMAC-based and Time-based One Time Password (HOTP and TOTP) Algorithm as  a npm package by using JavaScript (Node.js).',
+    ],
+    tags: ['Node.js', 'Algorithm', 'OTP'],
+  },
   {
     imageUrl: projectPortfolioImageUrl,
     title: 'albertusangga.tech (Personal Portfolio)',
@@ -121,20 +121,22 @@ export const projects = [
       'A portfolio website fully built using React and designed to be responsive, maintainable and modular.',
       'A side weekend project to try out several new frameworks and tech stacks.',
     ],
-    tags: ['JSX', 'CSS', 'ReactJS', 'Redux', 'Webpack', 'UI Design', 'npm'],
+    tags: ['JSX', 'CSS', 'React.js', 'Redux', 'Webpack', 'UI Design', 'npm'],
   },
+  /*
   {
     imageUrl: projectTwiggsyImageUrl,
     title: 'Twiggsy',
     link: 'https://www.twiggsy.com',
     role: 'Lead Front End Engineer',
     descriptions: [
-      'Twiggsy is a redesigned Twibbon website.',
-      'Contributed to the early stage of the development with a team of 5, initialized the boiler plate and built the front end core features',
-      'Implemented auth system in front end, campaign creation site, and twibbon photo generator',
+      'Twiggsy is a redesigned Twibbon website. (picture with watermarks to support public campaign).',
+      'Led the early stage of front end development by creating project’s boilerplate and core website features such as campaign creation and filtered picture generation site using React.js, imgix API and Django-REST.',
+      'Reduced 50% loading time of creating a filtered image by resizing image in client-side to reduce server workload.',
     ],
-    tags: ['JSX', 'CSS', 'JavaScript', 'ReactJS', 'Redux', 'styled-components', 'Webpack', 'npm'],
+    tags: ['JSX', 'CSS', 'JavaScript', 'React.js', 'Redux', 'styled-components', 'Webpack', 'npm'],
   },
+  */
   {
     imageUrl: projectPekanRistekImageUrl,
     title: 'Pekan Ristek Website',
@@ -144,7 +146,7 @@ export const projects = [
       'Led a team of four to develop a website for an event holding playground, tech talks and competitions for University of Indonesia’s students.',
       'Implemented the website using University of Indonesia’s CAS [Central Authentication Service] for auth, created a dashboard for tech talks, competition registration and playground system.',
     ],
-    tags: ['JSX', 'CSS', 'JavaScript', 'ReactJS', 'Redux', 'Webpack', 'npm'],
+    tags: ['JSX', 'CSS', 'JavaScript', 'React.js', 'Redux', 'Webpack', 'npm'],
   },
   {
     imageUrl: projectAndroidImageUrl,

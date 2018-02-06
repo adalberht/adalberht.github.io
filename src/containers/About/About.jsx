@@ -36,14 +36,14 @@ class AboutComponent extends Component {
               About <span className="highlight">Albert</span>
             </SectionTitle>
             <Description>
-              I'm an aspiring <span className="bold highlight">Front End Software Engineer</span>{' '}
+              I'm an aspiring <span className="bold highlight">Software Engineer</span>{' '}
               who is in a journey to become{' '}
               <span className="highlight">full-stack developer</span>.
             </Description>
             <Description>
               I used to have no interest in{' '}
               <span className="bold highlight">Front End Development</span> before I know{' '}
-              <span className="bold">ReactJS.</span>
+              <span className="bold">React.js</span>
             </Description>
             <Description>
               I got introduced to programming world when I was in high school through
@@ -60,12 +60,6 @@ class AboutComponent extends Component {
               I'm a <span className="bold">Japanese pop culture enthusiast </span>
               and still hoping that someday I can visit Japan.
             </Description>
-            <br />
-            <SectionTitle>Want to get in touch?</SectionTitle>
-            <div>
-              Feel free to say hi in my listed social medias :)
-            </div>
-            <UnmarginSocialMedias primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} />
           </Wrapper>
         </Container>
       </Element>

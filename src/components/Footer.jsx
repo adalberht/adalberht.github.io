@@ -20,22 +20,8 @@ export default class Footer extends React.Component {
     const { primaryColor, secondaryColor, themeColor } = this.props.utils;
     return (
       <Container primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor}>
-        <CenterSocialMedias
-          primaryColor={secondaryColor}
-          secondaryColor={primaryColor}
-          themeColor={themeColor}
-        />
-        <Copyright>&copy; 2017 - Design and Code by Albertus Angga Raharja</Copyright>
-        <div>Built with React, Redux, styled-component and tailwindcss.</div>
-        <div>
-          Code for this project is open sourced <a href={REPOSITORY}>here</a>.
-        </div>
-        <div>
-          &copy; Projects assets laptop and phone vectors is
-          <a href="https://www.freepik.com/free-vector/laptop-and-mobile-phone-design_919220.htm">
-            {' '}designed by Freepik.
-          </a>
-        </div>
+        <CenterSocialMedias primaryColor={secondaryColor} secondaryColor={primaryColor} themeColor={themeColor} />
+        <Copyright>Albertus Angga Raharja &copy; {new Date().getFullYear()}</Copyright>
       </Container>
     );
   }
@@ -58,8 +44,7 @@ const Container = styled.div`
     background: white;
   }
   div:last-child {
-    margin: 2rem;
-    font-style: italic;
+    margin-bottom: 1.5rem;
   }
   a {
     color: ${props => props.themeColor};
