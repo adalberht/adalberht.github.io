@@ -10,7 +10,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint-config-airbnb": "^15.1.0",
-    "gh-pages": "^1.1.0",
     "history": "^4.7.2",
     "morgan": "^1.9.0",
     "prop-types": "^15.6.0",
@@ -51,8 +50,6 @@
   },
   "scripts": {
     "start": "poi src/index.jsx",
-    "build": "poi build",
-    "serve": "node server.js",
-    "deploy": "NODE_ENV=production npm run build && gh-pages -d dist -b master -a"
+    "build": "poi build && echo '/*    /index.html   200' > dist/_redirects"
   }
 }
