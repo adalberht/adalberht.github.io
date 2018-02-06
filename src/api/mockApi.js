@@ -47,7 +47,7 @@ export const experiences = {
       place: 'Jakarta, Indonesia',
       time: "Dec '17 - present",
       image: twiggsyImageUrl,
-      role: 'Software Engineer & Lead Front End',
+      role: 'Part Time Front End Engineer',
       company: 'Twiggsy',
       website: 'https://www.twiggsy.com',
       descriptions: [
