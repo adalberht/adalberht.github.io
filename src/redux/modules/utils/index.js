@@ -22,7 +22,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
     case REHYDRATE:
       if (!action.payload || !action.payload.utils) return state;
-      return { ...state, isUsingLightTheme: action.payload.utils.isUsingLightTheme };
+      return { ...state, ...action.payload.utils };
     case THEME_INVERT:
       return { ...state, ...action.payload };
     default:
