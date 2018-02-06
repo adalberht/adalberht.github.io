@@ -50,6 +50,7 @@
   },
   "scripts": {
     "start": "poi src/index.jsx",
-    "build": "poi build && echo '/*    /index.html   200' > dist/_redirects"
+    "build": "poi build && echo '/*    /index.html   200' > dist/_redirects",
+    "serve": "node server.js"
   }
 }
