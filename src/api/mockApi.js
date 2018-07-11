@@ -8,6 +8,8 @@ import projectTwiggsyImageUrl from '../assets/project-twiggsy.png';
 
 const twiggsyImageUrl = 'https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_120,w_120,f_auto,b_white,q_auto:eco/hhbmro3rb2og5fittthx';
 
+const travelokaImageUrl = "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/cb/1c/e9cb1cce-8a6d-9be8-1d11-39a37e244213/AppIcon-1x_U007emarketing-85-220-0-4.png/246x0w.jpg";
+
 export const skills = {
   strong: [
     'Python',
@@ -18,8 +20,8 @@ export const skills = {
     'CSS',
     'React',
   ],
-  experienced: ['Git', 'Django (Django-REST)', 'Node.js', 'Express'],
-  familiar: ['Android', 'Go', 'PHP', 'Angular'],
+  experienced: ['Django', 'Dart (Flutter)', 'Android', 'Git','Working in UNIX environment'],
+  familiar: ['Go', 'PHP',],
   achievements: [
     {
       tag: '[International]',
@@ -45,17 +47,15 @@ export const experiences = {
   works: [
     {
       place: 'Jakarta, Indonesia',
-      time: "Dec '17 - present",
-      image: twiggsyImageUrl,
-      role: 'Part Time Front End Engineer',
-      company: 'Twiggsy',
-      website: 'https://www.twiggsy.com',
+      time: "Jun '18 - Aug '18",
+      image: travelokaImageUrl,
+      role: 'Software Engineering Intern (Android)',
+      company: 'Traveloka',
+      website: 'https://www.traveloka.com',
       descriptions: [
-        'Twiggsy is a redesigned Twibbon website. (picture with watermarks to support public campaign).',
-        'Led the early stage of front end development by creating project’s boilerplate and core website features such as campaign creation and filtered picture generation site using React.js, imgix API and Django-REST.',
-        'Reduced 50% loading time of creating a filtered image by resizing image in client-side to reduce server workload.',
+        "Bus & Train Team",
       ],
-     tags: ['CSS', 'JavaScript', 'React.js', 'Redux', 'styled-components'],
+      tags: ['Java', 'Android'],
     },
     {
       place: 'Jakarta, Indonesia',
@@ -69,7 +69,6 @@ export const experiences = {
         'Improved marketplace automation by creating merchant platform website using React, Redux and Algolia that allows supplier to add products in the marketplace.',
         'Implemented password resetting system for customer using stateless JWT.',
         'Implemented cart and checkout system of Stoqo’s marketplace in web platform which previously only available in the Android application using React and Redux backed by strong tests utilizing Django-REST API.',
-
       ],
       tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'styled-components', 'Django-REST'],
     },
@@ -91,18 +90,19 @@ export const experiences = {
       place: 'Depok, Indonesia',
       time: "Aug '16 - present",
       image: uiImageUrl,
-      grade: 'Current GPA: 3.91 / 4.00',
+      grade: 'Current GPA: 3.90 / 4.00',
       role: 'Computer Science Undergraduate Student',
       institution: 'University of Indonesia',
       descriptions: [
-        'Relevant Courseworks: Data Structures and Algorithm, Introduction to Computer Organization, Linear Algebra, Statistics & Probability, Web Programming & Design (Taken); Advanced Programming, Competitive Programming, Database, Operating Systems, Theory of Language & Automata (Taking);',
+        'Relevant Courseworks: Data Structures and Algorithm, Introduction to Computer Organization, Linear Algebra, Statistics & Probability, Web Programming & Design, Advanced Programming, Competitive Programming, Database, Operating Systems, Theory of Language & Automata;',
       ],
-      tags: ['Competitive Programming', 'Software Engineering', 'Web Development'],
+      tags: ['Software Engineering', 'Competitive Programming',],
     },
   ],
 };
 
 export const projects = [
+  
   {
     title: 'HOTP TOTP Generator',
     role: 'Contributor',
@@ -123,7 +123,6 @@ export const projects = [
     ],
     tags: ['JSX', 'CSS', 'React.js', 'Redux', 'Webpack', 'UI Design', 'npm'],
   },
-  /*
   {
     imageUrl: projectTwiggsyImageUrl,
     title: 'Twiggsy',
@@ -136,7 +135,6 @@ export const projects = [
     ],
     tags: ['JSX', 'CSS', 'JavaScript', 'React.js', 'Redux', 'styled-components', 'Webpack', 'npm'],
   },
-  */
   {
     imageUrl: projectPekanRistekImageUrl,
     title: 'Pekan Ristek Website',

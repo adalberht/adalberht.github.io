@@ -185,8 +185,8 @@ const Flex = styled.div`
 
 const SocialMediasWithMargin = styled(SocialMedias)`
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 3rem;
+  left: 1rem;
   a {
     margin: auto ${props => props.theme.margin['2']};
   }

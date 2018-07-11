@@ -49,14 +49,14 @@ class SkillsComponent extends Component {
           themeColor={themeColor}
         >
           <Title color={primaryColor}>Skills</Title>
-          <Flex>
+          {/* <Flex>
             <p>
               Currently, my strength lies more in{' '}
               <span className="highlight">front end development</span>. I enjoy learning new
               frameworks, language and code that solves{' '}
               <span className="bold highlight">technical challenges</span>.
             </p>
-          </Flex>
+          </Flex> */}
           <Flex>
             <SkillSection>
               <div className="highlight bold section-title">Strong</div>

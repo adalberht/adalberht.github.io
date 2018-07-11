@@ -144,6 +144,7 @@ const Container = styled.div`
   }
 
   .panel {
+    flex: 4;
     .title {
       display: flex;
       align-items: center;
@@ -260,6 +261,9 @@ const TimelineEvent = styled.li`
   > * {
     margin-right: ${props => props.theme.margin['4']};
   }
+  .time-and-place {
+    flex: 1;
+  }
   img {
     width: ${props => props.theme.width['12']};
     height: ${props => props.theme.width['12']};
@@ -274,6 +278,7 @@ const TimelineEvent = styled.li`
     .time-and-place {
       width: 100%;
       display: flex;
+
       justify-content: space-between;
     }
     .image {
