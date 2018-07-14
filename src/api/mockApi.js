@@ -45,18 +45,18 @@ export const skills = {
 
 export const experiences = {
   works: [
-    {
-      place: 'Jakarta, Indonesia',
-      time: "Jun '18 - Aug '18",
-      image: travelokaImageUrl,
-      role: 'Software Engineering Intern (Android)',
-      company: 'Traveloka',
-      website: 'https://www.traveloka.com',
-      descriptions: [
-        "Bus & Train Team",
-      ],
-      tags: ['Java', 'Android'],
-    },
+    // {
+    //   place: 'Jakarta, Indonesia',
+    //   time: "Jun '18 - Aug '18",
+    //   image: travelokaImageUrl,
+    //   role: 'Software Engineering Intern (Android)',
+    //   company: 'Traveloka',
+    //   website: 'https://www.traveloka.com',
+    //   descriptions: [
+    //     "Bus & Train Team",
+    //   ],
+    //   tags: ['Java', 'Android'],
+    // },
     {
       place: 'Jakarta, Indonesia',
       time: "Jun '17 - Feb '18",
