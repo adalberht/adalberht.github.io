@@ -13,7 +13,7 @@ const INITIAL_STATE = {
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
-   case LOADING:
+    case LOADING:
       return { ...state, loading: true };
     case EXPERIENCES_SET:
       return { ...state, ...action.payload, loading: false, loaded: true };
