@@ -7,7 +7,8 @@ import { Link, scroller } from 'react-scroll';
 import SwitchButton from './SwitchButton';
 import scrollLinks from '../constants/scrollLinks';
 import albertIcon from '../assets/icon.png';
-
+import Icon from "./Icon";
+import { BLOG_URL } from "../api/data";
 
 @withRouter
 @connect(state => (state))
@@ -38,35 +39,38 @@ export default class Navbar extends React.Component {
         themeColor={themeColor}
         scrollDown={scrollDown}
       >
-        <Link
-          active="active"
-          className="without-border"
-          duration={500}
-          href={scrollLinks.HOME.to}
-          key={scrollLinks.HOME.to}
-          smooth
-          spy
-          to={scrollLinks.HOME.to}
-          onClick={() => this.props.history.push(scrollLinks.HOME.to)}
-        >
-          <img src={albertIcon} alt="icon" />
-        </Link>
+        <Links>
+          <Link
+            active="active"
+            className="without-border"
+            duration={500}
+            href={scrollLinks.HOME.to}
+            key={scrollLinks.HOME.to}
+            smooth
+            spy
+            to={scrollLinks.HOME.to}
+          >
+            <img src={albertIcon} alt="icon" />
+          </Link>
+        </Links>
         <Links>
           <SwitchButton />
           {Object.values(scrollLinks).map(scrollLink => (
             <Link
-              active="active"
               key={scrollLink.to}
               to={scrollLink.to}
               spy
               smooth
               duration={500}
               href={scrollLink.to}
-              onClick={() => this.props.history.push(scrollLink.to)}
             >
               {scrollLink.text}
             </Link>
           ))}
+          <a href={BLOG_URL} className="blog">
+            <span className="text">Blog</span>
+            <Icon className="arrow" name="arrow-right" color={primaryColor} />
+          </a>
         </Links>
       </Container>
     );
@@ -85,7 +89,6 @@ const Container = styled.div`
   color: ${props => props.primaryColor};
   font-family: ${props => props.theme.fonts.mono};
 
-  box-shadow: ${props => props.theme.shadows.md};
   background-color: ${props => props.secondaryColor};
   transition: transform 0.5s ease;
 
@@ -105,19 +108,76 @@ const Container = styled.div`
     ${props => props.themeColor};
   }
 
+  .active {
+    color: ${props => props.themeColor};
+    font-weight: bold;
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: ${props => props.themeColor};
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
   a {
+    position: relative;
     margin: 0.5rem;
     cursor: pointer;
-    border-bottom: solid 1px ${props => props.themeColor};
     color: ${props => props.primaryColor};
     text-decoration: none;
-    :hover {
-      font-weight: bold;
-    }
+    font-family: sans-serif;
   }
 
   .without-border {
     border: none;
+   
+  }
+  .without-border:before {
+    display: none;
+  }
+  
+  .blog:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: ${props => props.primaryColor};
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  .blog {
+    font-weight: bold;
+    background-color: ${props => props.themeColor};
+    padding: 1rem;
+  }
+  
+  .text {
+      margin-right: ${props => props.theme.margin['2']};
+  }
+
+  .arrow {
+    animation: slide 1s linear infinite;
   }
 
   img {

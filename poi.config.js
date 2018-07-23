@@ -4,8 +4,8 @@ module.exports = (options, req) => ({
     NODE_ENV: process.env.NODE_ENV || 'development',
   },
   html: {
-    title: 'Albertus Angga',
-    description: 'Personal portfolio website',
+    title: 'Albertus Angga Raharja',
+    description: "Albertus Angga's portfolio site",
     favicon: './static/favicon.ico',
   },
   port: 3550,

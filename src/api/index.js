@@ -1,6 +1,6 @@
 import defaults from 'superagent-defaults';
 // import * as apiUrl from '../constants/apiUrl';
-import * as mockApi from './mockApi';
+import * as mockApi from './data';
 
 export const request = defaults();
 

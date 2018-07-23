@@ -11,7 +11,7 @@ import Icon from '../../components/Icon';
 const KONNICHIWA = toHiragana('konnichiha');
 
 const RESUME_LINK =
-  'https://docs.google.com/document/d/1-S1Jo2U_-z9xlacl8ER0hZg39rivJafrlzgdkVWu6cg/edit?usp=sharing';
+  'https://docs.google.com/document/d/1-cxzcRapPkggSRh0Cl1APu2jP_7FGoUbdYmIqW1Rjdg/edit?usp=sharing';
 
 @connect(state => ({ utils: state.utils }), { invertTheme })
 class HomeComponent extends React.Component {
@@ -40,13 +40,12 @@ class HomeComponent extends React.Component {
               My name is <span className="highlight bold">Albertus Angga Raharja</span>
             </Name>
             <Description>
-              A <span className="bold">sophomore</span> in{' '}
+              I'm a <span className="bold">junior</span> in{' '}
               <span className="highlight">Computer Science</span> at{' '}
               <a href="http://www.ui.ac.id/en/">University of Indonesia</a>,
             </Description>
             <Description>
-              An aspiring <span className="highlight">Software Engineer</span> who is in a journey
-              to become a <span className="highlight"> full-stack developer</span>.
+              and an aspiring <span className="highlight">Software Engineer</span>.
             </Description>
             <a className="button-link" href={RESUME_LINK} target="_blank">
               <span className="text">See my resume</span>

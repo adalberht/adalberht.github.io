@@ -1,4 +1,4 @@
-export const HOME_ROUTE = '/home';
+export const HOME_ROUTE = '/';
 export const SKILLS_ROUTE = '/skills';
 export const EXPERIENCES_ROUTE = '/experiences';
 export const PROJECTS_ROUTE = '/projects';

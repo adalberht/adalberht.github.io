@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import { Element } from 'react-scroll';
 import { ABOUT_ROUTE } from '../../constants/routes';
 import { invertTheme } from '../../redux/modules/utils';
-import Icon from '../../components/Icon';
 import profile from '../../assets/profile.jpg';
-import SocialMedias from '../../components/SocialMedias';
 
 @connect(state => ({ utils: state.utils }), { invertTheme })
 class AboutComponent extends Component {
@@ -37,21 +35,14 @@ class AboutComponent extends Component {
             </SectionTitle>
             <Description>
               I'm an aspiring <span className="bold highlight">Software Engineer</span>{' '}
-              who is in a journey to become{' '}
-              <span className="highlight">full-stack developer</span>.
+              who is interested in <span className="highlight">full-stack development</span>.
             </Description>
             <Description>
-              I used to have no interest in{' '}
-              <span className="bold highlight">Front End Development</span> before I know{' '}
-              <span className="bold">React.js</span>
+              My first experience with programming was through
+              <span className="highlight"> Competitive Programming</span> when I was in high school.
+                As of now, I don't consider myself as a <span className="highlight">competitive programmer </span>
+                anymore, {' '} but I do still enjoy it and consider it as something that have shaped who I am today.
             </Description>
-            <Description>
-              I got introduced to programming world when I was in high school through
-              <span className="highlight"> Competitive Programming</span>. Even though I am not that
-              competitive (yet), I do still enjoy competitive programming and can proudly say it's a
-              part that shapes who I am.
-            </Description>
-            <SectionTitle>Random Facts</SectionTitle>
             <Description>
               I <span className="highlight">type quite fast</span> with more than{' '}
               <span className="bold">150 WPM</span> in average.
@@ -59,6 +50,9 @@ class AboutComponent extends Component {
             <Description>
               I'm a <span className="bold">Japanese pop culture enthusiast </span>
               and still hoping that someday I can visit Japan.
+            </Description>
+            <Description>
+              I'm an ONCE and really-really love TWICE from the bottom of my heart :)
             </Description>
           </Wrapper>
         </Container>
@@ -129,8 +123,4 @@ const SectionTitle = styled.div`
   margin-top: ${props => props.theme.margin['2']};
   font-weight: ${props => props.theme.fontWeights.bold};
   font-size: ${props => props.theme.textSizes['2xl']};
-`;
-
-const UnmarginSocialMedias = styled(SocialMedias)`
-  margin-top: 0;
 `;

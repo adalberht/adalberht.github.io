@@ -10,6 +10,8 @@ const twiggsyImageUrl = 'https://crunchbase-production-res.cloudinary.com/image/
 
 const travelokaImageUrl = "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/cb/1c/e9cb1cce-8a6d-9be8-1d11-39a37e244213/AppIcon-1x_U007emarketing-85-220-0-4.png/246x0w.jpg";
 
+export const BLOG_URL = "https://blog.albertusangga.tech";
+
 export const skills = {
   strong: [
     'Python',
@@ -20,8 +22,8 @@ export const skills = {
     'CSS',
     'React',
   ],
-  experienced: ['Django', 'Dart (Flutter)', 'Android', 'Git','Working in UNIX environment'],
-  familiar: ['Go', 'PHP',],
+  experienced: ['Django', 'Dart (Flutter)', 'Android', 'Git', 'Working in UNIX environment'],
+  familiar: ['Go', 'PHP'],
   achievements: [
     {
       tag: '[International]',
@@ -45,18 +47,18 @@ export const skills = {
 
 export const experiences = {
   works: [
-    // {
-    //   place: 'Jakarta, Indonesia',
-    //   time: "Jun '18 - Aug '18",
-    //   image: travelokaImageUrl,
-    //   role: 'Software Engineering Intern (Android)',
-    //   company: 'Traveloka',
-    //   website: 'https://www.traveloka.com',
-    //   descriptions: [
-    //     "Bus & Train Team",
-    //   ],
-    //   tags: ['Java', 'Android'],
-    // },
+    {
+      place: 'Jakarta, Indonesia',
+      time: "Jun '18 - Aug '18",
+      image: travelokaImageUrl,
+      role: 'Software Engineering Intern',
+      company: 'Traveloka',
+      website: 'https://www.traveloka.com',
+      descriptions: [
+        'Bus & Train Team',
+      ],
+      tags: ['Java', 'Android'],
+    },
     {
       place: 'Jakarta, Indonesia',
       time: "Jun '17 - Feb '18",
@@ -102,7 +104,16 @@ export const experiences = {
 };
 
 export const projects = [
-  
+  {
+    title: 'TuberculosApp',
+    role: 'Solo Developer',
+    link: 'https://www.github.com/adalberht/tuberculos-app',
+    descriptions: [
+      'Cross-platform mobile application for pharmacists to remind their patients to take their medicine.',
+      'Developed full features of the app including real-time push notification and chat alone using Flutter and Firebase in 3 weeks.',
+    ],
+    tags: ['Flutter', 'Android', 'iOS', 'Firebase'],
+  },
   {
     title: 'HOTP TOTP Generator',
     role: 'Contributor',

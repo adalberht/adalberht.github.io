@@ -9,6 +9,8 @@ import Icon from './Icon';
 import SwitchButton from './SwitchButton';
 import SocialMedias from './SocialMedias';
 import albertIcon from '../assets/icon.png';
+import { BLOG_URL } from "../api/data";
+
 
 @withRouter
 @connect(state => ({ utils: state.utils }))
@@ -76,7 +78,7 @@ export default class MobileNavbar extends React.Component {
             </Flex>
           )}
           {isMenuActive && (
-            <MobileMenuContainer primaryColor={primaryColor} secondaryColor={secondaryColor}>
+            <MobileMenuContainer primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor}>
               <ButtonIcon column onClick={this.toggleMenu}>
                 <Icon name="times" size="2x" color={primaryColor} />
               </ButtonIcon>
@@ -96,6 +98,10 @@ export default class MobileNavbar extends React.Component {
                     {scrollLink.text}
                   </Link>
                 ))}
+                <a href={BLOG_URL} className="blog">
+                  <span className="text">Blog</span>
+                  <Icon className="arrow" name="arrow-right" color={primaryColor} />
+                </a>
               </Links>
               <SocialMediasWithMargin
                 primaryColor={primaryColor}
@@ -125,7 +131,6 @@ const Container = styled.div`
   transform: translateY(0%);
   transition: transform 0.5s ease;
   background: ${props => props.secondaryColor};
-  box-shadow: ${props => props.theme.shadows.md};
   ${props =>
     props.scrollDown &&
     `
@@ -139,6 +144,7 @@ const Container = styled.div`
       display: none;
     }
   }
+  
 `;
 
 const MobileMenuContainer = styled.div`
@@ -161,6 +167,23 @@ const MobileMenuContainer = styled.div`
     font-family: ${props => props.theme.fonts.mono};
   }
   touch-action: none;
+  .blog {
+    font-weight: bold;
+    background-color: ${props => props.themeColor};
+    padding: 1rem 0.25rem;
+    text-decoration: none;
+    color: ${props => props.primaryColor};
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .text {
+  }
+
+  .arrow {
+    transform: translateX(-5%);
+    animation: slide 1s linear infinite;
+  }
 `;
 
 const ButtonIcon = styled.button`
