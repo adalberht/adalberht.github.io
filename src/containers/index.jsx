@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
+import ReactGA from 'react-ga';
 import Home from './Home';
 import About from './About';
 import Skills from './Skills';
@@ -10,8 +12,8 @@ import Projects from './Projects';
 import Navbar from '../components/Navbar';
 import MobileNavbar from '../components/MobileNavbar';
 import Footer from '../components/Footer';
-import { connect } from 'react-redux';
-import { invertTheme } from '../redux/modules/utils';
+import {invertTheme} from '../redux/modules/utils';
+import {GOOGLE_ANALYTICS_TRACKING_ID} from "../api/data";
 
 @connect(state => ({ utils: state.utils }), { invertTheme })
 class Routes extends Component {
@@ -30,15 +32,7 @@ class Routes extends Component {
     onScrollDown: false,
   };
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.onScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
-  }
-
-  onScroll = (e) => {
+  onScroll = () => {
     const offset = window.pageYOffset || document.documentElement.scrollTop;
     if (offset > this.lastScrollPosition) {
       this.setState({ onScrollDown: true });
@@ -48,10 +42,20 @@ class Routes extends Component {
     this.lastScrollPosition = offset;
   };
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  componentDidMount() {
+    ReactGA.initialize(GOOGLE_ANALYTICS_TRACKING_ID);
+    ReactGA.pageview('/');
+    window.addEventListener('scroll', this.onScroll);
+  }
+
   lastScrollPosition = 0;
 
   render() {
-    const { primaryColor, secondaryColor } = this.props.utils;
+    const {secondaryColor} = this.props.utils;
     const { onScrollDown } = this.state;
     return (
       <Switch>

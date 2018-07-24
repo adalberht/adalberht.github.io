@@ -1,15 +1,15 @@
-import * as api from '../../../api';
+import * as api from "../../../api";
 
-const REHYDRATE = 'persist/REHYDRATE';
-const SKILLS_SET = 'skills/SKILLS_SET';
-const LOADING = 'skills/LOADING';
+const REHYDRATE = "persist/REHYDRATE";
+const SKILLS_SET = "skills/SKILLS_SET";
+const LOADING = "skills/LOADING";
 
 const INITIAL_STATE = {
   strong: [],
   experienced: [],
   familiar: [],
   achievements: [],
-  loading: false,
+  loading: false
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
@@ -28,9 +28,12 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
 
 export const loading = () => ({ type: LOADING });
 
-export const setSkills = skills => ({ type: SKILLS_SET, payload: { ...skills } });
+export const setSkills = skills => ({
+  type: SKILLS_SET,
+  payload: { ...skills }
+});
 
-export const loadSkills = () => (dispatch) => {
+export const loadSkills = () => dispatch => {
   dispatch(loading());
   const skills = api.getSkills();
   dispatch(setSkills(skills));

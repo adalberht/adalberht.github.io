@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
-import { EXPERIENCES_ROUTE } from '../../constants/routes';
-import { loadExperiences } from '../../redux/modules/experiences';
-import Icon from '../../components/Icon';
+import {connect} from 'react-redux';
+import {Element} from 'react-scroll';
+import {EXPERIENCES_ROUTE} from '../../constants/routes';
+import {loadExperiences} from '../../redux/modules/experiences';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import About from '../About/index';
 
 @connect(state => ({ utils: state.utils, experiences: state.experiences }), { loadExperiences })
 class ExperiencesComponent extends Component {
@@ -20,8 +18,8 @@ class ExperiencesComponent extends Component {
     }).isRequired,
     experiences: PropTypes.shape({
       loaded: PropTypes.bool.isRequired,
-      works: PropTypes.object.isRequired,
-      educations: PropTypes.object.isRequired,
+      works: PropTypes.array.isRequired,
+      educations: PropTypes.array.isRequired,
     }).isRequired,
     loadExperiences: PropTypes.func.isRequired,
   };

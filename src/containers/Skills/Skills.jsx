@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
-import { SKILLS_ROUTE } from '../../constants/routes';
-import { loadSkills } from '../../redux/modules/skills';
+import {connect} from 'react-redux';
+import {Element} from 'react-scroll';
+import {SKILLS_ROUTE} from '../../constants/routes';
+import {loadSkills} from '../../redux/modules/skills';
 import Icon from '../../components/Icon';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
@@ -49,14 +49,6 @@ class SkillsComponent extends Component {
           themeColor={themeColor}
         >
           <Title color={primaryColor}>Skills</Title>
-          {/* <Flex>
-            <p>
-              Currently, my strength lies more in{' '}
-              <span className="highlight">front end development</span>. I enjoy learning new
-              frameworks, language and code that solves{' '}
-              <span className="bold highlight">technical challenges</span>.
-            </p>
-          </Flex> */}
           <Flex>
             <SkillSection>
               <div className="highlight bold section-title">Strong</div>

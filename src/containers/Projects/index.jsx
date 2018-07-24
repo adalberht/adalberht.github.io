@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Loadable from 'react-loadable';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
+import {connect} from 'react-redux';
+import {Element} from 'react-scroll';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import { PROJECTS_ROUTE } from '../../constants/routes';
-import { loadProjects } from '../../redux/modules/projects';
+import {PROJECTS_ROUTE} from '../../constants/routes';
+import {loadProjects} from '../../redux/modules/projects';
 
 
 const LoadableProject = Loadable({
@@ -47,7 +47,7 @@ class Projects extends Component {
           <Wrapper>
             <Title color={primaryColor}>Projects</Title>
             {loading && <LoadingIndicator />}
-            {!loading && projects.map(project => <LoadableProject project={project} utils={utils} />)}
+            {!loading && projects.map(project => <LoadableProject key={project.name} project={project} utils={utils}/>)}
           </Wrapper>
         </Element>
       </Container>

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
-import { ABOUT_ROUTE } from '../../constants/routes';
-import { invertTheme } from '../../redux/modules/utils';
+import {connect} from 'react-redux';
+import {Element} from 'react-scroll';
+import {ABOUT_ROUTE} from '../../constants/routes';
+import {invertTheme} from '../../redux/modules/utils';
 import profile from '../../assets/profile.jpg';
 
 @connect(state => ({ utils: state.utils }), { invertTheme })
@@ -50,9 +50,6 @@ class AboutComponent extends Component {
             <Description>
               I'm a <span className="bold">Japanese pop culture enthusiast </span>
               and still hoping that someday I can visit Japan.
-            </Description>
-            <Description>
-              I'm an ONCE and really-really love TWICE from the bottom of my heart :)
             </Description>
           </Wrapper>
         </Container>

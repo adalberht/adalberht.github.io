@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Element } from 'react-scroll';
-import { toHiragana } from 'wanakana';
-import { HOME_ROUTE } from '../../constants/routes';
-import { invertTheme } from '../../redux/modules/utils';
+import {connect} from 'react-redux';
+import {Element} from 'react-scroll';
+import {toHiragana} from 'wanakana';
+import {HOME_ROUTE} from '../../constants/routes';
+import {invertTheme} from '../../redux/modules/utils';
 import Icon from '../../components/Icon';
 
 const KONNICHIWA = toHiragana('konnichiha');
@@ -42,9 +42,7 @@ class HomeComponent extends React.Component {
             <Description>
               I'm a <span className="bold">junior</span> in{' '}
               <span className="highlight">Computer Science</span> at{' '}
-              <a href="http://www.ui.ac.id/en/">University of Indonesia</a>,
-            </Description>
-            <Description>
+              <a href="http://www.ui.ac.id/en/">University of Indonesia</a>
               and an aspiring <span className="highlight">Software Engineer</span>.
             </Description>
             <a className="button-link" href={RESUME_LINK} target="_blank">

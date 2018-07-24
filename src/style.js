@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal } from "styled-components";
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`

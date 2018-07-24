@@ -1,6 +1,6 @@
-import defaults from 'superagent-defaults';
+import defaults from "superagent-defaults";
 // import * as apiUrl from '../constants/apiUrl';
-import * as mockApi from './data';
+import * as mockApi from "./data";
 
 export const request = defaults();
 
@@ -15,4 +15,3 @@ export function getProjects() {
 export function getExperiences() {
   return mockApi.experiences;
 }
-

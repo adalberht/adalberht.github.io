@@ -1,12 +1,12 @@
-import * as api from '../../../api';
+import * as api from "../../../api";
 
-const REHYDRATE = 'persist/REHYDRATE';
-const PROJECTS_SET = 'projects/PROJECTS_SET';
-const LOADING = 'projects/LOADING';
+const REHYDRATE = "persist/REHYDRATE";
+const PROJECTS_SET = "projects/PROJECTS_SET";
+const LOADING = "projects/LOADING";
 
 const INITIAL_STATE = {
   projects: [],
-  loading: false,
+  loading: false
 };
 
 export default function reducer(state = INITIAL_STATE, action = {}) {
@@ -27,7 +27,7 @@ export const loading = () => ({ type: LOADING });
 
 export const setProjects = payload => ({ type: PROJECTS_SET, payload });
 
-export const loadProjects = () => (dispatch) => {
+export const loadProjects = () => dispatch => {
   dispatch(loading());
   const projects = api.getProjects();
   dispatch(setProjects(projects));

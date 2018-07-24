@@ -7,7 +7,7 @@ export default function Project(props) {
   const { primaryColor, secondaryColor, themeColor } = props.utils;
   const { project } = props;
   return (
-    <Container primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor}>
+    <Container primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} key={project.title}>
       {!!project.imageUrl && <Image src={project.imageUrl} alt={`${project.title} image`} />}
       <a className="title button-link" href={project.link} target="_blank">
         <span className="text">{project.title}</span>
@@ -26,10 +26,10 @@ export default function Project(props) {
 
 Project.propTypes = {
   project: PropTypes.shape({
-    imageUrl: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string,
     title: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
-    descriptiopn: PropTypes.array.isRequired,
+    role: PropTypes.string,
+    descriptions: PropTypes.array,
     tags: PropTypes.array.isRequired,
   }).isRequired,
   utils: PropTypes.shape({
