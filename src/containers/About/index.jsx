@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import Loadable from 'react-loadable';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import Footer from '../../components/Footer';
 
 const LoadableAbout = Loadable({
   loader: () => import('./About'),
@@ -24,7 +23,7 @@ class About extends Component {
 
 const Container = styled.div`
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
   width: 80%;
   display: flex;
   flex-direction: column;
