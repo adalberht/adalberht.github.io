@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from "react-ga";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withRouter } from 'react-router';
@@ -9,6 +10,7 @@ import scrollLinks from '../constants/scrollLinks';
 import albertIcon from '../assets/icon.png';
 import Icon from "./Icon";
 import { BLOG_URL } from "../api/data";
+
 
 @withRouter
 @connect(state => (state))
@@ -63,6 +65,12 @@ export default class Navbar extends React.Component {
               smooth
               duration={500}
               href={scrollLink.to}
+              onClick={() => {
+                ReactGA.event({
+                  category: "Navigation",
+                  action: scrollLink.to,
+                })
+              }}
             >
               {scrollLink.text}
             </Link>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from "react-ga";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -91,6 +92,10 @@ export default class MobileNavbar extends React.Component {
                     to={scrollLink.to}
                     onClick={() => {
                       this.toggleMenu();
+                      ReactGA.event({
+                        category: "Mobile Navigation",
+                        action: scrollLink.to,
+                      });
                     }}
                   >
                     {scrollLink.text}

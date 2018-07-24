@@ -10,7 +10,7 @@ const travelokaImageUrl =
 
 export const BLOG_URL = "https://blog.albertusangga.tech";
 
-export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-110303390-1";
+export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-122832553-1";
 
 export const skills = {
   strong: ["Python", "JavaScript", "C++", "Java", "HTML", "CSS", "React"],

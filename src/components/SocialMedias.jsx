@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Icon from './Icon';
@@ -11,6 +12,13 @@ const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000171038042';
 const TWITTER = 'https://twitter.com/adalberht';
 const MAIL = 'mailto:albertusangga.98@gmail.com?Subject=Hello';
 
+function trackSeeSocialMedia(socialMediaName) {
+  ReactGA.event({
+    category: "Social Media",
+    action: socialMediaName
+  })
+}
+
 export default function SocialMedias(props) {
   let { className, size, primaryColor, secondaryColor, themeColor } = props;
   return (
@@ -20,16 +28,19 @@ export default function SocialMedias(props) {
       themeColor={themeColor}
       className={className}
     >
-      <a href={LINKEDIN} target="_blank">
+      <a href={LINKEDIN} target="_blank" onClick={() => trackSeeSocialMedia("LinkedIn")}>
         <Icon color={primaryColor} name="linkedin" size={size} />
       </a>
-      <a href={GITHUB} target="_blank">
+      <a href={GITHUB} target="_blank" onClick={() => {
+        trackSeeSocialMedia("GitHub");
+        console.log("See GitHub...");
+      }}>
         <Icon color={primaryColor} name="github" size={size} />
       </a>
-      <a href={TWITTER} target="_blank">
+      <a href={TWITTER} target="_blank" onClick={() => trackSeeSocialMedia("Twitter")}>
         <Icon color={primaryColor} name="twitter" size={size} />
       </a>
-      <a href={MAIL} target="_top">
+      <a href={MAIL} target="_top" onClick={() => trackSeeSocialMedia("Email")}>
         <Icon color={primaryColor} name="envelope" size={size} />
       </a>
     </Container>

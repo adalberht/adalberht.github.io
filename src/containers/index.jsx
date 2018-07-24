@@ -47,8 +47,12 @@ class Routes extends Component {
   }
 
   componentDidMount() {
-    ReactGA.initialize(GOOGLE_ANALYTICS_TRACKING_ID);
-    ReactGA.pageview('/');
+    ReactGA.initialize(GOOGLE_ANALYTICS_TRACKING_ID, { debug: true });
+    ReactGA.set({
+
+    });
+    ReactGA.pageview(window.location.pathname + window.location.search);
+    console.log("Tracking Google Analytics....");
     window.addEventListener('scroll', this.onScroll);
   }
 
@@ -58,22 +62,16 @@ class Routes extends Component {
     const {secondaryColor} = this.props.utils;
     const { onScrollDown } = this.state;
     return (
-      <Switch>
-        <Route
-          path="*"
-          render={() => (
-            <RootContainer background={secondaryColor}>
-              <Navbar scrollDown={onScrollDown} />
-              <MobileNavbar scrollDown={onScrollDown} />
-              <Home />
-              <Experiences />
-              <Projects />
-              <Skills />
-              <About />
-              <Footer />
-            </RootContainer>)}
-        />
-      </Switch>
+        <RootContainer background={secondaryColor}>
+          <Navbar scrollDown={onScrollDown} />
+          <MobileNavbar scrollDown={onScrollDown} />
+          <Home />
+          <Experiences />
+          <Projects />
+          <Skills />
+          <About />
+          <Footer />
+        </RootContainer>
     );
   }
 }

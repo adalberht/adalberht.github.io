@@ -1,4 +1,5 @@
 import theme from "../../../constants/theme";
+import ReactGA from "react-ga";
 
 const REHYDRATE = "persist/REHYDRATE";
 const THEME_INVERT = "utils/THEME_INVERT";
@@ -24,6 +25,10 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
       if (!action.payload || !action.payload.utils) return state;
       return { ...state, ...action.payload.utils };
     case THEME_INVERT:
+      ReactGA.event({
+        category: "Theme",
+        action: "Invert theme"
+      });
       return { ...state, ...action.payload };
     default:
       return { ...state };
