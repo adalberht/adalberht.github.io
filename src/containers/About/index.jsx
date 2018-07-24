@@ -23,7 +23,7 @@ class About extends Component {
 
 const Container = styled.div`
   position: relative;
-  min-height: 100vh;
+  min-height: 85vh;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -31,6 +31,7 @@ const Container = styled.div`
   justify-content: space-between;
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     width: 100%;
+    min-height: 100vh;
   }
 `;
 

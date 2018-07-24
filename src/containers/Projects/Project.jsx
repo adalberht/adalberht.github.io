@@ -112,8 +112,10 @@ const Container = styled.div`
   }
   .descriptions {
     font-family: ${props => props.theme.fonts.sans};
+    width: 75%;
     .description {
       margin-bottom: ${props => props.theme.margin['1']};
+      align-self: flex-start;
       text-align: justify;
       font-size: ${props => props.theme.textSizes.lg};
       @media screen and (max-width: ${props => props.theme.screens.sm}) {
@@ -141,7 +143,7 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 50%;
+  max-width: 35%;
   object-fit: scale-down;
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     max-width: 80%;

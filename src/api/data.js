@@ -115,9 +115,9 @@ export const projects = [
     link: "https://www.github.com/adalberht/tuberculos-app",
     descriptions: [
       "Cross-platform mobile application for pharmacists to remind their patients to take their medicine.",
-      "Developed full features of the app including real-time push notification and chat alone using Flutter and Firebase in 3 weeks."
+      "Developed full features of the app including real-time push notification and chat using Flutter and Firebase in 3 weeks."
     ],
-    tags: ["Flutter", "Android", "iOS", "Firebase"]
+    tags: ["Flutter", "Android", "iOS", "Firebase", "Redux"]
   },
   {
     title: "HOTP TOTP Generator",
@@ -149,16 +149,7 @@ export const projects = [
       "Led the early stage of front end development by creating project’s boilerplate and core website features such as campaign creation and filtered picture generation site using React.js, imgix API and Django-REST.",
       "Reduced 50% loading time of creating a filtered image by resizing image in client-side to reduce server workload."
     ],
-    tags: [
-      "JSX",
-      "CSS",
-      "JavaScript",
-      "React.js",
-      "Redux",
-      "styled-components",
-      "Webpack",
-      "npm"
-    ]
+    tags: ["JavaScript", "React.js", "CSS", "Redux"]
   },
   {
     imageUrl: projectPekanRistekImageUrl,
@@ -169,7 +160,7 @@ export const projects = [
       "Led a team of four to develop a website for an event holding playground, tech talks and competitions for University of Indonesia’s students.",
       "Implemented the website using University of Indonesia’s CAS [Central Authentication Service] for auth, created a dashboard for tech talks, competition registration and playground system."
     ],
-    tags: ["JSX", "CSS", "JavaScript", "React.js", "Redux", "Webpack", "npm"]
+    tags: ["CSS", "JavaScript", "React.js", "Redux"]
   },
   {
     imageUrl: projectAndroidImageUrl,

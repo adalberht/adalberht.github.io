@@ -26,5 +26,9 @@ export default Home;
 const Container = styled.div`
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 `;

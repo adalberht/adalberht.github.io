@@ -64,7 +64,6 @@ export default class MobileNavbar extends React.Component {
           smooth
           spy
           to={scrollLinks.HOME.to}
-          onClick={() => this.props.history.push(scrollLinks.HOME.to)}
         >
           <Image src={albertIcon} alt="icon" />
         </Link>
@@ -91,7 +90,6 @@ export default class MobileNavbar extends React.Component {
                     spy
                     to={scrollLink.to}
                     onClick={() => {
-                      this.props.history.push(scrollLink.to);
                       this.toggleMenu();
                     }}
                   >
@@ -169,12 +167,9 @@ const MobileMenuContainer = styled.div`
   touch-action: none;
   .blog {
     font-weight: bold;
-    background-color: ${props => props.themeColor};
-    padding: 1rem 0.25rem;
     text-decoration: none;
     color: ${props => props.primaryColor};
     display: flex;
-    justify-content: space-between;
   }
   
   .text {

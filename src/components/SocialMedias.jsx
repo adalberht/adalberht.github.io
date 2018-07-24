@@ -12,7 +12,7 @@ const TWITTER = 'https://twitter.com/adalberht';
 const MAIL = 'mailto:albertusangga.98@gmail.com?Subject=Hello';
 
 export default function SocialMedias(props) {
-  const { className, size, primaryColor, secondaryColor, themeColor } = props;
+  let { className, size, primaryColor, secondaryColor, themeColor } = props;
   return (
     <Container
       primaryColor={primaryColor}
@@ -20,17 +20,11 @@ export default function SocialMedias(props) {
       themeColor={themeColor}
       className={className}
     >
-      <a href={GITHUB} target="_blank">
-        <Icon color={primaryColor} name="github" size={size} />
-      </a>
-      <a href={MEDIUM} target="_blank">
-        <Icon color={primaryColor} name="medium" size={size} />
-      </a>
       <a href={LINKEDIN} target="_blank">
         <Icon color={primaryColor} name="linkedin" size={size} />
       </a>
-      <a href={FACEBOOK} target="_blank">
-        <Icon color={primaryColor} name="facebook-official" size={size} />
+      <a href={GITHUB} target="_blank">
+        <Icon color={primaryColor} name="github" size={size} />
       </a>
       <a href={TWITTER} target="_blank">
         <Icon color={primaryColor} name="twitter" size={size} />
@@ -60,6 +54,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   align-self: flex-start;
+  transition: 0.5s;
   margin: ${props => props.theme.margin['4']} 0;
   a + a {
     margin: ${props => props.theme.margin['2']};

@@ -61,12 +61,14 @@ class AboutComponent extends Component {
 export default AboutComponent;
 
 const Container = styled.div`
-  align-items: flex-start;
+  align-items: center;
+  height: 100%;
   color: ${props => props.primaryColor};
   display: flex;
   font-family: ${props => props.theme.fonts.main};
   flex-direction: column;
   justify-content: center;
+  align-self: center;
   margin-left: auto;
   margin-right: auto;
   .highlight {

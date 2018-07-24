@@ -20,7 +20,7 @@ export default class Footer extends React.Component {
     const { primaryColor, secondaryColor, themeColor } = this.props.utils;
     return (
       <Container primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor}>
-        <CenterSocialMedias primaryColor={secondaryColor} secondaryColor={primaryColor} themeColor={themeColor} />
+        <CenterSocialMedias primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} />
         <Copyright>Albertus Angga Raharja &copy; {new Date().getFullYear()}</Copyright>
       </Container>
     );
@@ -28,10 +28,12 @@ export default class Footer extends React.Component {
 }
 
 const Container = styled.div`
+  -webkit-transition: 1s;
+  transition: 1s;
   width: 100%;
   min-height: ${props => props.theme.height['24']};
-  background-color: ${props => props.primaryColor};
-  color: ${props => props.secondaryColor};
+  background-color: ${props => props.secondaryColor};
+  color: ${props => props.primaryColor};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,8 +53,15 @@ const Container = styled.div`
   }
 `;
 
-const Copyright = styled.div``;
+const Copyright = styled.div`
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    font-size: 1rem;
+  }
+`;
 
 const CenterSocialMedias = styled(SocialMedias)`
   align-self: center;
+  margin: 0 auto;
 `;

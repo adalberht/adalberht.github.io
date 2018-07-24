@@ -90,8 +90,9 @@ const Container = styled.div`
   font-family: ${props => props.theme.fonts.mono};
 
   background-color: ${props => props.secondaryColor};
-  transition: transform 0.5s ease;
-
+  transition: 1s;
+  -webkit-transition: 1s;
+  
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   transform: translateY(0%);
@@ -169,6 +170,7 @@ const Container = styled.div`
   .blog {
     font-weight: bold;
     background-color: ${props => props.themeColor};
+    color: white;
     padding: 1rem;
   }
   
@@ -190,6 +192,7 @@ const Container = styled.div`
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
     display: none;
   }
+  border: none;
 `;
 
 Container.propTypes = {

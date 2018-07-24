@@ -43,7 +43,7 @@ class HomeComponent extends React.Component {
               I'm a <span className="bold">junior</span> in{' '}
               <span className="highlight">Computer Science</span> at{' '}
               <a href="http://www.ui.ac.id/en/">University of Indonesia</a>
-              and an aspiring <span className="highlight">Software Engineer</span>.
+              {' '}and an aspiring <span className="highlight">Software Engineer</span>.
             </Description>
             <a className="button-link" href={RESUME_LINK} target="_blank">
               <span className="text">See my resume</span>
@@ -160,13 +160,16 @@ const Name = styled.div`
   color: ${props => props.primaryColor};
   font-size: ${props => props.theme.textSizes['5xl']};
   @media screen and (max-width: ${props => props.theme.screens.sm}) {
-    font-size: ${props => props.theme.textSizes['2xl']};
+    font-size: ${props => props.theme.textSizes['3xl']};
   }
   margin-bottom: ${props => props.theme.margin['4']};
 `;
 
 const Description = styled.div`
-  font-size: ${props => props.theme.textSizes.lg};
+  font-size: 1.25rem;
   font-family: ${props => props.theme.fonts.mono};
   margin-bottom: ${props => props.theme.margin['2']};
+  @media screen and (max-width: ${props => props.theme.screens.sm}) {
+    font-size: ${props => props.theme.textSizes['lg']};
+  }
 `;
