@@ -12,7 +12,7 @@ import Icon from '../../components/Icon';
 const KONNICHIWA = toHiragana('konnichiha');
 
 const RESUME_LINK =
-  'https://docs.google.com/document/d/1-cxzcRapPkggSRh0Cl1APu2jP_7FGoUbdYmIqW1Rjdg/edit?usp=sharing';
+  'https://docs.google.com/document/d/15kIqfdrFESyy1xKcj0JCkPyCfZAydD5Mv2CGrIq8YHo/edit?usp=sharing';
 
 @connect(state => ({ utils: state.utils }), { invertTheme })
 class HomeComponent extends React.Component {
