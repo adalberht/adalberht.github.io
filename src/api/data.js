@@ -53,7 +53,12 @@ export const experiences = {
       role: "Software Engineering Intern",
       company: "Traveloka",
       website: "https://www.traveloka.com",
-      descriptions: ["Bus & Train Team"],
+      descriptions: [
+        "Built two major features of Traveloka internal app using React Native.",
+        "Created Python script to analyze and detect errors in more than 11000 Traveloka Android strings.",
+        "Implemented several new events tracking and deeplink navigations for Train/Bus product in app version 3.3.",
+        "Contributed in UI iteration for Traveloka Bus product in Android version 3.2.",
+      ],
       tags: ["Java", "Android"]
     },
     {
@@ -97,7 +102,7 @@ export const experiences = {
       place: "Depok, Indonesia",
       time: "Aug '16 - present",
       image: uiImageUrl,
-      grade: "Current GPA: 3.90 / 4.00",
+      grade: "Current GPA: 3.91 / 4.00",
       role: "Computer Science Undergraduate Student",
       institution: "University of Indonesia",
       descriptions: [
