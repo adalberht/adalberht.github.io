@@ -8,7 +8,7 @@ import projectTwiggsyImageUrl from "../assets/project-twiggsy.png";
 const travelokaImageUrl =
   "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/cb/1c/e9cb1cce-8a6d-9be8-1d11-39a37e244213/AppIcon-1x_U007emarketing-85-220-0-4.png/246x0w.jpg";
 
-const gojekImageUrl = "https://bilba.go-jek.com/dist/img/gojek-logo.png";
+const gojekImageUrl = "https://media.licdn.com/dms/image/C560BAQHWAibJshwNLg/company-logo_400_400/0?e=1570060800&v=beta&t=nSLdw8Q42QqSacwD1AKXOe2dnHp5h7uDSQoXDGMwW9c";
 
 export const BLOG_URL = "https://blog.albertusangga.tech";
 
