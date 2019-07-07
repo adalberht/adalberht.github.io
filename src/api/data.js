@@ -60,9 +60,12 @@ export const experiences = {
       company: "GO-JEK",
       website: "https://www.gojek.io",
       descriptions: [
-        "Incoming Full-stack Engineering Intern",
+        "GO-JEK is the leading ride-hailing, food delivery, and super app tech decacorn company operating in South East Asia.",
+        "Currently working on improving GO-JEK's realtime image manipulation system that serves 50K images / minutes.",
+        "Open sourcing GO-JEK's realtime image manipulation library (https://github.com/gojek/darkroom).",
+        "Doing performance profiling in an attempt to improve the overall image processing time performance"
       ],
-      tags: ["Go"]
+      tags: ["Go", "Kubernetes"]
     },
     {
       place: "Jakarta, Indonesia",
