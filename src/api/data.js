@@ -138,7 +138,7 @@ export const experiences = {
       place: "Depok, Indonesia",
       time: "Aug '16 - present",
       image: uiImageUrl,
-      grade: "Current GPA: 3.91 / 4.00",
+      grade: "Current CGPA: 3.84 / 4.00",
       role: "Computer Science Undergraduate Student",
       institution: "University of Indonesia",
       descriptions: [
