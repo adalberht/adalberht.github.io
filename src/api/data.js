@@ -8,14 +8,26 @@ import projectTwiggsyImageUrl from "../assets/project-twiggsy.png";
 const travelokaImageUrl =
   "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/cb/1c/e9cb1cce-8a6d-9be8-1d11-39a37e244213/AppIcon-1x_U007emarketing-85-220-0-4.png/246x0w.jpg";
 
-const gojekImageUrl = "https://media.licdn.com/dms/image/C560BAQHWAibJshwNLg/company-logo_400_400/0?e=1570060800&v=beta&t=nSLdw8Q42QqSacwD1AKXOe2dnHp5h7uDSQoXDGMwW9c";
+const gojekImageUrl =
+  "https://media.licdn.com/dms/image/C560BAQHWAibJshwNLg/company-logo_400_400/0?e=1570060800&v=beta&t=nSLdw8Q42QqSacwD1AKXOe2dnHp5h7uDSQoXDGMwW9c";
 
 export const BLOG_URL = "https://blog.albertusangga.tech";
 
 export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-122832553-1";
 
 export const skills = {
-  strong: ["Python", "JavaScript", "Java", "Dart", "Flutter", "C++", "HTML", "CSS", "React"],
+  strong: [
+    "Python",
+    "JavaScript",
+    "Java",
+    "Dart",
+    "Flutter",
+    "Go",
+    "C++",
+    "HTML",
+    "CSS",
+    "React"
+  ],
   experienced: [
     "Django",
     "Android",
@@ -25,9 +37,9 @@ export const skills = {
     "GitLab CI",
     "Prolog",
     "Bash",
-    "Working in UNIX environment",
+    "Working in UNIX environment"
   ],
-  familiar: ["Go", "Ruby", "Perl", "PHP"],
+  familiar: ["Ruby", "Perl", "PHP"],
   achievements: [
     {
       tag: "[International]",
@@ -78,9 +90,9 @@ export const experiences = {
         "Traveloka is a tech unicorn company and leading company for Online Travel Agent in South East Asia.",
         "Fixed broken internal tools due to the split of Train Railink product to Airport Transport product.",
         "Migrated Bus supply internal inventory database to another database to increase scability of Bus supply tools.",
-        "Implemented caching mechanism using Memcached in Bus search service resulting in faster query execution time.",
+        "Implemented caching mechanism using Memcached in Bus search service resulting in faster query execution time."
       ],
-      tags: ["Java", "PostgreSQL", "Microservices", "Memcached", "AWS",]
+      tags: ["Java", "PostgreSQL", "Microservices", "Memcached", "AWS"]
     },
     {
       place: "Jakarta, Indonesia",
@@ -93,9 +105,15 @@ export const experiences = {
         "Built two major features of Traveloka internal app using React Native.",
         "Created Python script to analyze and detect errors in more than 11000 Traveloka Android strings.",
         "Implemented several new events tracking and deeplink navigations for Train/Bus product in app version 3.3.",
-        "Contributed in UI iteration for Traveloka Bus product in Android version 3.2.",
+        "Contributed in UI iteration for Traveloka Bus product in Android version 3.2."
       ],
-      tags: ["Java", "Android", "JavaScript", "React Native", "Mobile Development"]
+      tags: [
+        "Java",
+        "Android",
+        "JavaScript",
+        "React Native",
+        "Mobile Development"
+      ]
     },
     {
       place: "Jakarta, Indonesia",
