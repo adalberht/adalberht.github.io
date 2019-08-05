@@ -46,7 +46,7 @@ class HomeComponent extends React.Component {
               <a href="http://www.ui.ac.id/en/">University of Indonesia</a>
               {' '}and an aspiring <span className="highlight">Software Engineer</span>.
             </Description>
-            <a className="button-link" href={RESUME_LINK} target="_blank" onClick={() => {
+            {/* <a className="button-link" href={RESUME_LINK} target="_blank" onClick={() => {
               console.log("Tracking see my resume...");
               ReactGA.event({
                 category: "Resume",
@@ -55,7 +55,7 @@ class HomeComponent extends React.Component {
             }}>
               <span className="text">See my resume</span>
               <Icon className="arrow" name="arrow-right" color={themeColor} />
-            </a>
+            </a> */}
           </IdentityWrapper>
         </Container>
       </Element>
