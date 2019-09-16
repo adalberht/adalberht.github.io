@@ -1,35 +1,38 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import {Route, Switch} from 'react-router-dom';
-import {connect} from 'react-redux';
-import ReactGA from 'react-ga';
-import Home from './Home';
-import About from './About';
-import Skills from './Skills';
-import Experiences from './Experiences';
-import Projects from './Projects';
-import Navbar from '../components/Navbar';
-import MobileNavbar from '../components/MobileNavbar';
-import Footer from '../components/Footer';
-import {invertTheme} from '../redux/modules/utils';
-import {GOOGLE_ANALYTICS_TRACKING_ID} from "../api/data";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import ReactGA from "react-ga";
+import Home from "./Home";
+import About from "./About";
+import Skills from "./Skills";
+import Experiences from "./Experiences";
+import Projects from "./Projects";
+import Navbar from "../components/Navbar";
+import MobileNavbar from "../components/MobileNavbar";
+import Footer from "../components/Footer";
+import { invertTheme } from "../redux/modules/utils";
+import { GOOGLE_ANALYTICS_TRACKING_ID } from "../api/data";
 
-@connect(state => ({ utils: state.utils }), { invertTheme })
+@connect(
+  state => ({ utils: state.utils }),
+  { invertTheme }
+)
 class Routes extends Component {
   static propTypes = {
     theme: PropTypes.shape({
-      colors: PropTypes.object.isRequired,
+      colors: PropTypes.object.isRequired
     }).isRequired,
     utils: PropTypes.shape({
       isUsingLightTheme: PropTypes.bool.isRequired,
       primaryColor: PropTypes.string.isRequired,
-      secondaryColor: PropTypes.string.isRequired,
-    }).isRequired,
+      secondaryColor: PropTypes.string.isRequired
+    }).isRequired
   };
 
   state = {
-    onScrollDown: false,
+    onScrollDown: false
   };
 
   onScroll = () => {
@@ -43,35 +46,32 @@ class Routes extends Component {
   };
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener("scroll", this.onScroll);
   }
 
   componentDidMount() {
     ReactGA.initialize(GOOGLE_ANALYTICS_TRACKING_ID, { debug: true });
-    ReactGA.set({
-
-    });
+    ReactGA.set({});
     ReactGA.pageview(window.location.pathname + window.location.search);
-    console.log("Tracking Google Analytics....");
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener("scroll", this.onScroll);
   }
 
   lastScrollPosition = 0;
 
   render() {
-    const {secondaryColor} = this.props.utils;
+    const { secondaryColor } = this.props.utils;
     const { onScrollDown } = this.state;
     return (
-        <RootContainer background={secondaryColor}>
-          <Navbar scrollDown={onScrollDown} />
-          <MobileNavbar scrollDown={onScrollDown} />
-          <Home />
-          <Experiences />
-          <Projects />
-          <Skills />
-          <About />
-          <Footer />
-        </RootContainer>
+      <RootContainer background={secondaryColor}>
+        <Navbar scrollDown={onScrollDown} />
+        <MobileNavbar scrollDown={onScrollDown} />
+        <Home />
+        <Experiences />
+        <Projects />
+        <Skills />
+        <About />
+        <Footer />
+      </RootContainer>
     );
   }
 }
@@ -94,7 +94,7 @@ const RootContainer = styled.div`
 `;
 
 RootContainer.defaultProps = {
-  background: null,
+  background: null
 };
 
 export default Routes;
