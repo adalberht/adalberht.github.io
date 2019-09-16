@@ -8,20 +8,38 @@ import projectTwiggsyImageUrl from "../assets/project-twiggsy.png";
 const travelokaImageUrl =
   "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/cb/1c/e9cb1cce-8a6d-9be8-1d11-39a37e244213/AppIcon-1x_U007emarketing-85-220-0-4.png/246x0w.jpg";
 
+const gojekImageUrl =
+  "https://media.licdn.com/dms/image/C560BAQHWAibJshwNLg/company-logo_400_400/0?e=1570060800&v=beta&t=nSLdw8Q42QqSacwD1AKXOe2dnHp5h7uDSQoXDGMwW9c";
+
 export const BLOG_URL = "https://blog.albertusangga.tech";
 
 export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-122832553-1";
 
 export const skills = {
-  strong: ["Python", "JavaScript", "C++", "Java", "HTML", "CSS", "React"],
+  strong: [
+    "Python",
+    "JavaScript",
+    "Java",
+    "Dart",
+    "Flutter",
+    "Go",
+    "C++",
+    "HTML",
+    "CSS",
+    "React"
+  ],
   experienced: [
     "Django",
-    "Dart (Flutter)",
     "Android",
     "Git",
+    "Docker",
+    "Kubernetes",
+    "GitLab CI",
+    "Prolog",
+    "Bash",
     "Working in UNIX environment"
   ],
-  familiar: ["Go", "PHP"],
+  familiar: ["Ruby", "Perl", "PHP"],
   achievements: [
     {
       tag: "[International]",
@@ -48,13 +66,54 @@ export const experiences = {
   works: [
     {
       place: "Jakarta, Indonesia",
+      time: "Jun '19 - Aug '19",
+      image: gojekImageUrl,
+      role: "Software Engineering Intern (Full-stack)",
+      company: "GO-JEK",
+      website: "https://www.gojek.io",
+      descriptions: [
+        "GO-JEK is the leading ride-hailing, food delivery, and super app tech decacorn company operating in South East Asia.",
+        "Currently working on improving GO-JEK's realtime image manipulation system that serves 50K images / minutes.",
+        "Open sourcing GO-JEK's realtime image manipulation library (https://github.com/gojek/darkroom).",
+        "Doing performance profiling in an attempt to improve the overall image processing time performance"
+      ],
+      tags: ["Go", "Kubernetes"]
+    },
+    {
+      place: "Jakarta, Indonesia",
+      time: "Oct '18 - Apr '19",
+      image: travelokaImageUrl,
+      role: "Part-time Software Engineer",
+      company: "Traveloka",
+      website: "https://www.traveloka.com",
+      descriptions: [
+        "Traveloka is a tech unicorn company and leading company for Online Travel Agent in South East Asia.",
+        "Fixed broken internal tools due to the split of Train Railink product to Airport Transport product.",
+        "Migrated Bus supply internal inventory database to another database to increase scability of Bus supply tools.",
+        "Implemented caching mechanism using Memcached in Bus search service resulting in faster query execution time."
+      ],
+      tags: ["Java", "PostgreSQL", "Microservices", "Memcached", "AWS"]
+    },
+    {
+      place: "Jakarta, Indonesia",
       time: "Jun '18 - Aug '18",
       image: travelokaImageUrl,
       role: "Software Engineering Intern",
       company: "Traveloka",
       website: "https://www.traveloka.com",
-      descriptions: ["Bus & Train Team"],
-      tags: ["Java", "Android"]
+      descriptions: [
+        "Built two major features of Traveloka internal app using React Native.",
+        "Created Python script to analyze and detect errors in more than 11000 Traveloka Android strings.",
+        "Implemented several new events tracking and deeplink navigations for Train/Bus product in app version 3.3.",
+        "Contributed in UI iteration for Traveloka Bus product in Android version 3.2."
+      ],
+      tags: [
+        "Java",
+        "Android",
+        "JavaScript",
+        "React Native",
+        "Mobile Development"
+      ]
     },
     {
       place: "Jakarta, Indonesia",
@@ -97,7 +156,7 @@ export const experiences = {
       place: "Depok, Indonesia",
       time: "Aug '16 - present",
       image: uiImageUrl,
-      grade: "Current GPA: 3.90 / 4.00",
+      grade: "Current CGPA: 3.84 / 4.00",
       role: "Computer Science Undergraduate Student",
       institution: "University of Indonesia",
       descriptions: [
@@ -142,7 +201,7 @@ export const projects = [
   {
     imageUrl: projectTwiggsyImageUrl,
     title: "Twiggsy",
-    link: "https://www.twiggsy.com",
+    // link: "https://www.twiggsy.com",
     // role: 'Lead Front End Engineer',
     descriptions: [
       "Twiggsy is a redesigned Twibbon website. (picture with watermarks to support public campaign).",
