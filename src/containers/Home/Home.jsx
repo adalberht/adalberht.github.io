@@ -41,7 +41,7 @@ class HomeComponent extends React.Component {
               My name is <span className="highlight bold">Albertus Angga Raharja</span>
             </Name>
             <Description>
-              I'm a <span className="bold">junior</span> in{' '}
+              I'm a <span className="bold">senior</span> in{' '}
               <span className="highlight">Computer Science</span> at{' '}
               <a href="http://www.ui.ac.id/en/">University of Indonesia</a>
               {' '}and an aspiring <span className="highlight">Software Engineer</span>.
