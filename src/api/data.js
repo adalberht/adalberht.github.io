@@ -12,7 +12,7 @@ const gojekImageUrl = "https://media.licdn.com/dms/image/C510BAQHwmxtMwm2XIA/com
 
 const googleImageUrl = "https://media.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0?e=2159024400&v=beta&t=0e00tehBFFtuqgUCfAijpOkoBl89jxOTIe_k9HHpi_4";
 
-export const BLOG_URL = "https://blog.albertusangga.tech";
+export const BLOG_URL = "https://blog.albertusangga.dev";
 
 export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-122832553-1";
 
