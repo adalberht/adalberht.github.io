@@ -10,6 +10,8 @@ const travelokaImageUrl =
 
 const gojekImageUrl = "https://media.licdn.com/dms/image/C510BAQHwmxtMwm2XIA/company-logo_400_400/0?e=1579132800&v=beta&t=YFQ08hIy_Y8m8BD-S8JHV_jg3w8M2ScjeDuer-b7EUk";
 
+const googleImageUrl = "https://media.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0?e=2159024400&v=beta&t=0e00tehBFFtuqgUCfAijpOkoBl89jxOTIe_k9HHpi_4";
+
 export const BLOG_URL = "https://blog.albertusangga.tech";
 
 export const GOOGLE_ANALYTICS_TRACKING_ID = "UA-122832553-1";
@@ -64,6 +66,18 @@ export const skills = {
 export const experiences = {
   works: [
     {
+      place: "Seattle, US",
+      time: "Sep '19 - Dec '19",
+      image: googleImageUrl,
+      role: "Software Engineering Intern",
+      company: "Google",
+      website: "https://www.google.com",
+      descriptions: [
+       "Google Flutter team",
+      ],
+      tags: ["Flutter"]
+    },
+    {
       place: "Jakarta, Indonesia",
       time: "Jun '19 - Aug '19",
       image: gojekImageUrl,
@@ -72,9 +86,9 @@ export const experiences = {
       website: "https://www.gojek.io",
       descriptions: [
         "GO-JEK is the leading ride-hailing, food delivery, and super app tech decacorn company operating in South East Asia.",
-        "Currently working on improving GO-JEK's realtime image manipulation system that serves 50K images / minutes.",
-        "Open sourcing GO-JEK's realtime image manipulation library (https://github.com/gojek/darkroom).",
-        "Doing performance profiling in an attempt to improve the overall image processing time performance"
+        "Worked on improving GO-JEK's realtime image manipulation system that serves 50K images / minutes.",
+        "Helped in open sourcing GO-JEK's realtime image manipulation library (https://github.com/gojek/darkroom).",
+        "Did performance profiling in an attempt to improve the overall image processing time performance",
       ],
       tags: ["Go", "Kubernetes"]
     },
