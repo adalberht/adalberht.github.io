@@ -1,7 +1,5 @@
 # Redirect domain aliases to primary domain
-https://albertusangga.dev/* https://www.albertusangga.dev/:splat 301!
+https://albertusangga.dev/* https://albertusangga.dev/:splat 301!
 https://www.albertusangga.dev/* https://www.albertusangga.dev/:splat 301!
-https://www.albertusangga.tech/* https://www.albertusangga.dev/:splat 301!
 
 https://albertusangga.netlify.com/* https://www.albertusangga.dev/:splat 301!
-https://albertusangga.tech/* https://www.albertusangga.dev/:splat 301!
