@@ -7,7 +7,6 @@ import {EXPERIENCES_ROUTE} from '../../constants/routes';
 import {loadExperiences} from '../../redux/modules/experiences';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
-@connect(state => ({ utils: state.utils, experiences: state.experiences }), { loadExperiences })
 class ExperiencesComponent extends Component {
   static propTypes = {
     utils: PropTypes.shape({
@@ -46,7 +45,7 @@ class ExperiencesComponent extends Component {
               <SectionTitle>Educations</SectionTitle>
               <Timeline color={primaryColor}>
                 {educations.map(education => (
-                  <TimelineEvent themeColor={themeColor} hideTimeline>
+                  <TimelineEvent primaryColor={primaryColor} secondaryColor={secondaryColor} themeColor={themeColor} hideTimeline>
                     <div className="time-and-place">
                       <div className="place">{education.place}</div>
                       <div className="time">{education.time}</div>
@@ -115,7 +114,7 @@ class ExperiencesComponent extends Component {
   }
 }
 
-export default ExperiencesComponent;
+export default connect(state => ({ utils: state.utils, experiences: state.experiences }), { loadExperiences })(ExperiencesComponent);
 
 const Container = styled.div`
   align-items: center;
@@ -266,7 +265,7 @@ const TimelineEvent = styled.li`
     width: ${props => props.theme.width['12']};
     height: ${props => props.theme.width['12']};
     object-fit: contain;
-    border-radius: ${props => props.theme.borderRadius.full};
+    border-radius: 30;
     position: relative;
     z-index: 1;
     margin: 0 ${props => props.theme.margin['4']};

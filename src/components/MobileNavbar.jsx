@@ -12,10 +12,7 @@ import SocialMedias from './SocialMedias';
 import albertIcon from '../assets/icon.png';
 import { BLOG_URL } from "../api/data";
 
-
-@withRouter
-@connect(state => ({ utils: state.utils }))
-export default class MobileNavbar extends React.Component {
+class MobileNavbar extends React.Component {
   static propTypes = {
     utils: PropTypes.shape({
       primaryColor: PropTypes.string.isRequired,
@@ -224,3 +221,5 @@ const Image = styled.img`
   object-fit: scale-down;
   margin: ${props => props.theme.margin['1']} ${props => props.theme.margin['4']};
 `;
+
+export default withRouter(connect(state => ({ utils: state.utils }))(MobileNavbar));

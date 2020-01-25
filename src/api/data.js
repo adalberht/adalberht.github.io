@@ -1,16 +1,16 @@
+// Company logos
 import uiImageUrl from "../assets/makara-ui-fasilkom.jpg";
 import stoqoImageUrl from "../assets/stoqo.png";
+import travelokaImageUrl from "../assets/traveloka-logo.jpg";
+import gojekImageUrl from "../assets/gojek-logo.png";
+import googleImageUrl from "../assets/google-logo.png";
+import facebookImageUrl from "../assets/facebook-logo.png";
+
+// Project assets
 import projectAndroidImageUrl from "../assets/project-android.png";
 import projectPortfolioImageUrl from "../assets/project-portfolio.png";
 import projectPekanRistekImageUrl from "../assets/project-pekan-ristek.png";
 import projectTwiggsyImageUrl from "../assets/project-twiggsy.png";
-
-const travelokaImageUrl =
-  "https://is4-ssl.mzstatic.com/image/thumb/Purple125/v4/e9/cb/1c/e9cb1cce-8a6d-9be8-1d11-39a37e244213/AppIcon-1x_U007emarketing-85-220-0-4.png/246x0w.jpg";
-
-const gojekImageUrl = "https://media.licdn.com/dms/image/C510BAQHwmxtMwm2XIA/company-logo_400_400/0?e=1579132800&v=beta&t=YFQ08hIy_Y8m8BD-S8JHV_jg3w8M2ScjeDuer-b7EUk";
-
-const googleImageUrl = "https://media.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_200_200/0?e=2159024400&v=beta&t=0e00tehBFFtuqgUCfAijpOkoBl89jxOTIe_k9HHpi_4";
 
 export const BLOG_URL = "https://blog.albertusangga.dev";
 
@@ -66,6 +66,16 @@ export const skills = {
 export const experiences = {
   works: [
     {
+      place: "London, UK",
+      time: "Jun '20 - Aug '20",
+      image: facebookImageUrl,
+      role: "(Incoming) Software Engineering Intern",
+      company: "Facebook",
+      website: "https://www.facebook.com",
+      descriptions: ["Incoming Software Engineering Intern at Facebook London"],
+      tags: []
+    },
+    {
       place: "Seattle, US",
       time: "Sep '19 - Dec '19",
       image: googleImageUrl,
@@ -73,22 +83,27 @@ export const experiences = {
       company: "Google",
       website: "https://www.google.com",
       descriptions: [
-       "Google Flutter team",
+        "Interned at Flutter team, Google's open source UI toolkit for crafting beautiful cross-platform apps.",
+        "Created Layout Explorer in Dart DevTools, a new tool coming in Flutter v1.12 stable release for debugging Flutter layout issues and fixing overflow error which is one of the most common errors in Flutter.",
+        "Layout Explorer was announced at the biggest Flutter Event (Flutter Interact) and received positive reactions from users.",
+        "Collaborated with senior Developer Advocate in Flutter to make a YouTube video to introduce and promote Layout Explorer's features.",
+        "Received peer bonus for diagnosing and fixing an integration test failure caused by breaking change in Dart pub.",
+        "Wrote 53 corner test cases in Flutter core repository (flutter/flutter) resulting in more structured Flutter error message and comprehensive test coverage in Flutter error handling."
       ],
-      tags: ["Flutter"]
+      tags: ["Dart", "Flutter"]
     },
     {
       place: "Jakarta, Indonesia",
       time: "Jun '19 - Aug '19",
       image: gojekImageUrl,
       role: "Software Engineering Intern (Full-stack)",
-      company: "GO-JEK",
+      company: "Gojek",
       website: "https://www.gojek.io",
       descriptions: [
-        "GO-JEK is the leading ride-hailing, food delivery, and super app tech decacorn company operating in South East Asia.",
-        "Worked on improving GO-JEK's realtime image manipulation system that serves 50K images / minutes.",
-        "Helped in open sourcing GO-JEK's realtime image manipulation library (https://github.com/gojek/darkroom).",
-        "Did performance profiling in an attempt to improve the overall image processing time performance",
+        "Gojek is the leading ride-hailing, food delivery, and super app tech decacorn company operating in South East Asia.",
+        "Worked on improving Gojek's realtime image manipulation system that serves 50K images / minutes.",
+        "Helped in open sourcing Gojek's realtime image manipulation library (https://github.com/gojek/darkroom).",
+        "Did performance profiling in an attempt to improve the overall image processing time performance"
       ],
       tags: ["Go", "Kubernetes"]
     },

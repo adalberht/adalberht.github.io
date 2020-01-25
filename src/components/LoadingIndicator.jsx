@@ -27,8 +27,7 @@ const Container = styled.div`
   }
 `;
 
-@connect(state => ({ utils: state.utils }))
-export default class LoadingIndicator extends React.Component {
+class LoadingIndicator extends React.Component {
   static propTypes = {
     className: PropTypes.string,
     utils: PropTypes.shape({
@@ -49,3 +48,5 @@ export default class LoadingIndicator extends React.Component {
     );
   }
 }
+
+export default connect(state => ({ utils: state.utils }))(LoadingIndicator);

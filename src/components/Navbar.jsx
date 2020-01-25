@@ -12,9 +12,7 @@ import Icon from "./Icon";
 import { BLOG_URL } from "../api/data";
 
 
-@withRouter
-@connect(state => (state))
-export default class Navbar extends React.Component {
+class Navbar extends React.Component {
   static propTypes = {
     utils: PropTypes.shape({
       primaryColor: PropTypes.string.isRequired,
@@ -230,3 +228,5 @@ const Links = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export default withRouter(connect(state => (state))(Navbar));

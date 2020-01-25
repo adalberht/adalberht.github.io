@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import ReactGA from "react-ga";
 import Home from "./Home";
@@ -15,10 +14,6 @@ import Footer from "../components/Footer";
 import { invertTheme } from "../redux/modules/utils";
 import { GOOGLE_ANALYTICS_TRACKING_ID } from "../api/data";
 
-@connect(
-  state => ({ utils: state.utils }),
-  { invertTheme }
-)
 class Routes extends Component {
   static propTypes = {
     theme: PropTypes.shape({
@@ -97,4 +92,7 @@ RootContainer.defaultProps = {
   background: null
 };
 
-export default Routes;
+export default connect(
+  state => ({ utils: state.utils }),
+  { invertTheme }
+)(Routes);

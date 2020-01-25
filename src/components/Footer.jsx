@@ -6,8 +6,7 @@ import SocialMedias from './SocialMedias';
 
 const REPOSITORY = 'https://github.com/adalberht/adalberht.github.io';
 
-@connect(state => ({ utils: state.utils }))
-export default class Footer extends React.Component {
+class Footer extends React.Component {
   static propTypes = {
     utils: PropTypes.shape({
       primaryColor: PropTypes.string.isRequired,
@@ -65,3 +64,5 @@ const CenterSocialMedias = styled(SocialMedias)`
   align-self: center;
   margin: 0 auto;
 `;
+
+export default connect(state => ({ utils: state.utils }))(Footer);

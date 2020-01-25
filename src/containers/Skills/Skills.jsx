@@ -8,7 +8,6 @@ import {loadSkills} from '../../redux/modules/skills';
 import Icon from '../../components/Icon';
 import LoadingIndicator from '../../components/LoadingIndicator';
 
-@connect(state => ({ ...state }), { loadSkills })
 class SkillsComponent extends Component {
   static propTypes = {
     utils: PropTypes.shape({
@@ -84,7 +83,7 @@ class SkillsComponent extends Component {
   }
 }
 
-export default SkillsComponent;
+export default connect(state => ({ ...state }), { loadSkills })(SkillsComponent);
 
 const Container = styled.div`
   align-items: center;

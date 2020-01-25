@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { invertTheme } from '../redux/modules/utils/';
 import Icon from '../components/Icon';
-@connect(state => ({ utils: state.utils }), { invertTheme })
-export default class SwitchButton extends Component {
+
+class SwitchButton extends Component {
   static propTypes = {
     // Styled-Components props
     className: PropTypes.string,
@@ -104,3 +104,5 @@ Label.propTypes = {
   primaryColor: PropTypes.string.isRequired,
   secondaryColor: PropTypes.string.isRequired,
 };
+
+export default connect(state => ({ utils: state.utils }), { invertTheme })(SwitchButton);

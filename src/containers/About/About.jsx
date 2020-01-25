@@ -7,7 +7,6 @@ import {ABOUT_ROUTE} from '../../constants/routes';
 import {invertTheme} from '../../redux/modules/utils';
 import profile from '../../assets/profile.jpg';
 
-@connect(state => ({ utils: state.utils }), { invertTheme })
 class AboutComponent extends Component {
   static propTypes = {
     utils: PropTypes.shape({
@@ -58,7 +57,7 @@ class AboutComponent extends Component {
   }
 }
 
-export default AboutComponent;
+export default connect(state => ({ utils: state.utils }), { invertTheme })(AboutComponent);
 
 const Container = styled.div`
   align-items: center;

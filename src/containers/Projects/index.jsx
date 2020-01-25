@@ -18,7 +18,6 @@ const LoadableProject = Loadable({
   },
 });
 
-@connect(state => ({ projects: state.projects, utils: state.utils }), { loadProjects })
 class Projects extends Component {
   static propTypes = {
     projects: PropTypes.shape({
@@ -55,7 +54,7 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default connect(state => ({ projects: state.projects, utils: state.utils }), { loadProjects })(Projects);
 
 const Container = styled.div`
   position: relative;

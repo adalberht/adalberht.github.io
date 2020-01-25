@@ -25,8 +25,6 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-var defaultConfig = require("tailwindcss/defaultConfig")();
-
 /*
 |-------------------------------------------------------------------------------
 | Colors                                    https://tailwindcss.com/docs/colors
@@ -149,7 +147,7 @@ module.exports = {
   |-----------------------------------------------------------------------------
   | Screens                      https://tailwindcss.com/docs/responsive-design
   |-----------------------------------------------------------------------------
-  |
+  | 
   | Screens in Tailwind are translated to CSS media queries. They define the
   | responsive breakpoints for your project. By default Tailwind takes a
   | "mobile first" approach, where each screen size represents a minimum

@@ -1,15 +1,16 @@
 module.exports = (options, req) => ({
   entry: "src/index.jsx",
-  env: {
+  envs: {
     NODE_ENV: process.env.NODE_ENV || "development"
   },
-  html: {
-    title: "Albertus Angga Raharja",
-    description: "Albertus Angga's portfolio site",
-    favicon: "./static/favicon.ico"
+  output: {
+    html: {
+      title: "Albertus Angga Raharja",
+      description: "Albertus Angga's portfolio site",
+      favicon: "./static/favicon.ico"
+    }
   },
-  port: 3550,
-  resolve: {
-    extensions: ["", ".js", ".jsx"]
+  devServer: {
+    port: 3550
   }
 });

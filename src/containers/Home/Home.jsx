@@ -14,7 +14,6 @@ const KONNICHIWA = toHiragana('konnichiha');
 const RESUME_LINK =
   'https://docs.google.com/document/d/1U_Qj3KM3-pd1_QHYh_KjLj-e16MhCLoTi3fzkxbXicY/edit?usp=sharing';
 
-@connect(state => ({ utils: state.utils }), { invertTheme })
 class HomeComponent extends React.Component {
   static propTypes = {
     utils: PropTypes.shape({
@@ -63,7 +62,7 @@ class HomeComponent extends React.Component {
   }
 }
 
-export default HomeComponent;
+export default connect(state => ({ utils: state.utils }), { invertTheme })(HomeComponent);
 
 const Container = styled.div`
   align-items: center;
