@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Icon from './Icon';
 
-const GITHUB = 'https://github.com/albertusangga';
+const GITHUB = 'https://github.com/adalberht';
 const MEDIUM = 'https://medium.com/@albertusangga/';
 const LINKEDIN = 'https://www.linkedin.com/in/albertusangga/';
 const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000171038042';
