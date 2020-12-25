@@ -1,8 +1,8 @@
-import { injectGlobal } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 /* eslint-disable no-unused-expressions */
-injectGlobal`
-  #app {
+export const GlobalStyled = createGlobalStyle`
+  #root {
     width: 100%;
     min-height: 100vh;
     position: absolute;

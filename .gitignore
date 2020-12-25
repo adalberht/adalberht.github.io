@@ -1,10 +1,6 @@
-# Dev dependency
-/node_modules
+/node_modules/
+/public/build/
 
-# Production Build
-/dist
-/log
+.DS_Store
 
-# Editor
-.vscode/
-.idea/
+.eslintcache

@@ -27,7 +27,7 @@ export const skills = {
     "C++",
     "HTML",
     "CSS",
-    "React"
+    "React",
   ],
   experienced: [
     "Django",
@@ -38,7 +38,7 @@ export const skills = {
     "GitLab CI",
     "Prolog",
     "Bash",
-    "Working in UNIX environment"
+    "Working in UNIX environment",
   ],
   familiar: ["Ruby", "Perl", "PHP"],
   achievements: [
@@ -46,21 +46,21 @@ export const skills = {
       tag: "[International]",
       title: "Finalist (Top 50), 2017 ACM-ICPC Asia Jakarta Regional Contest",
       description:
-        "An ICPC-style programming competition attended by 80 teams. Advanced to finals through fierce competition between more than 500 teams."
+        "An ICPC-style programming competition attended by 80 teams. Advanced to finals through fierce competition between more than 500 teams.",
     },
     {
       tag: "[National]",
       title: "Finalist (Top 20), 2017 ACM-ICPC Maranatha Provincial Contest",
       description:
-        "An ICPC-style programming competition attended by more than 100 teams."
+        "An ICPC-style programming competition attended by more than 100 teams.",
     },
     {
       tag: "[National]",
       title: "1st Runner-Up, Programming Competition Session (PCS) JOINTS 2015",
       description:
-        "A IOI-style programming competition held by Universitas Gadjah Mada for highschool students. Placed 4 out of ± 30 finalist."
-    }
-  ]
+        "A IOI-style programming competition held by Universitas Gadjah Mada for highschool students. Placed 4 out of ± 30 finalist.",
+    },
+  ],
 };
 
 export const experiences = {
@@ -73,7 +73,7 @@ export const experiences = {
       company: "Facebook",
       website: "https://www.facebook.com",
       descriptions: ["Incoming Software Engineering Intern at Facebook London"],
-      tags: []
+      tags: [],
     },
     {
       place: "Seattle, US",
@@ -88,9 +88,9 @@ export const experiences = {
         "Layout Explorer was announced at the biggest Flutter Event (Flutter Interact) and received positive reactions from users.",
         "Collaborated with senior Developer Advocate in Flutter to make a YouTube video to introduce and promote Layout Explorer's features.",
         "Received peer bonus for diagnosing and fixing an integration test failure caused by breaking change in Dart pub.",
-        "Wrote 53 corner test cases in Flutter core repository (flutter/flutter) resulting in more structured Flutter error message and comprehensive test coverage in Flutter error handling."
+        "Wrote 53 corner test cases in Flutter core repository (flutter/flutter) resulting in more structured Flutter error message and comprehensive test coverage in Flutter error handling.",
       ],
-      tags: ["Dart", "Flutter"]
+      tags: ["Dart", "Flutter"],
     },
     {
       place: "Jakarta, Indonesia",
@@ -103,9 +103,9 @@ export const experiences = {
         "Gojek is the leading ride-hailing, food delivery, and super app tech decacorn company operating in South East Asia.",
         "Worked on improving Gojek's realtime image manipulation system that serves 50K images / minutes.",
         "Helped in open sourcing Gojek's realtime image manipulation library (https://github.com/gojek/darkroom).",
-        "Did performance profiling in an attempt to improve the overall image processing time performance"
+        "Did performance profiling in an attempt to improve the overall image processing time performance",
       ],
-      tags: ["Go", "Kubernetes"]
+      tags: ["Go", "Kubernetes"],
     },
     {
       place: "Jakarta, Indonesia",
@@ -118,9 +118,9 @@ export const experiences = {
         "Traveloka is a tech unicorn company and leading company for Online Travel Agent in South East Asia.",
         "Fixed broken internal tools due to the split of Train Railink product to Airport Transport product.",
         "Migrated Bus supply internal inventory database to another database to increase scability of Bus supply tools.",
-        "Implemented caching mechanism using Memcached in Bus search service resulting in faster query execution time."
+        "Implemented caching mechanism using Memcached in Bus search service resulting in faster query execution time.",
       ],
-      tags: ["Java", "PostgreSQL", "Microservices", "Memcached", "AWS"]
+      tags: ["Java", "PostgreSQL", "Microservices", "Memcached", "AWS"],
     },
     {
       place: "Jakarta, Indonesia",
@@ -133,15 +133,15 @@ export const experiences = {
         "Built two major features of Traveloka internal app using React Native.",
         "Created Python script to analyze and detect errors in more than 11000 Traveloka Android strings.",
         "Implemented several new events tracking and deeplink navigations for Train/Bus product in app version 3.3.",
-        "Contributed in UI iteration for Traveloka Bus product in Android version 3.2."
+        "Contributed in UI iteration for Traveloka Bus product in Android version 3.2.",
       ],
       tags: [
         "Java",
         "Android",
         "JavaScript",
         "React Native",
-        "Mobile Development"
-      ]
+        "Mobile Development",
+      ],
     },
     {
       place: "Jakarta, Indonesia",
@@ -154,7 +154,7 @@ export const experiences = {
         "Improved company’s day to day operation by creating internal tool website using React, Redux, Django-REST, and Google Maps API that tracks more than 2000 orders, 300 stores and 900 products.",
         "Improved marketplace automation by creating merchant platform website using React, Redux and Algolia that allows supplier to add products in the marketplace.",
         "Implemented password resetting system for customer using stateless JWT.",
-        "Implemented cart and checkout system of Stoqo’s marketplace in web platform which previously only available in the Android application using React and Redux backed by strong tests utilizing Django-REST API."
+        "Implemented cart and checkout system of Stoqo’s marketplace in web platform which previously only available in the Android application using React and Redux backed by strong tests utilizing Django-REST API.",
       ],
       tags: [
         "HTML",
@@ -163,8 +163,8 @@ export const experiences = {
         "React",
         "Redux",
         "styled-components",
-        "Django-REST"
-      ]
+        "Django-REST",
+      ],
     },
     {
       place: "Depok, Indonesia",
@@ -174,10 +174,10 @@ export const experiences = {
       company: "University of Indonesia",
       website: "http://ui.ac.id/en",
       descriptions: [
-        'Tutored and graded 14 Computer Science freshmans’ in "Fundamentals of Programming I" course by teaching Python 3 as their first programming language, resulting in 12 of them receiving an A.'
+        'Tutored and graded 14 Computer Science freshmans’ in "Fundamentals of Programming I" course by teaching Python 3 as their first programming language, resulting in 12 of them receiving an A.',
       ],
-      tags: ["Python"]
-    }
+      tags: ["Python"],
+    },
   ],
   educations: [
     {
@@ -188,11 +188,11 @@ export const experiences = {
       role: "Computer Science Undergraduate Student",
       institution: "University of Indonesia",
       descriptions: [
-        "Relevant Courseworks: Data Structures and Algorithm, Introduction to Computer Organization, Linear Algebra, Statistics & Probability, Web Programming & Design, Advanced Programming, Competitive Programming, Database, Operating Systems, Theory of Language & Automata;"
+        "Relevant Courseworks: Data Structures and Algorithm, Introduction to Computer Organization, Linear Algebra, Statistics & Probability, Web Programming & Design, Advanced Programming, Competitive Programming, Database, Operating Systems, Theory of Language & Automata;",
       ],
-      tags: ["Software Engineering", "Competitive Programming"]
-    }
-  ]
+      tags: ["Software Engineering", "Competitive Programming"],
+    },
+  ],
 };
 
 export const projects = [
@@ -202,18 +202,18 @@ export const projects = [
     link: "https://www.github.com/adalberht/tuberculos-app",
     descriptions: [
       "Cross-platform mobile application for pharmacists to remind their patients to take their medicine.",
-      "Developed full features of the app including real-time push notification and chat using Flutter and Firebase in 3 weeks."
+      "Developed full features of the app including real-time push notification and chat using Flutter and Firebase in 3 weeks.",
     ],
-    tags: ["Flutter", "Android", "iOS", "Firebase", "Redux"]
+    tags: ["Flutter", "Android", "iOS", "Firebase", "Redux"],
   },
   {
     title: "HOTP TOTP Generator",
     // role: 'Contributor',
     link: "https://www.npmjs.com/package/hotp-totp-generator",
     descriptions: [
-      "Implemented and published customizable HMAC-based and Time-based One Time Password (HOTP and TOTP) Algorithm as  a npm package by using JavaScript (Node.js)."
+      "Implemented and published customizable HMAC-based and Time-based One Time Password (HOTP and TOTP) Algorithm as  a npm package by using JavaScript (Node.js).",
     ],
-    tags: ["Node.js", "Algorithm", "OTP"]
+    tags: ["Node.js", "Algorithm", "OTP"],
   },
   {
     imageUrl: projectPortfolioImageUrl,
@@ -222,9 +222,9 @@ export const projects = [
     // role: 'Solo Developer and Designer',
     descriptions: [
       "A portfolio website fully built using React and designed to be responsive.",
-      "A side weekend project to try out several new frameworks and tech stacks."
+      "A side weekend project to try out several new frameworks and tech stacks.",
     ],
-    tags: ["React.js", "Redux", "CSS", "Webpack", "UI Design"]
+    tags: ["React.js", "Redux", "CSS", "Webpack", "UI Design"],
   },
   {
     imageUrl: projectTwiggsyImageUrl,
@@ -234,9 +234,9 @@ export const projects = [
     descriptions: [
       "Twiggsy is a redesigned Twibbon website. (picture with watermarks to support public campaign).",
       "Led the early stage of front end development by creating project’s boilerplate and core website features such as campaign creation and filtered picture generation site using React.js, imgix API and Django-REST.",
-      "Reduced 50% loading time of creating a filtered image by resizing image in client-side to reduce server workload."
+      "Reduced 50% loading time of creating a filtered image by resizing image in client-side to reduce server workload.",
     ],
-    tags: ["JavaScript", "React.js", "CSS", "Redux"]
+    tags: ["JavaScript", "React.js", "CSS", "Redux"],
   },
   {
     imageUrl: projectPekanRistekImageUrl,
@@ -245,9 +245,9 @@ export const projects = [
     // role: 'Lead Developer',
     descriptions: [
       "Led a team of four to develop a website for an event holding playground, tech talks and competitions for University of Indonesia’s students.",
-      "Implemented the website using University of Indonesia’s CAS [Central Authentication Service] for auth, created a dashboard for tech talks, competition registration and playground system."
+      "Implemented the website using University of Indonesia’s CAS [Central Authentication Service] for auth, created a dashboard for tech talks, competition registration and playground system.",
     ],
-    tags: ["CSS", "JavaScript", "React.js", "Redux"]
+    tags: ["CSS", "JavaScript", "React.js", "Redux"],
   },
   {
     imageUrl: projectAndroidImageUrl,
@@ -257,8 +257,8 @@ export const projects = [
     descriptions: [
       "An Android application that display latest trending and top rated movies fetched from TheMovieDB API.",
       "Part of Udacity's Android Associate Fast-Track Program's project",
-      "Developed without prior knowledge about Android in one week while doing my first internship at Stoqo"
+      "Developed without prior knowledge about Android in one week while doing my first internship at Stoqo",
     ],
-    tags: ["Android", "Java"]
-  }
+    tags: ["Android", "Java"],
+  },
 ];
