@@ -25,7 +25,7 @@ module.exports = {
         formatString: "MMM DD 'YY",
         navigation: [
           {
-            title: `Home`,
+            title: `🏠 Home`,
             slug: `/`,
           },
           {
@@ -53,13 +53,16 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
-      },
-    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    "gatsby-plugin-theme-ui",
+
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: process.env.GOOGLE_ANALYTICS_ID,
+    //   },
+    // },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
@@ -94,6 +97,5 @@ module.exports = {
         openAnalyzer: false,
       },
     },
-    "gatsby-plugin-theme-ui",
   ].filter(Boolean),
 };

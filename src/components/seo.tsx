@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { withPrefix } from "gatsby";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
 type SEOProps = {
@@ -45,19 +44,20 @@ const SEO = ({
       titleTemplate={`%s | ${siteTitle}`}
     >
       <html lang={siteLanguage} />
-      <script type="text/javascript">
+      {/* <script type="text/javascript">
         {`(function syncColorMode() {
-          if (localStorage.colorMode === 'system') {
+          window.alert('blocking');
+          if (localStorage.colorMode === 'system' || !('colorMode' in localStorage)) {
             if (window && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
               localStorage.setItem('theme-ui-color-mode', 'dark');
             } else {
               localStorage.setItem('theme-ui-color-mode', 'light');
             }
-          } else {
+          } else if (localStorage.colorMode === 'dark' || localStorage.colorMode === 'light') {
             localStorage.setItem('theme-ui-color-mode', localStorage.colorMode);
           }
         })()`}
-      </script>
+      </script> */}
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
@@ -66,7 +66,6 @@ const SEO = ({
       <meta property="og:image" content={seo.image} />
       <meta property="og:type" content="website" />
       <meta property="og:image:alt" content={seo.description} />
-      <meta name="color-scheme" content="light dark" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:url" content={seo.url} />

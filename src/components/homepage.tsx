@@ -49,11 +49,12 @@ const Homepage = ({ posts }: PostsProps) => {
         <Flex
           sx={{
             display: "flex",
+            flexDirection: ["column", "column", "row"],
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <div sx={{ flex: 2 }}>
+          <div sx={{ flex: 2, mr: 1 }}>
             <Hero />
           </div>
           <Flex
@@ -67,7 +68,7 @@ const Homepage = ({ posts }: PostsProps) => {
               src="me.jpg"
               alt="Albertus' Profile Picture"
               sx={{
-                maxWidth: "100%",
+                maxWidth: ["50%", "50%", "100%"],
                 borderRadius: 999,
               }}
             />

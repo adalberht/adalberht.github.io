@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import { jsx, useColorMode } from "theme-ui";
-import { Select } from "@theme-ui/components";
+import { jsx, useColorMode, useThemeUI } from "theme-ui";
+import { css } from "@emotion/react";
 import React from "react";
-
-// Adapted from: https://codepen.io/aaroniker/pen/KGpXZo and https://github.com/narative/gatsby-theme-novela/blob/714b6209c5bd61b220370e8a7ad84c0b1407946a/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx
 
 const getPreferredMode = (): "light" | "dark" => {
   if (typeof window === undefined) return "light";
@@ -24,11 +22,23 @@ const getIconFromMode = (mode: string): string => {
   return "🔆";
 };
 
+const getInitialMode = () => {
+  if (typeof window !== undefined) {
+    return window.localStorage.colorMode;
+  }
+  return "";
+};
+
 const ColorModeToggle = () => {
-  const [_, redrawApp] = useColorMode();
-  let [mode, setMode] = React.useState(() => {
-    return "system";
+  const { theme } = useThemeUI();
+  const [currentColorMode, setCurrentColorMode] = useColorMode();
+  let [cachedColorMode, setCachedColorMode] = React.useState(() => {
+    return getInitialMode();
   });
+
+  React.useEffect(() => {
+    setCachedColorMode(getInitialMode());
+  }, [getInitialMode]);
 
   React.useEffect(() => {
     if (window.matchMedia("(prefers-color-scheme)").media === "not all") {
@@ -40,7 +50,10 @@ const ColorModeToggle = () => {
         window.localStorage.colorMode === "dark"
       )
         return;
-      redrawApp(getPreferredMode());
+      if (currentColorMode !== getPreferredMode()) {
+        console.log("redrawing...");
+        setCurrentColorMode(getPreferredMode());
+      }
     };
 
     const darkModeMediaQuery = window.matchMedia(
@@ -49,44 +62,74 @@ const ColorModeToggle = () => {
 
     if (
       window.localStorage.colorMode !== "light" &&
-      window.localStorage.colorMode !== "dark"
+      window.localStorage.colorMode !== "dark" &&
+      getPreferredMode() !== currentColorMode
     ) {
-      redrawApp(getPreferredMode());
+      console.log("redrawing...");
+      setCurrentColorMode(getPreferredMode());
     }
 
     darkModeMediaQuery.addEventListener("change", switchMode, false);
 
     return () =>
       darkModeMediaQuery.removeEventListener("change", switchMode, false);
-  }, [redrawApp]);
-
-  React.useEffect(() => {
-    setMode(localStorage.colorMode);
-  }, []);
+  }, [setCurrentColorMode]);
 
   const onChange = (e) => {
     const mode = e.target.value;
     localStorage.colorMode = mode;
-    setMode(mode);
+    setCachedColorMode(mode);
     if (mode === "light" || mode === "dark") {
-      redrawApp(mode);
+      setCurrentColorMode(mode);
     } else {
-      redrawApp(getPreferredMode());
+      setCurrentColorMode(getPreferredMode());
     }
   };
 
   return (
-    <Select
-      onChange={onChange}
-      value={mode}
-      sx={{
-        opacity: "0",
-      }}
+    <div
+      css={css`
+        position: relative;
+
+        &:focus-within {
+          outline-color: ${theme.colors.accent};
+          outline-offset: -2px;
+          outline-style: auto;
+          outline-width: 5px;
+        }
+      `}
     >
-      <option value="system">Use System Default</option>
-      <option value="dark">Dark Theme</option>
-      <option value="light">Light Theme</option>
-    </Select>
+      <div
+        css={css`
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+        `}
+      >{`${getIconFromMode(cachedColorMode)}  (${cachedColorMode})`}</div>
+      <select
+        onChange={onChange}
+        value={cachedColorMode}
+        className="select"
+        css={css`
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          text-indent: 1px;
+          text-overflow: "";
+          appearance: none;
+          opacity: 0;
+
+          &::-ms-expand {
+            display: none;
+          }
+        `}
+      >
+        <option value="system">Use System Default</option>
+        <option value="dark">Dark Theme</option>
+        <option value="light">Light Theme</option>
+      </select>
+    </div>
   );
 };
 

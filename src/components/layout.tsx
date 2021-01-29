@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import React from "react"
-import { Global } from "@emotion/core"
-import { Box, Container, jsx } from "theme-ui"
-import "typeface-ibm-plex-sans"
-import SEO from "./seo"
-import Header from "./header"
-import Footer from "./footer"
-import CodeStyles from "../styles/code"
-import SkipNavLink from "./skip-nav"
+import React from "react";
+import { Global } from "@emotion/core";
+import { Box, Container, jsx } from "theme-ui";
+import "typeface-ibm-plex-sans";
+import SEO from "./seo";
+import Header from "./header";
+import Footer from "./footer";
+import CodeStyles from "../styles/code";
+import SkipNavLink from "./skip-nav";
 
-type LayoutProps = { children: React.ReactNode; className?: string }
+type LayoutProps = { children: React.ReactNode; className?: string };
 
 const Layout = ({ children, className = `` }: LayoutProps) => (
   <React.Fragment>
@@ -21,6 +21,9 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         html: {
           WebkitTextSizeAdjust: `100%`,
         },
+        // body: {
+        //   transition: `color 0.5s ease, background-color 0.5s ease`,
+        // },
         img: {
           borderStyle: `none`,
         },
@@ -51,6 +54,6 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
       <Footer />
     </Container>
   </React.Fragment>
-)
+);
 
-export default Layout
+export default Layout;
