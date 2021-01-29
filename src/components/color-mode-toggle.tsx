@@ -23,7 +23,7 @@ const getIconFromMode = (mode: string): string => {
 };
 
 const getInitialMode = () => {
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined" && window.localStorage) {
     return window.localStorage.colorMode;
   }
   return "";

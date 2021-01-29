@@ -2,7 +2,7 @@
 import { jsx, useColorMode } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
-import ColorModeToggle from "./colormode-toggle";
+import ColorModeToggle from "./color-mode-toggle";
 import Navigation from "./navigation";
 import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "./header-external-links";
