@@ -24,7 +24,7 @@ const getIconFromMode = (mode: string): string => {
 };
 
 const getInitialMode = () => {
-  if (!window || !window.localStorage) {
+  if (typeof window == "undefined") {
     return "loading...";
   }
   if (
@@ -57,7 +57,6 @@ const ColorModeToggle = () => {
       )
         return;
       if (currentColorMode !== getPreferredMode()) {
-        console.log("redrawing...");
         setCurrentColorMode(getPreferredMode());
       }
     };
@@ -71,7 +70,6 @@ const ColorModeToggle = () => {
       window.localStorage.colorMode !== "dark" &&
       getPreferredMode() !== currentColorMode
     ) {
-      console.log("redrawing...");
       setCurrentColorMode(getPreferredMode());
     }
 
@@ -123,7 +121,7 @@ const ColorModeToggle = () => {
           fontSize: ["16px", 1, 1],
         }}
       >
-        {!window
+        {typeof window === "undefined"
           ? `loading...`
           : `${getIconFromMode(cachedColorMode)}  (${cachedColorMode})`}
       </div>
