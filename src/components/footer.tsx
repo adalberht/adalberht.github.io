@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Link } from "theme-ui"
-import useSiteMetadata from "../hooks/use-site-metadata"
+import { jsx, Link } from "theme-ui";
+import useSiteMetadata from "../hooks/use-site-metadata";
 
 const Footer = () => {
-  const { siteTitle } = useSiteMetadata()
+  const { siteTitle } = useSiteMetadata();
 
   return (
     <footer
@@ -21,10 +21,10 @@ const Footer = () => {
       }}
     >
       <div>
-        &copy; {new Date().getFullYear()} by {siteTitle}. All rights reserved.
+        &copy; {new Date().getFullYear()} by {siteTitle}. All Rights Reserved.
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

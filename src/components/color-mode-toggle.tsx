@@ -96,12 +96,13 @@ const ColorModeToggle = () => {
     <div
       css={css`
         position: relative;
-
+        border: solid 1px ${theme.colors.accent};
+        border-radius: 6px;
         &:focus-within {
           outline-color: ${theme.colors.accent};
-          outline-offset: -2px;
+          outline-offset: 0px;
           outline-style: auto;
-          outline-width: 5px;
+          outline-width: 1px;
         }
       `}
     >
@@ -113,6 +114,14 @@ const ColorModeToggle = () => {
           width: 100%;
           text-align: center;
         `}
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          textAlign: "center",
+          fontSize: ["16px", 1, 1],
+        }}
       >
         {!window
           ? `loading...`

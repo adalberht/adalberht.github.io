@@ -40,7 +40,7 @@ const Homepage = ({ posts }: PostsProps) => {
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
       <section
         sx={{
-          mt: 6,
+          mt: [2, 4, 6],
           mb: [5, 6, 7],
           p: { fontSize: [1, 2, 3], mt: 2 },
           variant: `section_hero`,
@@ -68,7 +68,7 @@ const Homepage = ({ posts }: PostsProps) => {
               src="me.jpg"
               alt="Albertus' Profile Picture"
               sx={{
-                maxWidth: ["50%", "50%", "100%"],
+                maxWidth: ["40%", "50%", "100%"],
                 borderRadius: 999,
               }}
             />
@@ -80,8 +80,14 @@ const Homepage = ({ posts }: PostsProps) => {
           Read all posts
         </Link>
       </Title>
-      <Listing posts={posts} showTags={false} />
-      <List sx={{ variant: `section_bottom` }}>
+      <Listing posts={posts} showTags={true} />
+      <List
+        sx={{
+          a: {
+            color: "primary",
+          },
+        }}
+      >
         <Bottom />
       </List>
     </Layout>

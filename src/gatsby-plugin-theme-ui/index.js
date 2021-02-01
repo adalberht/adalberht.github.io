@@ -55,6 +55,8 @@ const theme = merge(tailwind, {
         "--baseline-multiplier": 0.179,
         "--x-height-multiplier": 0.35,
       },
+      mt: 1,
+      mb: 1,
     },
     ol: {
       li: {
@@ -137,6 +139,9 @@ const theme = merge(tailwind, {
       padding: [3, 4],
       maxWidth: `1024px`,
     },
+  },
+  lineHeights: {
+    body: "1.5",
   },
   text: {
     heading: {

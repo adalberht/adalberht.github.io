@@ -1,22 +1,26 @@
 /** @jsx jsx */
-import React from "react"
-import { jsx } from "theme-ui"
+import React from "react";
+import { jsx } from "theme-ui";
 
 type ListProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const List = ({ children }: ListProps) => (
   <section
     sx={{
       mb: [5, 5, 6],
-      ul: { margin: 0, padding: 0 },
-      li: { listStyle: `none`, mb: 3 },
-      a: { variant: `links.listItem` },
+      li: { mb: 3 },
+      a: {
+        fontSize: [2, 2, 3],
+        color: `primary`,
+        mb: 0,
+        textDecoration: "underline",
+      },
     }}
   >
     {children}
   </section>
-)
+);
 
-export default List
+export default List;
