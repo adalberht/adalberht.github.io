@@ -18,23 +18,29 @@ const getPreferredMode = (): "light" | "dark" => {
 };
 
 const getIconFromMode = (mode: string): string => {
+  if (mode === "system") mode = getPreferredMode();
   if (mode === "dark") return "🌒";
   return "🔆";
 };
 
 const getInitialMode = () => {
-  if (typeof window !== "undefined" && window.localStorage) {
+  if (!window || !window.localStorage) {
+    return "loading...";
+  }
+  if (
+    typeof window !== "undefined" &&
+    window.localStorage &&
+    "colorMode" in window.localStorage
+  ) {
     return window.localStorage.colorMode;
   }
-  return "";
+  return "system";
 };
 
 const ColorModeToggle = () => {
   const { theme } = useThemeUI();
   const [currentColorMode, setCurrentColorMode] = useColorMode();
-  let [cachedColorMode, setCachedColorMode] = React.useState(() => {
-    return getInitialMode();
-  });
+  let [cachedColorMode, setCachedColorMode] = React.useState(getInitialMode());
 
   React.useEffect(() => {
     setCachedColorMode(getInitialMode());
@@ -107,7 +113,11 @@ const ColorModeToggle = () => {
           width: 100%;
           text-align: center;
         `}
-      >{`${getIconFromMode(cachedColorMode)}  (${cachedColorMode})`}</div>
+      >
+        {!window
+          ? `loading...`
+          : `${getIconFromMode(cachedColorMode)}  (${cachedColorMode})`}
+      </div>
       <select
         onChange={onChange}
         value={cachedColorMode}
