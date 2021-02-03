@@ -82,9 +82,41 @@ A long time ago, somebody who I respected a lot and whom I consider to be quite 
 
 If someone is telling you that you won't succeed, whoever they are, even the ones that you consider to be a quite successful person, don't listen to them! Screw their negativity. Everyone does not even know what will happen in their life 1 minute from now, so why should you believe what they said negatively about you?
 
+## Actions that Helped Me Grow After Rejections
+
+Before closing this post, I'd like to summarize by sharing some practical actions that helped me overcome my failures after countless rejections:
+
+- Getting accustomed to rejection and not taking it personally.
+
+  - As I've said before, often the reasoning behind our rejection is not caused by our shortcomings and it could be some external factors that we don't have control on. Get accustomed to rejections, don't take it too personally, try to learn from it, and have a _thank you, next_ mindset.
+
+- Make a reflection notes / log.
+
+  - This is actually related to my countless software engineering internship applications. For every applications and interview that I did, I tried to make a log and personal note on how did my application and interview go and what I think could have gone better and what could have been prepared better.
+
+- Prepare better.
+
+  - In my case, often, the rejection comes because I didn't prepare enough and gave my best on the preparation. For example, my internship rejection from Stripe was caused because I didn't prepare enough and didn't do any mock interviews beforehand since I was too busy with my internship at Google at the time. The next year, I learned from this and prepared for a whole week before my remote onsite interview for the full-time position.
+
+- Don't stop trying.
+
+  - Don't let your fear of rejection or failures make you stop from trying in the first place. I saw all of my internship application as an opportunity to grow, learn, and practice my interviewing skill and never regretted my decision to apply even though I got rejected in the end of the process.
+
+- Be kinder to yourself and stop measuring yourself against others.
+
+  - This one actually hits me the most and took me the longest time and the hardest effort to actually try to do it. When Google rejected my internship application, the one that made it so hard for me to accept the rejection is the fact that I compared myself with the three of my friends who got accepted in the same position. I instantly felt so small and pathetic because of that.
+  - When I realizes that life is a marathon, instead of a sprint and tried to just be happy with what I have, my life just feels so light and I find myself to be generally happier in anything that I do.
+    > Your career is not a single race track, and the people running beside you don’t even have the same finish line as you. - [Joma](https://www.computer.org/publications/tech-news/build-your-career/embracing-individuality-joma?source=twitter)
+
 ## Closing
 
 For you who are all reading this post and maybe is receiving a rejection right now, don't let a single rejection to define you and your life. Just like every single rejection has helped me to build my resilience and momentum going forward, I'm sure you can get through this one as well!
+
+To close this post, I would like to share a quote by Epictetus that I found from [my mentor's blogpost here](https://irfan3.me/2020/).
+
+> Try, also, to be as kind to yourself as possible. Do not measure yourself against others or even against your ideal self. Human betterment is a gradual, two-steps-forward, one-step-back effort.
+> Forgive others for their misdeeds over and over again. This gesture fosters inner ease.
+> Forgive yourself over and over and over again. Then try to do better next time.
 
 That's it for this post about my reflection on how my journey to accept rejection over the last four years. I wanted to write this before graduating soon from my university. I hope it can be some kind of useful to anyone who reads it.
 
