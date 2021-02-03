@@ -7,8 +7,8 @@ const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 module.exports = {
   siteMetadata: {
     siteTitle: "Albertus Angga Raharja",
-    siteHeadline: "Albertus Angga R. Personal Website",
-    siteTitleAlt: `Albertus Angga R. Personal Website`,
+    siteTitleAlt: `A blog by Albertus Angga R.`,
+    siteHeadline: "A blog by Albertus Angga R.",
     defaultTitle: `Albertus Angga Raharja`,
     siteUrl: "https://albertus.dev",
     siteDescription:
@@ -51,6 +51,8 @@ module.exports = {
             url: `https://www.instagram.com/albertusdev/`,
           },
         ],
+        feed: true,
+        feedTitle: `Blog by Albertus Angga R.`,
       },
     },
     `gatsby-plugin-react-helmet`,

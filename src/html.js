@@ -11,7 +11,7 @@ const HTML = (props) => {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <meta name="color-scheme" content="light dark" />
         {props.headComponents}
