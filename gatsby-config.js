@@ -14,7 +14,7 @@ module.exports = {
     siteDescription:
       "Software Engineer. Writes about my journey as a New Grad/Junior Eng in Southeast Asia.",
     siteLanguage: "en",
-    siteImage: "/icon.png",
+    siteImage: "/site-image.png",
     author: "Albertus Angga Raharja",
   },
   plugins: [
