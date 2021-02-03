@@ -2,6 +2,7 @@
 title: "On Handling Rejection"
 date: 2021-02-01
 slug: "/on-handling-rejection"
+banner: "./on-handling-rejection.png"
 tags:
   - personal
 ---
