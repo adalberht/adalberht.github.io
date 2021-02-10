@@ -42,6 +42,12 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           transition: `all 0.3s ease-in-out`,
           color: `text`,
         },
+        ".autolink-headers > svg": {
+          fill: theme.colors.text,
+          width: "32px",
+          height: "1.5rem",
+          marginLeft: "-32px",
+        },
       })}
     />
     <SEO />

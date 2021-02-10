@@ -40,6 +40,12 @@ const coreOptions = {
               linkImagesToOriginal: false,
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: "autolink-headers",
+            },
+          },
         ],
         plugins: [
           {
