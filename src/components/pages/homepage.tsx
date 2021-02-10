@@ -2,18 +2,20 @@
 import { jsx } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import { Link } from "gatsby";
-import Layout from "./layout";
-import Title from "./title";
-import Listing from "./listing";
-import List from "./list";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
-import useSiteMetadata from "../hooks/use-site-metadata";
-import replaceSlashes from "../utils/replaceSlashes";
-import { visuallyHidden } from "../styles/utils";
+import Layout from "../layout";
+import Title from "../title";
+import RecentBlogs from "../RecentBlogs";
+import List from "../list";
+import useMinimalBlogConfig from "../../hooks/use-minimal-blog-config";
+import useSiteMetadata from "../../hooks/use-site-metadata";
+import replaceSlashes from "../../utils/replaceSlashes";
+import { visuallyHidden } from "../../styles/utils";
+
+// MDX Imports
 // @ts-ignore
-import Hero from "../texts/hero";
+import Hero from "../../texts/hero";
 // @ts-ignore
-import Bottom from "../texts/bottom";
+import Bottom from "../../texts/bottom";
 
 type PostsProps = {
   posts: {
@@ -31,8 +33,10 @@ type PostsProps = {
   [key: string]: any;
 };
 
-const Homepage = ({ posts }: PostsProps) => {
-  const { basePath, blogPath } = useMinimalBlogConfig();
+const Homepage = (props: PostsProps) => {
+  const { posts } = props;
+  const config = useMinimalBlogConfig();
+  const { basePath, blogPath } = config;
   const { siteTitle } = useSiteMetadata();
 
   return (
@@ -80,7 +84,7 @@ const Homepage = ({ posts }: PostsProps) => {
           Read all posts
         </Link>
       </Title>
-      <Listing posts={posts} showTags={true} />
+      <RecentBlogs posts={posts} showTags={true} />
       <List
         sx={{
           a: {

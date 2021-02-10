@@ -4,7 +4,7 @@ import { Flex } from "@theme-ui/components"
 import { Link } from "gatsby"
 import Layout from "./layout"
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config"
-import Listing from "./listing"
+import Listing from "./RecentBlogs"
 import replaceSlashes from "../utils/replaceSlashes"
 import SEO from "./seo"
 

@@ -2,9 +2,65 @@ require(`dotenv`).config({
   path: `.env`,
 });
 
+const newsletterFeed = require(`./src/utils/newsletterFeed`);
+
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
+const withDefaults = require(`./utils/default-options`);
+
+const options = withDefaults(require("./options"));
+const { mdx = true } = options;
+const { feed = true, feedTitle } = options;
+const coreOptions = {
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: options.postsPath,
+        path: options.postsPath,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: options.pagesPath,
+        path: options.pagesPath,
+      },
+    },
+    mdx && {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-typescript`,
+  ].filter(Boolean),
+};
+
 module.exports = {
+  ...coreOptions,
   siteMetadata: {
     siteTitle: "Albertus Angga Raharja",
     siteTitleAlt: `A blog by Albertus Angga R.`,
@@ -18,42 +74,10 @@ module.exports = {
     author: "Albertus Angga Raharja",
   },
   plugins: [
-    {
-      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
-      // See the theme's README for all available options
-      options: {
-        formatString: "MMM DD 'YY",
-        navigation: [
-          {
-            title: `🏠 Home`,
-            slug: `/`,
-          },
-          {
-            title: `Blog`,
-            slug: `/blog`,
-          },
-          {
-            title: `About`,
-            slug: `/about`,
-          },
-        ],
-        externalLinks: [
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/albertusdev`,
-          },
-          {
-            name: `LinkedIn`,
-            url: `https://linkedin.com/in/albertusdev`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/albertusdev/`,
-          },
-        ],
-        feed: true,
-        feedTitle: `Blog by Albertus Angga R.`,
-      },
+    ...coreOptions.plugins,
+    feed && {
+      resolve: `gatsby-plugin-feed`,
+      options: newsletterFeed(feedTitle),
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
@@ -99,5 +123,7 @@ module.exports = {
         openAnalyzer: false,
       },
     },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-catch-links`,
   ].filter(Boolean),
 };

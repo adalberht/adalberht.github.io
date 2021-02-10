@@ -36,7 +36,6 @@ const px = [`32px`, `16px`, `8px`, `4px`];
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
 
 const Post = ({ data: { post } }: PostProps) => {
-  console.log(post);
   return (
     <Layout>
       <SEO
