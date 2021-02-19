@@ -12,6 +12,7 @@ module.exports = (themeOptions) => {
   const formatString = themeOptions.formatString || `DD.MM.YYYY`;
 
   return {
+    ...themeOptions,
     basePath,
     blogPath,
     postsPath,

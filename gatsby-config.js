@@ -10,7 +10,7 @@ const withDefaults = require(`./utils/default-options`);
 
 const options = withDefaults(require("./options"));
 const { mdx = true } = options;
-const { feed = true, feedTitle } = options;
+const { feed = true, feedTitle = "Blog by Albertus Angga R." } = options;
 const coreOptions = {
   plugins: [
     {
