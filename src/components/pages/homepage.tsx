@@ -53,7 +53,7 @@ const Homepage = (props: PostsProps) => {
         <Flex
           sx={{
             display: "flex",
-            flexDirection: ["column", "column", "row"],
+            flexDirection: ["column-reverse", "column-reverse", "row"],
             justifyContent: "space-between",
             alignItems: "center",
           }}
@@ -66,6 +66,8 @@ const Homepage = (props: PostsProps) => {
               flex: 1,
               alignItems: "center",
               justifyContent: "center",
+              mt: [2, 2, 0],
+              mb: [1, 1, 0],
             }}
           >
             <img
