@@ -21,8 +21,24 @@ const Footer = () => {
         variant: `dividers.top`,
       }}
     >
-      <div sx={{ fontSize: [1, 1, 1], color: `secondary` }}>
-        &copy; {new Date().getFullYear()} by {siteTitle}. All Rights Reserved.
+      <div
+        sx={{
+          display: `flex`,
+          flexDirection: `column`,
+          justifyContent: `space-between`,
+          alignItems: `space-between`,
+        }}
+      >
+        <div
+          sx={{ fontStyle: "italic", color: "secondary", fontSize: "0.8rem" }}
+        >
+          Disclaimer: <br />
+          All writings here are my own and do not represent any of my current
+          and past employer.
+        </div>
+        <div sx={{ fontSize: [1, 1, 1], color: `secondary` }}>
+          &copy; {new Date().getFullYear()} by {siteTitle}. All Rights Reserved.
+        </div>
       </div>
       <div
         sx={{
