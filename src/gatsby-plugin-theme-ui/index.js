@@ -101,11 +101,15 @@ const theme = merge(tailwind, {
       borderLeftColor: `primary`,
       borderLeftStyle: `solid`,
       borderLeftWidth: `6px`,
+      borderRightColor: `primary`,
+      borderRightStyle: `solid`,
+      borderRightWidth: `6px`,
       mx: 0,
       pl: 4,
       p: {
         fontStyle: `italic`,
       },
+      textAlign: "center",
     },
     table: {
       width: `100%`,
