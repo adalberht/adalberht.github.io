@@ -51,8 +51,8 @@ const BlogPostItem = (props: PostProps) => (
       sx={{ color: "secondary" }}
     >{`${props.date} • ${props.timeToRead} min read`}</div>
     <h3 sx={{ mt: 1 }}>{props.title}</h3>
-    {props.description && <div>{props.description}</div>}
-    <p>{props.excerpt}</p>
+    {props.description && <p>{props.description}</p>}
+    {!props.description && props.excerpt && <p>{props.excerpt}</p>}
     <div sx={{ textDecoration: "underline", mb: [4, 4, 5] }}>Read more</div>
   </a>
 );
